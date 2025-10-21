@@ -45,6 +45,17 @@
 
 # online AI tools
 ## 视频， 图片，音频 生成
-https://app.klingai.com/cn
+`paid`
+https://app.klingai.com/cn   
+
+## 视频， 图片， poster. UI
+`paid`
+https://www.lovart.ai/home
+tutorials: https://www.youtube.com/watch?v=ZRl83_GtdNU
+
+## AI video, Image
+`paid` text to video, image to video
+https://artlist.io/image-to-video-ai
+
 
   
