@@ -42,4 +42,9 @@
   Best AI, For Everyone.
   No fluff. Just a curated list of AI agents, SDKs, coding copilots, and dev-first tools that save you hours — not waste them.
 
+
+# online AI tools
+## 视频， 图片，音频 生成
+https://app.klingai.com/cn
+
   
