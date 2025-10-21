@@ -57,5 +57,6 @@ tutorials: https://www.youtube.com/watch?v=ZRl83_GtdNU
 `paid` text to video, image to video
 https://artlist.io/image-to-video-ai
 
-
+## 即梦
+https://jimeng.jianying.com/ai-tool/generate
   
