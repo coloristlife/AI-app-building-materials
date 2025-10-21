@@ -59,4 +59,8 @@ https://artlist.io/image-to-video-ai
 
 ## 即梦
 https://jimeng.jianying.com/ai-tool/generate
+
+## video (slow but good quality, deserve to pay)
+https://app.heygen.com/home
+
   
