@@ -261,3 +261,7 @@ The sources provide examples illustrating context management approaches:
 *   **Edit Apply Models (Historical):** In 2024, it was common to use a large model to output a markdown explanation of code edits, which was then fed to a smaller "edit apply model" to rewrite the file. This approach was faulty because the small model often misinterpreted the large model's instructions due to slight ambiguities. Today, the decision-making and applying of edits are more often handled by a **single model in one action**.
 
 The overall message is that agent builders must ensure that **every action is informed by the context of all relevant decisions** made by other parts of the system, even if practical limitations (like context window size) require carefully deciding the level of complexity and context exposure.
+
+`source` https://github.com/jihoo-kim/awesome-context-engineering?tab=readme-ov-file
+
+
