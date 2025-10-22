@@ -5,6 +5,8 @@ When humans solve tasks, we take notes and remember things for future, related t
 
 Scratchpads can be implemented in a few different ways. They can be [a tool call](https://www.anthropic.com/engineering/claude-think-tool?ref=blog.langchain.com) that simply writes [to a file](https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem?ref=blog.langchain.com). They can also be a field in a runtime [state object](https://langchain-ai.github.io/langgraph/concepts/low_level/?ref=blog.langchain.com&ajs_aid=82740d3b-9d86-499b-8ab6-4380c144b290&_gl=1*pujsas*_gcl_au*MjA3MjA4MjkyMS4xNzYxMTM0MTc4*_ga*NDAyMDE1NDcwLjE3NjExMzQxNzg.*_ga_47WX3HKKY2*czE3NjExNDc0MjUkbzMkZzEkdDE3NjExNDk4NzQkajUkbDAkaDA.#state) that persists during the session. In either case, scratchpads let agents save useful information to help them accomplish a task.
 
+Scratchpads help agents solve a task within a given session (or thread), but sometimes agents benefit from remembering things across many sessions!
+
 `source` https://www.anthropic.com/engineering/claude-think-tool?ref=blog.langchain.com
 ## Using the think tool
 
@@ -46,5 +48,8 @@ User wants to book 3 tickets to NYC with 2 checked bags each
 4. Calculate total: ticket price + any bag fees
 5. Get explicit confirmation for booking
 </think_tool_example_2>
+
+
+
 
 `source` https://blog.langchain.com/context-engineering-for-agents/
