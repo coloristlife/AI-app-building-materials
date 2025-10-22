@@ -13,6 +13,11 @@ Different applications require various types of memory. Although the analogy isn
 | [Episodic](#episodic-memory) | Experiences | Things I did | Past agent actions |
 | [Procedural](#procedural-memory) | Instructions | Instincts or motor skills | Agent system prompt |
 
+`source` https://blog.langchain.com/context-engineering-for-agents/
+Scratchpads help agents solve a task within a given session (or thread), but sometimes agents benefit from remembering things across many sessions! [Reflexion](https://arxiv.org/abs/2303.11366?ref=blog.langchain.com) introduced the idea of reflection following each agent turn and re-using these self-generated memories. [Generative Agents](https://ar5iv.labs.arxiv.org/html/2304.03442?ref=blog.langchain.com) created memories synthesized periodically from collections of past agent feedback.
+
+These concepts made their way into popular products like ChatGPT, Cursor, and Windsurf, which all have mechanisms to auto-generate long-term memories that can persist across sessions based on user-agent interactions.
+
 
 `source` https://github.com/jihoo-kim/awesome-context-engineering
 # Long-term memory
