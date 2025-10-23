@@ -1,4 +1,4 @@
-# AI-app-repositories
+# [category] AI-app-repositories
 
 ## A curated list of Artificial Intelligence Top Tools
 ### mahseema awesome ai tools
@@ -34,8 +34,13 @@
 - Other
 - Learn AI free
 
+## awesome llm apps
+A curated collection of Awesome LLM apps built with RAG, AI Agents, Multi-agent Teams, MCP, Voice Agents, and more. This repository features LLM apps that use models from openai logoOpenAI , anthropic logoAnthropic, google logoGoogle, X logoxAI and open-source models like alibaba logoQwen or meta logoLlama that you can run locally on your computer.
 
-# Search for the AI tools
+https://github.com/Shubhamsaboo/awesome-llm-apps
+---
+
+# [category] Search for the AI tools
 
 - https://altern.ai/
   
@@ -43,7 +48,7 @@
   No fluff. Just a curated list of AI agents, SDKs, coding copilots, and dev-first tools that save you hours — not waste them.
 
 
-# online AI tools
+# [category] online AI tools
 ## 视频， 图片，音频 生成
 `paid`
 https://app.klingai.com/cn   
