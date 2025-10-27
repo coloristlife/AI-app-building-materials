@@ -182,17 +182,10 @@ https://learn.deeplearning.ai/courses/agentic-knowledge-graph-construction/lesso
   <img width="1921" height="504" alt="KG_pipeline" src="https://github.com/user-attachments/assets/2e2b8cd3-a4ed-493c-b86a-86524f12ef4f" />
 
        
-  ----
-## Agentic GraphRAG
-  https://neo4j.com/blog/developer/graphrag-and-agentic-architecture-with-neoconverse/
-  https://memgraph.com/blog/build-agentic-graphrag-ai
+  
 
-## Agentic Graphs
 
-## Agentic Learning Graphs
 
-# Agentic RAG
 
-# RAG flow
 
-# multi modal RAG
+
