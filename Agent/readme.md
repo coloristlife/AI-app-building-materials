@@ -6,3 +6,8 @@ This repository delivers end-to-end, code-first tutorials covering every layer o
 - https://github.com/NirDiamant/genai_agents
 
 This repository provides tutorials and implementations for various Generative AI Agent techniques, from basic to advanced. It serves as a comprehensive guide for building intelligent, interactive AI systems.
+
+
+- https://github.com/FareedKhan-dev/all-agentic-architectures
+- 
+Implementation of 17+ agentic architectures designed for practical use across different stages of AI system development
