@@ -1,0 +1,8 @@
+
+- https://github.com/NirDiamant/agents-towards-production
+
+This repository delivers end-to-end, code-first tutorials covering every layer of production-grade GenAI agents, guiding you from spark to scale with proven patterns and reusable blueprints for real-world launches.
+
+- https://github.com/NirDiamant/genai_agents
+
+This repository provides tutorials and implementations for various Generative AI Agent techniques, from basic to advanced. It serves as a comprehensive guide for building intelligent, interactive AI systems.
