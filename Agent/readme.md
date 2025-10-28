@@ -9,5 +9,7 @@ This repository provides tutorials and implementations for various Generative AI
 
 
 - https://github.com/FareedKhan-dev/all-agentic-architectures
-- 
 Implementation of 17+ agentic architectures designed for practical use across different stages of AI system development
+
+- https://github.com/ginobefun/agentic-design-patterns-cn
+  《Agentic Design Patterns》中文翻译版
