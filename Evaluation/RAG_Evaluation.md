@@ -36,14 +36,14 @@ ID Based Context Recall IDBasedContextRecall provides a direct and efficient way
 
 The metric computes recall using retrieved_context_ids and reference_context_ids, with values ranging between 0 and 1. Higher values indicate better performance. It works with both string and integer IDs.
 
-# Context Entities Recall
+## Context Entities Recall
 `source` https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/context_entities_recall/
 
 Context Entities Recall
 
 ContextEntityRecall metric gives the measure of recall of the retrieved context, based on the number of entities present in both reference and retrieved_contexts relative to the number of entities present in the reference alone. Simply put, it is a measure of what fraction of entities is recalled from reference. This metric is useful in fact-based use cases like tourism help desk, historical QA, etc. This metric can help evaluate the retrieval mechanism for entities, based on comparison with entities present in reference, because in cases where entities matter, we need the retrieved_contexts which cover them.
 
-# Noise Sensitivity
+## Noise Sensitivity
 
 `source` https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/noise_sensitivity/
 
@@ -52,14 +52,14 @@ NoiseSensitivity measures how often a system makes errors by providing incorrect
 To estimate noise sensitivity, each claim in the generated response is examined to determine whether it is correct based on the ground truth and whether it can be attributed to the relevant (or irrelevant) retrieved context. Ideally, all claims in the answer should be supported by the relevant retrieved context.
 Credits: Noise sensitivity was introduced in [RAGChecker](https://github.com/amazon-science/RAGChecker/tree/main/ragchecker)
 
-# Response Relevancy
+## Response Relevancy
 `source` https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/answer_relevance/
 
 The ResponseRelevancy metric measures how relevant a response is to the user input. Higher scores indicate better alignment with the user input, while lower scores are given if the response is incomplete or includes redundant information.
 
 This metric is calculated using the user_input and the response.
 
-# Faithfulness
+## Faithfulness
 `source` https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/faithfulness/
 
 Faithfulness
