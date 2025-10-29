@@ -4,6 +4,7 @@ https://github.com/HKUDS/LightRAG
 
 https://www.youtube.com/watch?v=5EmRZcJIfnw
 
+https://www.ai-bites.net/lightrag-simple-and-efficient-rival-to-graphrag/
 
 # from AI to analyze the paper
 https://arxiv.org/pdf/2410.05779
