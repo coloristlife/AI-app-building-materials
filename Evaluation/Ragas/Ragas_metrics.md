@@ -73,6 +73,16 @@ Ragas provides several metrics to evaluate various aspects of your RAG systems:
 - Answer_relevancy — Measures how relevant the answer is to the question.
 - Context_recall — Measures the retriever’s ability to retrieve all necessary information required to answer the question.
 
+## from the AI
+
+| High-Level Metric | What It Measures                                 | Relation to Context Recall / Precision                                                 |
+| ----------------- | ------------------------------------------------ | -------------------------------------------------------------------------------------- |
+| **Accuracy**      | Factual correctness of final answer              | Depends on recall (was all info retrieved?)                                            |
+| **Relevance**     | Whether output addresses user query              | Depends on precision (did retrieval include only relevant context?)                    |
+| **Completeness**  | Coverage of all required aspects of the question | Strongly tied to recall                                                                |
+| **Coherence**     | Logical flow and consistency of generated text   | Indirectly affected by retrieval clarity (too many irrelevant docs can hurt coherence) |
+| **Efficiency**    | Time/cost of generating an answer                | Retrieval precision affects efficiency (less noise = faster generation)                |
+
 ## use cases
 - https://langfuse.com/guides/cookbook/evaluation_of_rag_with_ragas
 - https://medium.com/data-science/evaluating-rag-applications-with-ragas-81d67b0ee31a#c52f
