@@ -8,6 +8,7 @@ Ragas is your ultimate toolkit for evaluating and optimizing Large Language Mode
 ## available metrics
 List of available metrics
 https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/
+
 **Retrieval Augmented Generation**
 
 * Context Precision
