@@ -6,6 +6,8 @@ https://www.youtube.com/watch?v=5EmRZcJIfnw
 
 https://www.ai-bites.net/lightrag-simple-and-efficient-rival-to-graphrag/
 
+https://www.youtube.com/watch?v=oageL-1I0GE
+
 # from AI to analyze the paper
 https://arxiv.org/pdf/2410.05779
 
