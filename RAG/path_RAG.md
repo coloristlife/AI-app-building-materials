@@ -1,6 +1,7 @@
 # PathRAG
 
-https://github.com/BUPT-GAMMA/PathRAG
+https://github.com/BUPT-GAMMA/PathRAG 
+![GitHub Repo stars](https://img.shields.io/github/stars/BUPT-GAMMA/PathRAG?style=social)
 
 https://arxiv.org/html/2502.14902v1
 
