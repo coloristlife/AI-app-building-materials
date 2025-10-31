@@ -4,7 +4,7 @@ https://ar5iv.labs.arxiv.org/html/2401.15884v3
 
 
 ## implementation 
-- https://github.com/HuskyInSalt/CRAG   official one
+- https://github.com/HuskyInSalt/CRAG   ![GitHub Repo stars](https://img.shields.io/github/stars/HuskyInSalt/CRAG?style=social)  official one
 - https://github.com/NirDiamant/RAG_Techniques/blob/main/all_rag_techniques_runnable_scripts/crag.py
 
 # research from AI
