@@ -1,7 +1,7 @@
 
-- https://ragflow.io/docs/dev/
+- https://ragflow.io/docs/dev/ 
 
-- https://github.com/infiniflow/ragflow
+- https://github.com/infiniflow/ragflow  ![GitHub Repo stars](https://img.shields.io/github/stars/infiniflow/ragflow?style=social) 
 
 RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs. It offers a streamlined RAG workflow adaptable to enterprises of any scale. Powered by a converged context engine and pre-built agent templates, RAGFlow enables developers to transform complex data into high-fidelity, production-ready AI systems with exceptional efficiency and precision.
 
