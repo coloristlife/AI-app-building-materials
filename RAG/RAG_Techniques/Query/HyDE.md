@@ -2,6 +2,8 @@ HyDE
 
 - https://diamantai.substack.com/p/hyde-exploring-hypothetical-document
 
+- https://github.com/NirDiamant/RAG_Techniques/tree/main?tab=readme-ov-file
+
   
 Let's break down the HyDE process step by step:
 
