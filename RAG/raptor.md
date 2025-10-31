@@ -25,3 +25,5 @@ Technologies Used
 - Streamlit: Framework for creating interactive web applications with Python.
 - Unstructured.io: Tool for parsing and extracting complex content from PDFs, such as tables, graphs, and images.
 - Poetry: Dependency management and packaging tool for Python.
+
+<img width="1914" height="862" alt="image" src="https://github.com/user-attachments/assets/a84063ff-d013-4b34-b958-2e7a36e36f74" />
