@@ -10,6 +10,9 @@ raptor
 Figure 1:Tree construction process: RAPTOR recursively clusters chunks of text based on their vector embeddings and generates text summaries of those clusters, constructing a tree from the bottom up. Nodes clustered together are siblings; a parent node contains the text summary of that cluster.
 
 
+- https://github.com/NirDiamant/RAG_Techniques/blob/main/all_rag_techniques_runnable_scripts/raptor.py
+  personal implementation
+
 - https://github.com/BlueBash/RAG-Raptor-demo
 
 Features
@@ -27,3 +30,12 @@ Technologies Used
 - Poetry: Dependency management and packaging tool for Python.
 
 <img width="1914" height="862" alt="image" src="https://github.com/user-attachments/assets/a84063ff-d013-4b34-b958-2e7a36e36f74" />
+
+- https://blog.gopenai.com/deep-dive-into-raptor-with-llamaindex-raptor-pack-8eb4fa32df30
+  Deep Dive into RAPTOR with LlamaIndex Raptor Pack
+
+- feedbacks is not good
+  https://www.reddit.com/r/LocalLLaMA/comments/1htcb5i/what_became_of_raptor_for_rag/#:~:text=Exactly%2C%20secondly%20there%20was%20a,at%20any%20point%20of%20time
+
+## research from AI
+Understood. I’ll provide a high-level conceptual explanation of RAPTOR (Recursive Abstractive Processing for Tree-Organized Retrieval), then drill down into the technical details of how it works, including its document clustering, summarization, and retrieval steps. I’ll also explain how it differs from traditional chunk-based RAG pipelines in terms of structure, efficiency, and retrieval accuracy.
