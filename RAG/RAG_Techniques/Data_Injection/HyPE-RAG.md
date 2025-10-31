@@ -3,7 +3,7 @@ HyPE-RAG
 
 - https://www.machinelearningplus.com/gen-ai/hype-rag-how-hypothetical-prompt-embeddings-solve-question-matching-in-retrieval-systems/?utm_source=chatgpt.com
 
-
+- https://github.com/NirDiamant/RAG_Techniques/tree/main?tab=readme-ov-file
 ---
 # from AI
 
