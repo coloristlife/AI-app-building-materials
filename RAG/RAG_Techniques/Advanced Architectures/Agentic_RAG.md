@@ -18,3 +18,7 @@ https://github.com/NisaarAgharia/Advanced_RAG?tab=readme-ov-file
 https://github.com/NisaarAgharia/Advanced_RAG?tab=readme-ov-file
 
 <img width="2893" height="693" alt="image" src="https://github.com/user-attachments/assets/21379389-14f8-46b8-920b-d9371c4adf54" />
+
+## Agentic RAG with Knowledge Graph
+https://github.com/coleam00/ottomator-agents/tree/main/agentic-rag-knowledge-graph
+
