@@ -22,3 +22,4 @@ https://github.com/NisaarAgharia/Advanced_RAG?tab=readme-ov-file
 ## Agentic RAG with Knowledge Graph
 https://github.com/coleam00/ottomator-agents/tree/main/agentic-rag-knowledge-graph
 
+https://www.youtube.com/watch?v=p0FERNkpyHE
