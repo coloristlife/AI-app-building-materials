@@ -1,0 +1,379 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" version="28.2.8" pages="2">
+  <diagram name="Page-1" id="sE-ynUbhu6YfsCNA7mo2">
+    <mxGraphModel dx="2276" dy="1866" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="U70d6gFjX126DZgA0pA6-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.013;exitY=0.552;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="U70d6gFjX126DZgA0pA6-1" target="U70d6gFjX126DZgA0pA6-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-1" value="Vector Storage" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
+          <mxGeometry x="820" y="340" width="80" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-2" target="U70d6gFjX126DZgA0pA6-13" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-2" value="Document Loader" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-20" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-4" target="U70d6gFjX126DZgA0pA6-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-4" value="Embedding Model" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-6" target="U70d6gFjX126DZgA0pA6-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-6" value="Document" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-170" y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-10" target="U70d6gFjX126DZgA0pA6-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="U70d6gFjX126DZgA0pA6-10" target="U70d6gFjX126DZgA0pA6-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-45" y="390" />
+              <mxPoint x="-45" y="480" />
+              <mxPoint x="30" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-10" value="Query" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-170" y="360" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-11" target="U70d6gFjX126DZgA0pA6-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-11" value="Embedding Model" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry y="360" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-13" target="U70d6gFjX126DZgA0pA6-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-13" value="Text Splitter" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-14" target="U70d6gFjX126DZgA0pA6-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-14" value="Text Chunks" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="490" y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-15" target="U70d6gFjX126DZgA0pA6-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-15" value="Chunk Embeddings" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="U70d6gFjX126DZgA0pA6-16" target="U70d6gFjX126DZgA0pA6-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-16" value="Query Embeddings" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="160" y="360" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-25" value="Data Retriever" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="545" y="360" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-28" target="U70d6gFjX126DZgA0pA6-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-28" value="Relevant Information" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="150" y="550" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="U70d6gFjX126DZgA0pA6-30" target="U70d6gFjX126DZgA0pA6-38" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-30" value="LLM" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="730" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="U70d6gFjX126DZgA0pA6-31" target="U70d6gFjX126DZgA0pA6-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-31" value="Context" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="550" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="U70d6gFjX126DZgA0pA6-35" target="U70d6gFjX126DZgA0pA6-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-35" value="Prompt" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="560" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-38" value="Response" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-180" y="730" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-44" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;Optimizing Chunk Sizes&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 110%;&quot;&gt;select an appropriate fixed size for text chunks to balancecontext preservation and retrieval efficiency.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="125" y="70" width="265" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-45" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;Preposition Chunking&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 110%;&quot;&gt;breaking down the text into concise, complete, meaningful sentences allowing for better control and handling of specific queries.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="125" y="-10" width="265" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-46" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Query Transformation&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;font&gt;Modifying and expanding queries to improve retrieval effectiveness&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="-480" y="280" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-48" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Hypothetical Questions (HyDE)&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Generating hypothetical fake answers that point to relevant locations in the data, to improve the alignment/matching between queries and data.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-480" y="350" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-49" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;Contextual&amp;nbsp;Chunk&amp;nbsp;Headers&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;line-height: 20%;&quot;&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;Contextual&amp;nbsp;chunk&amp;nbsp;headers&amp;nbsp;(CCH)&amp;nbsp;is&amp;nbsp;a&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;line-height: 20%;&quot;&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;method&amp;nbsp;of&amp;nbsp;creating&amp;nbsp;document-level&amp;nbsp;and&amp;nbsp;section level&amp;nbsp;context,&amp;nbsp;and&amp;nbsp;prepending&amp;nbsp;those&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;line-height: 20%;&quot;&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;&amp;nbsp;chunk&amp;nbsp;headers&amp;nbsp;to&amp;nbsp;the&amp;nbsp;chunks&amp;nbsp;&lt;/span&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;overflow=hidden;rounded=0;whiteSpace=wrap;align=left;" parent="1" vertex="1">
+          <mxGeometry x="460" y="65" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-50" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Relevant Segment Extraction(RSE)&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Perform a retrieval post-processing step that analyzes the most relevant chunks and identifies longer multi-chunk segments to provide more complete context to the LLM.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="480" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-51" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Context Enrichment Techniques&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Enhancing retrieval accuracy by embedding individual sentences and extending context to neighboring sentences in the original text.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="580" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-52" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Semantic Chunking&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;font&gt;Dividing documents based on semantic coherence rather than fixed sizes.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="125" y="-80" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-53" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Context Compression&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Compressing retrieved information while preserving query-relevant content.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="670" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-54" value="&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Document&amp;nbsp;Augmentation&amp;nbsp;through&amp;nbsp;Question&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Generation&amp;nbsp;for&amp;nbsp;Enhanced&amp;nbsp;Retrieval&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font&gt;Use&amp;nbsp;an&amp;nbsp;LLM&amp;nbsp;to&amp;nbsp;augment&amp;nbsp;text&amp;nbsp;dataset&amp;nbsp;with&amp;nbsp;all&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font&gt;possible&amp;nbsp;questions&amp;nbsp;that&amp;nbsp;can&amp;nbsp;be&amp;nbsp;asked&amp;nbsp;to&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font&gt;each&amp;nbsp;document.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="-40" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-55" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Fusion Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Optimizing search results by combining different retrieval methods.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="420" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-57" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" parent="1" source="U70d6gFjX126DZgA0pA6-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="545" y="390" as="sourcePoint" />
+            <mxPoint x="198" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="260" y="390" />
+              <mxPoint x="260" y="480" />
+              <mxPoint x="198" y="480" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-58" value="Retrieval&amp;nbsp;&lt;div&gt;Post Processing&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#CCFFE6,#EDEDED);fontColor=light-dark(#000000,#000000);" parent="1" vertex="1">
+          <mxGeometry x="350" y="420" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="U70d6gFjX126DZgA0pA6-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="U70d6gFjX126DZgA0pA6-25" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="819" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NcGUfI1nd6w8-3AUiJRR-1" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Intelligent Reranking&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Applying advanced scoring mechanisms to improve the relevance ranking of retrieved results.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="750" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NcGUfI1nd6w8-3AUiJRR-2" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Multi-faceted Filtering&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Applying various filtering techniques to refine and improve the quality of retrieved results.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="840" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NcGUfI1nd6w8-3AUiJRR-3" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Hierarchical Indices&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Creating a multi-tiered system for efficient information navigation and retrieval.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="460" y="-110" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NcGUfI1nd6w8-3AUiJRR-5" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Ensemble Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Apply different embedding models or retrieval algorithms and use voting or weighting mechanisms to determine the final set of retrieved documents.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="490" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NcGUfI1nd6w8-3AUiJRR-7" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Dartboard Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Combine both relevance and diversity into a single scoring function and directly optimize for it.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="590" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NcGUfI1nd6w8-3AUiJRR-8" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Adaptive Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Dynamically adjusting retrieval strategies based on query types and user contexts&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="850" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NcGUfI1nd6w8-3AUiJRR-9" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Multi-modal Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Extending RAG capabilities to handle diverse data types for richer responses&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="560" y="680" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n-g8R_ZmLLpKEwH4WYLF-1" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Retrieval with Feedback Loops&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Implementing mechanisms to learn from user interactions and improve future retrievals.&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="760" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="n-g8R_ZmLLpKEwH4WYLF-2" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;HyPE&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;&lt;font&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(1, 4, 9); font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;;&quot;&gt;indexing-time generation of hypothetical prompts/questions for each chunk&lt;/span&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(1, 4, 9); font-family: -apple-system, &amp;quot;system-ui&amp;quot;, &amp;quot;Segoe UI&amp;quot;, &amp;quot;Noto Sans&amp;quot;, Helvetica, Arial, sans-serif, &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/font&gt;.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="-190" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="n-g8R_ZmLLpKEwH4WYLF-3" value="&lt;div&gt;Routing&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#CCFFE6,#EDEDED);fontColor=light-dark(#000000,#000000);" vertex="1" parent="1">
+          <mxGeometry x="350" y="320" width="120" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="jeo_ssGjHLPIerTaEHQc" name="Page-2">
+    <mxGraphModel dx="1426" dy="766" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0.013;exitY=0.552;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-2" target="XlaqLs3Uoj5AYlpNMfwQ-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-2" value="Vector Storage" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="950" width="80" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-4" target="XlaqLs3Uoj5AYlpNMfwQ-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-4" value="Document Loader" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-6" target="XlaqLs3Uoj5AYlpNMfwQ-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-6" value="Embedding Model" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1420" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-8" target="XlaqLs3Uoj5AYlpNMfwQ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-8" value="Document" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-11" target="XlaqLs3Uoj5AYlpNMfwQ-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-11" target="XlaqLs3Uoj5AYlpNMfwQ-28">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="1000" />
+              <mxPoint x="695" y="1090" />
+              <mxPoint x="770" y="1090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-11" value="Query" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="570" y="970" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-13" target="XlaqLs3Uoj5AYlpNMfwQ-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-13" value="Embedding Model" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="740" y="970" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-15" target="XlaqLs3Uoj5AYlpNMfwQ-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-15" value="Text Splitter" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-17" target="XlaqLs3Uoj5AYlpNMfwQ-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-17" value="Text Chunks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1230" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-19" target="XlaqLs3Uoj5AYlpNMfwQ-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-19" value="Chunk Embeddings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1560" y="780" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-21" target="XlaqLs3Uoj5AYlpNMfwQ-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-21" value="Query Embeddings" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="970" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-22" value="Data Retriever" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1285" y="970" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-24" target="XlaqLs3Uoj5AYlpNMfwQ-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-24" value="Relevant Information" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="1160" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-26" target="XlaqLs3Uoj5AYlpNMfwQ-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-26" value="LLM" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="1340" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-28" target="XlaqLs3Uoj5AYlpNMfwQ-26">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-28" value="Context" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="730" y="1160" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-30" target="XlaqLs3Uoj5AYlpNMfwQ-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-30" value="Prompt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-31" value="Response" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1340" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-32" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;Optimizing Chunk Sizes&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 110%;&quot;&gt;select an appropriate fixed size for text chunks to balancecontext preservation and retrieval efficiency.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="865" y="680" width="265" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-33" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;Preposition Chunking&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 12px; line-height: 110%;&quot;&gt;breaking down the text into concise, complete, meaningful sentences allowing for better control and handling of specific queries.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="865" y="600" width="265" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-34" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Query Transformation&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;font&gt;Modifying and expanding queries to improve retrieval effectiveness&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="890" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-35" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Hypothetical Questions (HyDE)&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Generating hypothetical fake answers that point to relevant locations in the data, to improve the alignment/matching between queries and data.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="960" width="300" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-36" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;font style=&quot;font-size: 14px; line-height: 20%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;Contextual&amp;nbsp;Chunk&amp;nbsp;Headers&lt;/span&gt;&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;line-height: 20%;&quot;&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;Contextual&amp;nbsp;chunk&amp;nbsp;headers&amp;nbsp;(CCH)&amp;nbsp;is&amp;nbsp;a&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;line-height: 20%;&quot;&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;method&amp;nbsp;of&amp;nbsp;creating&amp;nbsp;document-level&amp;nbsp;and&amp;nbsp;section level&amp;nbsp;context,&amp;nbsp;and&amp;nbsp;prepending&amp;nbsp;those&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;line-height: 20%;&quot;&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif;&quot;&gt;&amp;nbsp;chunk&amp;nbsp;headers&amp;nbsp;to&amp;nbsp;the&amp;nbsp;chunks&amp;nbsp;&lt;/span&gt;.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;overflow=hidden;rounded=0;whiteSpace=wrap;align=left;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="675" width="250" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-37" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Relevant Segment Extraction(RSE)&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Perform a retrieval post-processing step that analyzes the most relevant chunks and identifies longer multi-chunk segments to provide more complete context to the LLM.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1030" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-38" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Context Enrichment Techniques&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Enhancing retrieval accuracy by embedding individual sentences and extending context to neighboring sentences in the original text.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1130" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-39" value="&lt;div style=&quot;line-height: 20%;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px; line-height: 20%;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Semantic Chunking&lt;/span&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;line-height: 110%;&quot;&gt;&lt;font&gt;Dividing documents based on semantic coherence rather than fixed sizes.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="865" y="530" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-40" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Context Compression&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Compressing retrieved information while preserving query-relevant content.&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1220" width="250" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-41" value="&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Document&amp;nbsp;Augmentation&amp;nbsp;through&amp;nbsp;Question&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;&lt;b&gt;Generation&amp;nbsp;for&amp;nbsp;Enhanced&amp;nbsp;Retrieval&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;&lt;span style=&quot;color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font&gt;Use&amp;nbsp;an&amp;nbsp;LLM&amp;nbsp;to&amp;nbsp;augment&amp;nbsp;text&amp;nbsp;dataset&amp;nbsp;with&amp;nbsp;all&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font&gt;possible&amp;nbsp;questions&amp;nbsp;that&amp;nbsp;can&amp;nbsp;be&amp;nbsp;asked&amp;nbsp;to&amp;nbsp;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(17, 17, 17); font-family: Arial, &amp;quot;Trebuchet MS&amp;quot;, Helvetica, sans-serif; text-wrap-mode: wrap; background-color: rgb(255, 255, 255);&quot;&gt;&lt;font&gt;each&amp;nbsp;document.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="570" width="260" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-42" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Fusion Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Optimizing search results by combining different retrieval methods.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="1030" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-43" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1285" y="1000" as="sourcePoint" />
+            <mxPoint x="938" y="1160" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1000" y="1000" />
+              <mxPoint x="1000" y="1090" />
+              <mxPoint x="938" y="1090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-44" value="Retrieval Post Processing&amp;nbsp;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=light-dark(#CCFFE6,#EDEDED);" vertex="1" parent="1">
+          <mxGeometry x="1090" y="930" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="XlaqLs3Uoj5AYlpNMfwQ-22">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1559" y="990" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-46" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Intelligent Reranking&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Applying advanced scoring mechanisms to improve the relevance ranking of retrieved results.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1300" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-47" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Multi-faceted Filtering&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Applying various filtering techniques to refine and improve the quality of retrieved results.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="1390" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-48" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Hierarchical Indices&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Creating a multi-tiered system for efficient information navigation and retrieval.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="500" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-49" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Ensemble Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Apply different embedding models or retrieval algorithms and use voting or weighting mechanisms to determine the final set of retrieved documents.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="1100" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-50" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Dartboard Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; line-height: 13.2px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;forced-color-adjust: none;&quot;&gt;Combine both relevance and diversity into a single scoring function and directly optimize for it.&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="1200" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-51" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Multi-modal Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Extending RAG capabilities to handle diverse data types for richer responses&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="1300" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XlaqLs3Uoj5AYlpNMfwQ-52" value="&lt;h1 style=&quot;forced-color-adjust: none; color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0px; line-height: 4.8px;&quot;&gt;&lt;span style=&quot;forced-color-adjust: none; font-size: 14px; background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;Multi-modal Retrieval&lt;/span&gt;&lt;/h1&gt;&lt;div style=&quot;color: rgb(0, 0, 0);&quot;&gt;Extending RAG capabilities to handle diverse data types for richer responses&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212)); color: light-dark(rgb(0, 0, 0), rgb(237, 237, 237));&quot;&gt;.&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="1370" width="220" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
