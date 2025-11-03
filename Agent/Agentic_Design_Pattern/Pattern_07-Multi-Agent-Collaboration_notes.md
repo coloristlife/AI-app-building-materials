@@ -1,4 +1,16 @@
-# Orchestrator-worker
+# Cons
+- Coordination
+- Complexity
+- Debugging Difficulty
+- Conflict Resolution
+
+# Pros
+- Specialization Benefits
+- Parallel Processing
+- Modularity
+
+# Examples:
+## Orchestrator-worker
 https://docs.langchain.com/oss/python/langgraph/workflows-agents#orchestrator-worker
 
 In an orchestrator-worker configuration, the orchestrator:
