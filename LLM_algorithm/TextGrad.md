@@ -1,3 +1,5 @@
+- http://textgrad.com/
+
 # NEW TextGrad by Stanford: Better than DSPy
 - https://www.youtube.com/watch?v=Qks4UEsRwl0
 
