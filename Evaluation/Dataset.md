@@ -14,3 +14,7 @@
   Finding which ocean liner was used as a floating prop for “The Last Voyage”
   Finding the October 1949 breakfast menu for the above ocean liner
   Chaining together a problem-solving trajectory in the correct order.
+
+
+# dataset used  by EvoAgentX
+https://github.com/EvoAgentX/EvoAgentX/blob/main/evoagentx/benchmark/README.md#hotpotqa
