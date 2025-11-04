@@ -77,6 +77,24 @@ Agents recall **past experiences** to inform current actions, improving **contex
   
   EvoAgentX is an open-source framework for building, evaluating, and evolving LLM-based agents or agentic workflows in an automated, modular, and goal-driven manner. At its core, EvoAgentX enables developers and researchers to move beyond static prompt chaining or manual workflow orchestration. It introduces a self-evolving agent ecosystem, where AI agents can be constructed, assessed, and optimized through iterative feedback loops—much like how software is continuously tested and improved.
   It integrates automatic evaluators to score agent behavior using task-specific criteria. Agents don’t just work—they learn. EvoAgentX improves workflows using self-evolving algorithms.
+
+We have integrated some effective agent/workflow evolution algorithms into EvoAgentX:
+
+| Algorithm | Description | Link |
+|------------|--------------|------|
+| **TextGrad** | Gradient-based optimization for LLM prompts and reasoning chains, enabling differentiable planning. | 📄 *Nature (2025)* |
+| **MIPRO** | Model-agnostic Iterative Prompt Optimization using black-box evaluations and adaptive reranking. | 📄 [arXiv:2406.11695](https://arxiv.org/abs/2406.11695) |
+| **AFlow** | Reinforcement learning-inspired agent workflow evolution using Monte Carlo Tree Search. | 📄 [arXiv:2410.10762](https://arxiv.org/abs/2410.10762) |
+| **EvoPrompt** | EvoPrompt dynamically refines prompts via feedback-driven evolution to enhance agent performance and adaptability. | 📄 [arXiv:2309.08532](https://arxiv.org/abs/2309.08532) |
+
+  textgrad is used as mentioned above.
+  
+  https://github.com/zou-group/textgrad
+  
+  
+
+  https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents?tab=readme-ov-file
+
   
 - The Self-Improving Coding Agent (SICA)
   
