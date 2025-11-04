@@ -220,4 +220,274 @@ We provide a simple and intuitive API that allows you to define your own loss fu
   In traditional deep learning, gradients are numerical values that indicate how to adjust parameters to minimize a loss function. TextGrad extends this metaphor to text by treating textual feedback as gradients. Instead of calculating derivatives mathematically, TextGrad uses LLMs to generate descriptive feedback that guides how text variables should be improved.
   
   TextGrad doesn't compute numerical derivatives - it generates textual gradients that explain how and why a text variable should be changed to improve performance.
-    
+
+  TextGrad provides Function classes that represent operations on text variables. Each function implements:
+
+  - A forward() method that performs the operation
+  - A backward() method that computes gradients
+
+  ## Gradient Computation Prompts
+  The magic of TextGrad lies in its carefully designed prompts that guide LLMs to generate useful feedback. These prompts:
+  
+  1. Provide context about the variable's role and purpose
+  2. Include the conversation history (system prompt, input, output)
+  3. Specify the objective function to optimize
+  4. Instruct the LLM to generate constructive criticism
+      
+  Here's a simplified example of what happens during backward computation:
+
+  ~~~
+  # This is what TextGrad constructs internally
+  backward_prompt = f"""
+  You will give feedback to a variable with the role: {prompt.role_description}
+   
+  Here is a conversation with a language model:
+  System: {system_prompt}
+  User: {prompt.value}
+  Assistant: {response.value}
+   
+  Your goal is to give feedback to improve the following feedback on the output: {gradient_text}
+   
+  Give feedback to this span of text:
+  {prompt.get_short_value()}
+  """
+  ~~~
+  
+  The LLM's response becomes the gradient, stored in the input variable.
+
+  ## Loss Functions: Defining Objectives
+  
+  TextGrad provides several loss functions to define optimization objectives. The most common is TextLoss, which evaluates text based on a custom criterion:
+
+  ~~~
+  from textgrad.loss import TextLoss
+ 
+  # Define a loss function to evaluate joke quality
+  loss_fn = TextLoss(
+      eval_system_prompt="Rate this joke from 1-10 and explain why",
+      engine=engine
+  )
+   
+  # Evaluate a joke
+  joke = Variable("Why don't scientists trust atoms? Because they make up everything!")
+  loss = loss_fn(joke)
+   
+  # Backpropagate to get feedback for improvement
+  loss.backward(engine=engine)
+  print(f"Feedback for the joke: {joke.get_gradient_text()}")
+  
+  ~~~
+
+  Loss functions are just specialized modules that compute gradients based on evaluation criteria.
+
+  ## Aggregation and Reduction
+  
+  TextGrad supports operations like sum and aggregate that combine multiple variables. The forward pass concatenates text, while the backward pass handles gradient distribution:
+
+  ~~~
+  from textgrad.autograd.functional import sum, aggregate
+ 
+  # Combine multiple prompts
+  prompts = [Variable(f"Prompt {i}") for i in range(3)]
+  combined = sum(prompts)
+   
+  # During backward pass, gradients are distributed to all inputs
+  combined.backward(engine=engine)
+  
+  ~~~
+  For aggregation, gradients are optionally reduced (summarized) to prevent gradient explosion when many variables contribute to a single output.
+
+  ## Supported Engine Providers
+
+  TextGrad currently supports a wide range of LLM providers, each implemented as a separate engine class that extends the base interface:
+
+  Provider	Class Name	Example Models
+  OpenAI	ChatOpenAI	gpt-4, gpt-3.5-turbo
+  Azure OpenAI	AzureChatOpenAI	gpt-35-turbo
+  Anthropic	ChatAnthropic	claude-3-opus, claude-3-sonnet
+  Gemini	ChatGemini	gemini-pro
+  Cohere	ChatCohere	command-r-plus
+  Together	ChatTogether	meta-llama/Llama-3-70b-chat-hf
+  Groq	ChatGroq	llama3-70b-8192
+  Local Models	ChatVLLM	Custom local models
+
+
+  ## Optimizer Components
+  https://zread.ai/zou-group/textgrad/15-optimizer-components
+
+  The base Optimizer class provides the fundamental interface that all optimizers must implement, including methods to clear gradients (zero_grad()) and perform optimization steps (step()). This design ensures consistency across different optimization strategies while allowing for specialized implementations.
+
+
+  ### **Textual Gradient Descent (TGD)**
+  
+  **TextualGradientDescent** is the primary optimization algorithm in **TextGrad**, implementing a gradient descent approach for **text-based variables**.
+  It leverages language models to iteratively refine text parameters based on computed gradients.
+  
+  ---
+  
+  #### **Key Features**
+  
+  * **Gradient-based Optimization**
+    Leverages textual gradients computed during backward propagation.
+  
+  * **Constraint Support**
+    Allows the specification of natural language constraints to guide optimization.
+  
+  * **Gradient Memory**
+    Optionally maintains a history of past gradients for more stable optimization.
+  
+  * **In-context Examples**
+    Supports providing examples to guide the optimization process.
+  
+  ---
+  
+  #### **Basic Usage**
+  
+  ~~~
+  
+  import textgrad as tg
+   
+  system_prompt = tg.Variable("Initial prompt text", 
+                            requires_grad=True, 
+                            role_description="system prompt")
+   
+  # Initialize the optimizer
+  optimizer = tg.TextualGradientDescent(
+      parameters=[system_prompt],
+      engine=tg.get_engine("gpt-4o"),
+      constraints=["Be concise", "Use clear language"],
+      gradient_memory=3
+  )
+   
+  # Perform optimization step
+  optimizer.step()
+  ~~~
+  
+  The optimizer operates through the following steps:
+  
+  1. **Collect Gradients and Context**
+     Gathers gradients and their contextual information for each parameter.
+  
+  2. **Construct a Prompt**
+     Builds a prompt that includes the variable, computed gradients, and any applicable constraints.
+  
+  3. **Generate Improved Variable**
+     Uses the language model to produce an improved version of the variable.
+  
+  4. **Update Parameters**
+     Extracts the refined value and updates the corresponding parameter.
+  
+  
+  ### Textual Gradient Descent with Momentum
+  
+  The TextualGradientDescentwithMomentum optimizer extends the basic TGD algorithm by incorporating momentum, which helps accelerate optimization in relevant directions and dampens oscillations.
+
+  The momentum optimizer maintains a sliding window of past optimization states, including both variable values and their corresponding gradients. This history helps the language model understand the optimization trajectory and make more informed updates.
+
+  In short:
+
+    TextualGradientDescentwithMomentum = an LLM-driven optimizer that refines text variables over time, guided by past gradients and previous versions (momentum).
+  
+  Each .step():
+  
+  - Saves the current text and feedback.
+  
+  - Builds an “update prompt” summarizing past steps.
+  
+  - Asks an LLM to propose a new, improved version.
+  
+  - Parses and applies the LLM’s suggestion.
+
+
+  ### Guided Textual Gradient Descent
+
+
+  The TextualGradientDescentwithMomentum optimizer extends the basic TGD algorithm by incorporating momentum, which helps accelerate optimization in relevant directions and dampens oscillations.
+
+  The GuidedTextualGradientDescent optimizer leverages the Guidance library for more structured and controlled optimization. This approach provides finer control over the language model's output format, ensuring more reliable extraction of the improved variable.
+
+  Key Benefits
+    - Structured Output: Uses Guidance to enforce specific output formats
+    - Reliable Parsing: Reduces parsing errors common with free-form text generation
+    - Explicit Reasoning: Separates reasoning from the final improved variable
+
+  Implementation Details
+
+  ~~~
+  @guidance
+  def structured_tgd_response(lm, tgd_prompt: str, system_prompt: str, 
+                             new_variable_tags: List[str], 
+                             max_reasoning_tokens: int=1024, 
+                             max_variable_tokens: int=4096):
+      with guidance.system():
+          lm += system_prompt
+      with guidance.user():
+          lm += tgd_prompt
+      with guidance.assistant():
+          lm += "Reasoning: " + gen(name="reasoning", stop="\n", max_tokens=max_reasoning_tokens) + "\n"
+          lm += new_variable_tags[0] + gen(name="improved_variable", stop=new_variable_tags[1], max_tokens=max_variable_tokens) + new_variable_tags[1]
+      return lm
+    ~~~
+    This structured approach ensures that the language model's output follows a predictable format, making it easier to extract the improved variable reliably.
+
+
+    ### Core Template Components
+
+    The main template components include:
+
+      Base Prompt: Describes the variable and provides gradients
+      Momentum Addition: Includes past optimization states when using momentum
+      Constraint Addition: Incorporates natural language constraints
+      In-context Examples: Provides examples to guide optimization
+      Gradient Memory: Includes historical gradient information
+
+    Here’s your content reformatted into a clean, structured, and readable technical guide style (like you’d see in documentation or a best practices manual):
+
+---
+
+  ### **Best Practices and Considerations**
+  
+  #### **Choosing the Right Optimizer**
+  
+  * **`TextualGradientDescent`**
+    Best for most use cases — provides a good balance of simplicity and effectiveness.
+  
+  * **`TextualGradientDescentwithMomentum`**
+    Recommended for complex optimization tasks where the optimization trajectory (history of changes) matters.
+  
+  * **`GuidedTextualGradientDescent`**
+    Ideal when output format consistency is critical or when using Guidance-enabled models.
+  
+  ---
+  
+  #### **Parameter Tuning**
+  
+  * **Gradient Memory**
+    Start with `0`; increase gradually if optimization becomes unstable.
+  
+  * **Momentum Window**
+    Begin with `2–3` steps; adjust based on convergence behavior.
+  
+  * **Constraints**
+    Add constraints gradually — too many can overly restrict optimization flexibility.
+  
+  * **Engine Choice**
+    Use more capable models (e.g., `GPT-4`) for complex optimization tasks; smaller models may struggle to follow instructions.
+  
+  ---
+  
+  #### **Common Pitfalls**
+  
+  * **Over-Constraining**
+    Applying too many constraints can prevent the optimizer from finding meaningful improvements.
+  
+  * **Insufficient Context**
+    Providing too little context in gradient feedback can lead to poor or incoherent optimization decisions.
+  
+  * **Memory Issues**
+    Large momentum windows or long gradient memory chains may exceed the model’s context limits.
+  
+  * **Parsing Errors**
+    Free-form LLM generation may sometimes produce malformed outputs (e.g., missing tags) that are difficult to parse automatically.
+
+
