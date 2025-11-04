@@ -100,8 +100,100 @@ You start with many edited prompts → evaluate → drop the weakest → keep re
 | **UCB Bandits**        | Balances trying new options vs. exploiting good ones | Avoids missing better prompts       |
 | **Successive Rejects** | Eliminates the worst options step by step            | Efficiently narrows down candidates |
 
+
 ---
 
+<img width="956" height="488" alt="image" src="https://github.com/user-attachments/assets/58196b03-6f14-43f7-9881-e7667c3e8b28" />
+
+
+### 🧠 What ProTeGi does (in plain terms)
+
+Think of ProTeGi as a **smart system for improving prompts automatically**.
+
+It does two big things at once:
+
+1. **Learning from mistakes** → “Natural Language Gradients”
+
+   * It looks at how a prompt performs.
+   * The model gives *textual feedback* (like, “This prompt is too vague”).
+   * That feedback acts like a *gradient* — it points out which direction to improve.
+
+2. **Strategic exploration of new prompts** → “Beam Search + Bandit Selection”
+
+   * Instead of randomly guessing new prompts, it tries several candidates.
+   * It then **selects the most promising ones** using smart search (beam search) and efficient testing (UCB or Successive Rejects).
+
+Together, that means ProTeGi is learning and exploring **like an optimizer**, but using *language* instead of math equations.
+
+---
+
+### 🎯 Goal
+
+> “Find the optimal configuration in fewer steps.”
+
+That means: reach the best-performing prompt as quickly and efficiently as possible — fewer experiments, better results.
+
+---
+
+### ⚠️ Limitation
+
+> “Requires numerous API calls, which can be computationally expensive.”
+
+Each time the system:
+
+* tests a prompt,
+* gets feedback,
+* edits it, and
+* re-evaluates,
+
+it needs to query an LLM again — so the process can be **costly and slow** if not managed carefully.
+
+
+
+-----
+
+
+Let’s unpack that phrase: **“moves semantically opposite to the gradients.”**
+
+---
+
+### 1️⃣ First — what does a *gradient* mean here?
+
+In normal machine learning, a **gradient** tells you the *direction of greatest error*.
+So, if you follow the gradient, you move **toward** more error.
+If you move **opposite to it**, you reduce error — you’re *improving*.
+
+---
+
+### 2️⃣ In **natural language gradients**:
+
+The “gradient” is **textual feedback** describing *what’s wrong* with the current prompt.
+
+Example:
+
+> Gradient (feedback): “The prompt is too broad; it needs more specific instructions.”
+
+This is like a “semantic direction” — it points toward the *problem*.
+
+---
+
+### 3️⃣ Moving **semantically opposite** means:
+
+You adjust the prompt in the **opposite direction** of that problem.
+
+So instead of being broad, you make the prompt **more specific**.
+Instead of being vague, you make it **clearer**.
+Instead of missing constraints, you **add them**.
+
+---
+
+### 💡 In short:
+
+> **Natural language gradient** = describes what’s wrong (the direction of weakness).
+> **Semantic movement opposite to it** = editing the prompt to fix that weakness.
+
+---
+<img width="1183" height="703" alt="image" src="https://github.com/user-attachments/assets/e1de953e-a384-4980-b7a7-b62453cbd2fb" />
 
 
 # Repo
@@ -124,5 +216,8 @@ We provide a simple and intuitive API that allows you to define your own loss fu
   
   TextGrad revolutionizes the way we optimize text-based systems by implementing automatic "differentiation" through text feedback. This powerful framework extends the familiar concept of gradient-based optimization from numerical domains to the world of text, enabling us to optimize prompts, solutions, and other text-based variables using large language models (LLMs) as gradient engines.
 
-
+  ## The Gradient Metaphor in Text Space
+  In traditional deep learning, gradients are numerical values that indicate how to adjust parameters to minimize a loss function. TextGrad extends this metaphor to text by treating textual feedback as gradients. Instead of calculating derivatives mathematically, TextGrad uses LLMs to generate descriptive feedback that guides how text variables should be improved.
   
+  TextGrad doesn't compute numerical derivatives - it generates textual gradients that explain how and why a text variable should be changed to improve performance.
+    
