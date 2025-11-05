@@ -71,7 +71,10 @@ Agents recall **past experiences** to inform current actions, improving **contex
 
 # examples:
 - https://github.com/Shubhamsaboo/awesome-llm-apps/blob/main/advanced_ai_agents/multi_agent_apps/ai_Self-Evolving_agent/README.md
-  Building a Self-Evolving Ecosystem of AI Agents using EvoAgentX: https://github.com/EvoAgentX/EvoAgentX?tab=readme-ov-file#evolution-algorithms.
+  
+  Building a Self-Evolving Ecosystem of AI Agents using EvoAgentX:
+
+  https://github.com/EvoAgentX/EvoAgentX?tab=readme-ov-file#evolution-algorithms.
 
   What is EvoAgentX
   
