@@ -270,7 +270,7 @@ def should_terminate(
     if solved or state["depth"] >= ctx["max_depth"]:
         return "__end__"
     return [
-        Send("expand", {**state, "somevalseed": candidate})
+        Send("expand", {**state, "somevalseed": candidate}) ## somevalseed seems to be an error, it should be seed, which make more sense.
         for candidate in state["candidates"]
     ]
 
