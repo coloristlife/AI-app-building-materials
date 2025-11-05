@@ -17,4 +17,10 @@
 
 
 # dataset used  by EvoAgentX
-https://github.com/EvoAgentX/EvoAgentX/blob/main/evoagentx/benchmark/README.md#hotpotqa
+- https://github.com/EvoAgentX/EvoAgentX/blob/main/evoagentx/benchmark/README.md#hotpotqa
+
+
+# Recent Advances in Large Language Model Benchmarks against Data Contamination: From Static to Dynamic Evaluation
+- https://github.com/SeekingDream/Static-to-Dynamic-LLMEval
+
+  arxiv.org/abs/2502.17521
