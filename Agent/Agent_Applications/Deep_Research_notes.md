@@ -308,5 +308,5 @@ async function evaluateAnswer(question, answer, metrics, context) {
 
 ~~~~
 
-** More to read:  **
+**More to read:**
 - https://jina.ai/news/snippet-selection-and-url-ranking-in-deepsearch-deepresearch/
