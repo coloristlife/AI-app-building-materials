@@ -7,14 +7,17 @@
   
   You can see this question involves several challenges:
   
-  Answering in a constrained format,
-  Using multimodal capabilities (to extract the fruits from the image),
-  Gathering several pieces of information, some depending on others:
-  Identifying the fruits on the picture
-  Finding which ocean liner was used as a floating prop for “The Last Voyage”
-  Finding the October 1949 breakfast menu for the above ocean liner
-  Chaining together a problem-solving trajectory in the correct order.
+  - Answering in a constrained format,
+  - Using multimodal capabilities (to extract the fruits from the image),
+  - Gathering several pieces of information, some depending on others:
+    - Identifying the fruits on the picture
+    - Finding which ocean liner was used as a floating prop for “The Last Voyage”
+    - Finding the October 1949 breakfast menu for the above ocean liner
+  - Chaining together a problem-solving trajectory in the correct order.
 
+Solving this requires both high-level planning abilities and rigorous execution, which are two areas where LLMs struggle when used alone.
+
+On GAIA’s public leaderboard, GPT-4 does not even reach 7% on the validation set when used without any agentic setup. On the other side of the spectrum, with Deep Research, OpenAI reached 67.36% score on the validation set, so an order of magnitude better!
 
 # dataset used  by EvoAgentX
 - https://github.com/EvoAgentX/EvoAgentX/blob/main/evoagentx/benchmark/README.md#hotpotqa
