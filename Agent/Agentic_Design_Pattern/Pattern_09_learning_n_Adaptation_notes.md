@@ -95,9 +95,15 @@ We have integrated some effective agent/workflow evolution algorithms into EvoAg
   https://github.com/zou-group/textgrad
   
   
-
   https://github.com/EvoAgentX/Awesome-Self-Evolving-Agents?tab=readme-ov-file
 
+  - deep research
+    
+    https://github.com/huggingface/smolagents/tree/main/examples/open_deep_research
+
+    
+
+    
   
 - The Self-Improving Coding Agent (SICA)
   
