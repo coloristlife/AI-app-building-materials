@@ -80,7 +80,12 @@ workflow.add_edge("security", "reporter")
 
 # Want to add performance_analyzer? Rewrite the graph!
 ~~~
-Problems: - ❌ Tight coupling (agents know about successors) - ❌ O(n²) edge complexity - ❌ Hard to modify (rewrite edges) - ❌ No automatic parallelism - ❌ Testing requires full graph
+Problems: 
+- ❌ Tight coupling (agents know about successors)
+- ❌ O(n²) edge complexity
+- ❌ Hard to modify (rewrite edges)
+- ❌ No automatic parallelism
+- ❌ Testing requires full graph
 
 Blackboard Approach
 ~~~
@@ -99,3 +104,4 @@ Benefits:
 - ✅ Easy to extend (add new subscribers)
 - ✅ Automatic parallelism (concurrent consumers)
 - ✅ Test agents in isolation
+
