@@ -23,3 +23,9 @@
 - https://github.com/kaushikb11/awesome-llm-agents
   
   A curated list of awesome LLM frameworks and agent development tools. If you have a suggestion, feel free to open an issue or pull request. (Last updated: 2025-11-02)
+
+- https://github.com/ashishpatel26/500-AI-Agents-Projects
+
+  The 500 AI Agents Projects is a curated collection of AI agent use cases across various industries. It showcases practical applications and provides links to open-source projects for implementation, illustrating how AI agents are transforming sectors such as healthcare, finance, education, retail, and more.
+
+  
