@@ -133,4 +133,14 @@ Use **Graphiti** when you need:
 * Personalization engines with evolving user profiles
 
 
+- communities:
+  
+  https://help.getzep.com/graphiti/core-concepts/communities
 
+  In Graphiti, communities (represented as CommunityNode objects) represent groups of related entity nodes. Communities are determined using the Leiden algorithm, which groups strongly connected nodes together. Communities contain a summary field that collates the summaries held on each of its member entities. This allows Graphiti to provide high-level synthesized information about what the graph contains in addition to the more granular facts stored on edges.
+
+- Graph Namespacing:
+
+   https://help.getzep.com/graphiti/core-concepts/graph-namespacing
+
+  Graphiti supports the concept of graph namespacing through the use of group_id parameters. This feature allows you to create isolated graph environments within the same Graphiti instance, enabling multiple distinct knowledge graphs to coexist without interference.
