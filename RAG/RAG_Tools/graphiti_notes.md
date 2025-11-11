@@ -139,8 +139,48 @@ Use **Graphiti** when you need:
 
   In Graphiti, communities (represented as CommunityNode objects) represent groups of related entity nodes. Communities are determined using the Leiden algorithm, which groups strongly connected nodes together. Communities contain a summary field that collates the summaries held on each of its member entities. This allows Graphiti to provide high-level synthesized information about what the graph contains in addition to the more granular facts stored on edges.
 
+**community detection**
+Graphiti implements a label propagation algorithm for community detection, an efficient and scalable approach that works well with large, dynamic graphs graphiti_core/utils/maintenance/community_operations.py#L86-L133.
+
+The main entry point for community detection is the build_communities() method graphiti_core/graphiti.py#L996-L1030:
+
+  Key Features:
+  
+  - Selective Processing: Optional group_ids parameter allows targeted community building
+  - Complete Refresh: Clears existing communities before regeneration
+  - Concurrent Processing: Leverages semaphore_gather for parallel operations
+  - Embedding Generation: Automatically generates embeddings for community nodes
+
+from AI
+---
+What do we mean by “embeddings for community nodes”?
+
+Usually “embeddings” means: mapping discrete graph elements (nodes, edges, communities) into continuous low-dimensional vectors so that structural (and/or attribute) relationships in the original graph are preserved in vector space. 
+
+“Community nodes” could mean two things:
+
+Embeddings for nodes in the graph, where the goal is that nodes within the same community will be close in embedding space.
+
+Embeddings for communities themselves (i.e., the group of nodes that form a community) — you embed the group as a vector (or distribution) to capture how that community sits in the graph. For example, see work on “community embedding”. 
+
+In either case, the embedding converts graph-structure into vectors so you can apply standard ML/analytics operations (clustering, classification, similarity search, etc).
+
+So when you said “automatically generates embeddings for community nodes”, likely you mean: we compute embeddings so that nodes that are part of a community (or the community as a whole) get vector representations that capture their membership / proximity in the graph.
+-----
+
+
 - Graph Namespacing:
 
    https://help.getzep.com/graphiti/core-concepts/graph-namespacing
 
   Graphiti supports the concept of graph namespacing through the use of group_id parameters. This feature allows you to create isolated graph environments within the same Graphiti instance, enabling multiple distinct knowledge graphs to coexist without interference.
+
+
+
+- Adding Fact Triples
+
+https://help.getzep.com/graphiti/working-with-data/adding-fact-triples
+
+A “fact triple” consists of two nodes and an edge between them, where the edge typically contains some fact. 
+
+
