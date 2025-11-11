@@ -151,23 +151,30 @@ The main entry point for community detection is the build_communities() method g
   - Concurrent Processing: Leverages semaphore_gather for parallel operations
   - Embedding Generation: Automatically generates embeddings for community nodes
 
-from AI
----
-What do we mean by “embeddings for community nodes”?
+  from AI
+  ---
+  What do we mean by “embeddings for community nodes”?
+  
+  Usually “embeddings” means: mapping discrete graph elements (nodes, edges, communities) into continuous low-dimensional vectors so that structural (and/or attribute) relationships in the original graph are preserved in vector space. 
+  
+  “Community nodes” could mean two things:
+  
+  Embeddings for nodes in the graph, where the goal is that nodes within the same community will be close in embedding space.
+  
+  Embeddings for communities themselves (i.e., the group of nodes that form a community) — you embed the group as a vector (or distribution) to capture how that community sits in the graph. For example, see work on “community embedding”. 
+  
+  In either case, the embedding converts graph-structure into vectors so you can apply standard ML/analytics operations (clustering, classification, similarity search, etc).
+  
+  So when you said “automatically generates embeddings for community nodes”, likely you mean: we compute embeddings so that nodes that are part of a community (or the community as a whole) get vector representations that capture their membership / proximity in the graph.
+  
+  -----
 
-Usually “embeddings” means: mapping discrete graph elements (nodes, edges, communities) into continuous low-dimensional vectors so that structural (and/or attribute) relationships in the original graph are preserved in vector space. 
+  Integration with Search and Navigation
+  Community nodes enhance graph search capabilities by providing:
 
-“Community nodes” could mean two things:
-
-Embeddings for nodes in the graph, where the goal is that nodes within the same community will be close in embedding space.
-
-Embeddings for communities themselves (i.e., the group of nodes that form a community) — you embed the group as a vector (or distribution) to capture how that community sits in the graph. For example, see work on “community embedding”. 
-
-In either case, the embedding converts graph-structure into vectors so you can apply standard ML/analytics operations (clustering, classification, similarity search, etc).
-
-So when you said “automatically generates embeddings for community nodes”, likely you mean: we compute embeddings so that nodes that are part of a community (or the community as a whole) get vector representations that capture their membership / proximity in the graph.
------
-
+  - Higher-level Abstractions: Users can search at community level for broader context
+  - Semantic Navigation: Communities provide natural navigation paths through the knowledge graph
+  - Query Optimization: Community-level filtering can reduce search space for complex queries
 
 - Graph Namespacing:
 
