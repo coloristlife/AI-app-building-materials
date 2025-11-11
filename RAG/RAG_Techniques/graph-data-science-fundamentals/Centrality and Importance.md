@@ -1,6 +1,6 @@
 - https://graphacademy.neo4j.com/courses/graph-data-science-fundamentals/1-graph-algorithms/2-centrality-and-importance/
 
-## Centrality and Importance
+# Centrality and Importance
 
 Centrality algorithms are used to determine the importance of distinct nodes in a graph.
 
@@ -12,7 +12,7 @@ Common use cases of centrality include:
 
 - Fraud & Anomaly Detection: Find users with many shared identifiers or who otherwise act as a bridge between many communities
 
-**Degree Centrality Example**
+# Degree Centrality Example
 Degree centrality is one of the most ubiquitous and simple centrality algorithms. It counts the number of relationships a node has. In the GDS implementation, we specifically calculate out-degree centrality which is the count of outgoing relationships from a node. Below is an example of using degree centrality to count the number of movies each actor has acted in.
 
 > From AI
@@ -63,6 +63,7 @@ Parameters explained:
 Let’s take a small part of the graph:
 
 (:Actor {name: "Robert De Niro"})-[:ACTED_IN]->(:Movie {title: "Heat"})
+
 (:Actor {name: "Robert De Niro"})-[:ACTED_IN]->(:Movie {title: "Goodfellas"})
 
 
@@ -97,7 +98,7 @@ score → the degree centrality value (number of outgoing relationships).
 The top three actors should be "Robert De Niro", "Bruce Willis", and "Nicolas Cage."
 
 
-**PageRank Example**
+# PageRank Example
 Another common centrality algorithm is PageRank. PageRank is a good algorithm for measuring the influence of nodes in a directed graph, particularly where the relationships imply some form of flow of movement such as in payment networks, supply chain and logistics, communications, routing, and graphs of website and links.
 
 In summary, PageRank estimates the importance of a node by counting the number of incoming relationships from neighboring nodes weighted by the importance and out-degree centrality of those neighbors. The underlying assumption is that more important nodes are likely to have proportionately more incoming relationships from other important nodes. Our PageRank documentation offers a thorough technical explanation of PageRank if you are interested in digging in deeper.
@@ -304,6 +305,23 @@ The **PageRank score** reflects how influential a person is in the **director–
 | Sandra Bullock | 0.0024    |
 
 These are the top-ranked individuals by influence in the network of directors and actors for high-grossing movies since 1990.
+From AI:
+The results from the PageRank query contain a mix of both directors and actors — because both types of people are included as nodes in the projected graph. Let’s unpack why that happens and what it means.
+Optional filtering - If you only wanted actors or directors in your PageRank results, you could filter them:
+~~~
+CALL gds.pageRank.stream('proj')
+YIELD nodeId, score
+WITH gds.util.asNode(nodeId) AS person, score
+WHERE (person)-[:ACTED_IN]->()  // only actors
+RETURN person.name AS personName, score AS influence
+ORDER BY influence DESCENDING
+LIMIT 5;
+
+~~~
+Or for directors:
+~~~
+WHERE (person)-[:DIRECTED]->()
+~~~
 
 ---
 
@@ -318,13 +336,14 @@ These are the top-ranked individuals by influence in the network of directors an
 
 ---
 
+
 ### 💡 Analogy:
 
 Think of **degree centrality** as *“how many people you know”*
 and **PageRank** as *“how important the people you know are.”*
 
 
-**Other Centrality Algorithms**
+# Other Centrality Algorithms
 Other GDS production tier centrality algorithms include:
 
 Betweenness Centrality: Measures the extent to which a node stands between the other nodes in a graph. It is often used to find nodes that serve as a bridge from one part of a graph to another.
