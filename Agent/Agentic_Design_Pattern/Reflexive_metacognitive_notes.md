@@ -24,7 +24,7 @@ AI based healthcare or finance domain, this is a non-negotiable safety feature. 
   - Escalate/Refuse: For low-confidence, high-risk, or out-of-scope queries.
 
     
-4. Execute Strategy: The chosen path is executed.
+4.Execute Strategy: The chosen path is executed.
 
 The foundation of this agent is its self-model. This isn’t just a prompt; it’s a structured piece of data that explicitly defines what the agent is and what it can do. We’ll create one for a medical triage assistant.
 
