@@ -125,3 +125,12 @@ It’s the same as doing:
 ~~~
 lambda x: x["question"]
 ~~~
+
+
+Multi-Query is a great start, but simply taking a union of documents treats them all equally. What if one document was ranked highly by three of our queries, while another was a low-ranked result from only one?
+
+The first is clearly more important. RAG-Fusion improves on Multi-Query by not just fetching documents, but also …
+
+re-ranking them using a technique called Reciprocal Rank Fusion (RRF).
+
+RRF intelligently combines results from multiple searches. It boosts the score of documents that appear consistently high across different result lists, pushing the most relevant content to the top.
