@@ -1,5 +1,5 @@
 
-# CrossEncoder
+# Reranking Methods in RAG Systems 
 
 - https://github.com/NirDiamant/RAG_Techniques?tab=readme-ov-file
 
@@ -20,7 +20,7 @@ Relevance Revolution: [How Re-ranking Transforms RAG Systems](https://diamantai.
 A comprehensive blog post exploring the power of re-ranking in enhancing RAG system performance.
 
 
-# Reranking Methods in RAG Systems
+# CrossEncoder
 
 - https://github.com/NirDiamant/RAG_Techniques/blob/main/all_rag_techniques/reranking.ipynb
 
