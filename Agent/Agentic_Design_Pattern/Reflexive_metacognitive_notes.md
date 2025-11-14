@@ -14,11 +14,15 @@ AI based healthcare or finance domain, this is a non-negotiable safety feature. 
 <img width="720" height="542" alt="image" src="https://github.com/user-attachments/assets/5bfc5b67-8ab2-427c-8e02-a3fa1d8e403a" />
 
 1.Perceive Task: The agent receives a user request.
+
 2.Metacognitive Analysis: The agent’s first step is to analyze the request against its own self-model. It assesses its confidence, its tools, and whether the query is within its predefined domain.
+
 3.Strategy Selection: Based on this self-analysis, it chooses a strategy:
+
   - Reason Directly: For high-confidence, low-risk queries.
   - Use Tool: When the query requires a specific tool it knows it has.
   - Escalate/Refuse: For low-confidence, high-risk, or out-of-scope queries.
+    
 4. Execute Strategy: The chosen path is executed.
 
 The foundation of this agent is its self-model. This isn’t just a prompt; it’s a structured piece of data that explicitly defines what the agent is and what it can do. We’ll create one for a medical triage assistant.
