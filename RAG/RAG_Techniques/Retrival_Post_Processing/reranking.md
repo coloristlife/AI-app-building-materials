@@ -1,4 +1,6 @@
 
+# CrossEncoder
+
 - https://github.com/NirDiamant/RAG_Techniques?tab=readme-ov-file
 
 Applying advanced scoring mechanisms to improve the relevance ranking of retrieved results.
@@ -26,5 +28,5 @@ A comprehensive blog post exploring the power of re-ranking in enhancing RAG sys
 
 The key difference is how these models work.
 
-Our initial retrieval uses a bi-encoder (the embedding model), which creates a vector for the query and documents independently. It’s fast and great for searching over millions of items.
-A cross-encoder, on the other hand, takes the query and a single document together as a pair and performs a much deeper, more nuanced comparison. It’s slower, but far more accurate.
+1. Our initial retrieval uses a bi-encoder (the embedding model), which creates a vector for the query and documents independently. It’s fast and great for searching over millions of items.
+2. A cross-encoder, on the other hand, takes the query and a single document together as a pair and performs a much deeper, more nuanced comparison. It’s slower, but far more accurate.
