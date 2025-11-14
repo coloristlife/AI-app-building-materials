@@ -75,7 +75,7 @@ retriever = vectorstore.as_retriever()
 
 
 
-From AI
+## Comparison From AI
 
 Here’s a careful explanation of **when to use `RecursiveCharacterTextSplitter` vs `RecursiveCharacterTextSplitter.from_tiktoken_encoder`**, with pros and cons for each.
 
