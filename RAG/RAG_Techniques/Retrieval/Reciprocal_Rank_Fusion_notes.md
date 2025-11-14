@@ -58,3 +58,19 @@ We have now implemented the core of our adaptive retrieval system.
   - The vector_search_only function is our upgraded semantic search. The key addition is the filter=filter_dict argument, which allows us to pass the document_section from our planner's Step and force the search to only consider chunks with that metadata.
   - The bm25_search_only function is our pure keyword retriever. It's incredibly fast and effective for finding specific terms that semantic search might miss.
   - The hybrid_search function runs both searches in parallel and then intelligently merges the results using RRF. RRF is a simple but powerful algorithm that ranks documents based on their position in each list, effectively giving more weight to documents that appear high up in both search results.
+
+
+The supervisor must choose one of these three strategies and explain its reasoning. This makes its decision-making process transparent and reliable.
+
+Now, let’s create the prompt that will guide this agent’s behavior.
+
+~~~
+retrieval_supervisor_prompt = ChatPromptTemplate.from_messages([
+    ("system", """You are a retrieval strategy expert. Based on the user's query, you must decide the best retrieval strategy.
+You have three options:
+1. `vector_search`: Best for conceptual, semantic, or similarity-based queries.
+2. `keyword_search`: Best for queries with specific, exact terms, names, or codes (e.g., 'Item 1A', 'Hopper architecture').
+3. `hybrid_search`: A good default that combines both, but may be less precise than a targeted strategy."""),
+    ("human", "User Query: {sub_question}") # The rewritten search query will be passed here.
+])
+~~~
