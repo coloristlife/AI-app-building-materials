@@ -1,3 +1,5 @@
+# application 1
+
 - https://levelup.gitconnected.com/building-an-agentic-deep-thinking-rag-pipeline-to-solve-complex-queries-af69c5e044db#4ff4
   - Vector Search: Our standard semantic search, but now upgraded to use metadata filters.
   - Keyword Search (BM25): A classic, powerful algorithm that excels at finding documents with specific, exact terms.
@@ -74,3 +76,61 @@ You have three options:
     ("human", "User Query: {sub_question}") # The rewritten search query will be passed here.
 ])
 ~~~
+# application 2
+- https://levelup.gitconnected.com/building-the-entire-rag-ecosystem-and-optimizing-every-component-8f23349b96a4#9d43
+
+The first is clearly more important. RAG-Fusion improves on Multi-Query by not just fetching documents, but also …
+
+re-ranking them using a technique called Reciprocal Rank Fusion (RRF).
+
+RRF intelligently combines results from multiple searches. It boosts the score of documents that appear consistently high across different result lists, pushing the most relevant content to the top.
+
+The code is very similar, but we’ll swap our get_unique_union function with an RRF implementation.
+
+~~~
+def reciprocal_rank_fusion(results: list[list], k=60):
+    """ Reciprocal Rank Fusion that intelligently combines multiple ranked lists """
+    fused_scores = {}
+
+    # Iterate through each list of ranked documents
+    for docs in results:
+        for rank, doc in enumerate(docs):
+            doc_str = dumps(doc)
+            if doc_str not in fused_scores:
+                fused_scores[doc_str] = 0
+            # The core of RRF: documents ranked higher (lower rank value) get a larger score
+            fused_scores[doc_str] += 1 / (rank + k)
+
+    # Sort documents by their new fused scores in descending order
+    reranked_results = [
+        (loads(doc), score)
+        for doc, score in sorted(fused_scores.items(), key=lambda x: x[1], reverse=True)
+    ]
+    return reranked_results
+~~~
+The above function will re-rank the documents after they are fetched through similarity search, but we haven’t initialized it yet so let’s do that now.
+
+~~~
+# Use a slightly different prompt for RAG-Fusion
+template = """You are a helpful assistant that generates multiple search queries based on a single input query. \n
+Generate multiple search queries related to: {question} \n
+Output (4 queries):"""
+prompt_rag_fusion = ChatPromptTemplate.from_template(template)
+
+generate_queries = (
+    prompt_rag_fusion 
+    | ChatOpenAI(temperature=0)
+    | StrOutputParser() 
+    | (lambda x: x.split("\n"))
+)
+
+# Build the new retrieval chain with RRF
+retrieval_chain_rag_fusion = generate_queries | retriever.map() | reciprocal_rank_fusion
+docs = retrieval_chain_rag_fusion.invoke({"question": question})
+
+print(f"Total re-ranked documents retrieved: {len(docs)}")
+
+#### OUTPUT ####
+Total re-ranked documents retrieved: 7
+~~~
+The final chain remains the same, but now it receives a more intelligently ranked context. RAG-Fusion is a powerful, low-effort way to increase the quality of your retrieval.
