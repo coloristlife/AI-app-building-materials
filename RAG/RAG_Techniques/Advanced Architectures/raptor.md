@@ -1,5 +1,5 @@
 
-raptor
+# raptor
 - https://github.com/parthsarthi03/raptor  ![GitHub Repo stars](https://img.shields.io/github/stars/parthsarthi03/raptor?style=social)
   The official implementation of RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval.
   
@@ -37,7 +37,26 @@ Technologies Used
 - feedbacks is not good
   https://www.reddit.com/r/LocalLLaMA/comments/1htcb5i/what_became_of_raptor_for_rag/#:~:text=Exactly%2C%20secondly%20there%20was%20a,at%20any%20point%20of%20time
 
-## research from AI
+
+# Application 
+
+- https://levelup.gitconnected.com/building-the-entire-rag-ecosystem-and-optimizing-every-component-8f23349b96a4#8177
+  
+**Hierarchical Indexing (RAPTOR) Knowledge Tree**
+
+The Theory: RAPTOR (Recursive Abstractive Processing for Tree-Organized Retrieval) takes the multi-representation idea a step further. Instead of just one layer of summaries, RAPTOR builds a multi-level tree of summaries. It starts by clustering small document chunks. It then summarizes each cluster.
+
+
+<img width="720" height="554" alt="image" src="https://github.com/user-attachments/assets/4c48c1fb-e15c-44b7-8e7f-d1c8ca137ba6" />
+
+Then, it takes these summaries, clusters them, and summarizes the new clusters. This process repeats, creating a hierarchy of knowledge from fine-grained details to high-level concepts. When you query, you can search at different levels of this tree, allowing for retrieval that can be as specific or as general as needed.
+
+This is a more advanced technique, and while we won’t implement the full algorithm here, you can find a deep dive and complete code in the RAPTOR Cookbook. It represents the cutting edge of structured indexing.
+
+
+
+
+# research from AI
 
 **RAPTOR Overview and Problem Context**
 
