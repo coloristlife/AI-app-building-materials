@@ -91,5 +91,10 @@ detectable features. In many ways, a black hole acts as an ideal black body,
 as it reflects no light.
 ~~~
 
+
+RunnableLambda is a LangChain LCEL building block that lets you wrap any Python function and use it inside an LCEL pipeline.
+
+Think of it as “turn any Python function into a runnable step in the chain.”
+
 Perfect. The router correctly identified the question as physics-related and used the physics professor prompt, resulting in a concise and accurate answer. This technique is excellent for creating specialized agents that adapt their persona to the user’s needs.
 
