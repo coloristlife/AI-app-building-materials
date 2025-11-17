@@ -90,22 +90,6 @@ final_rag_chain = (
 
 ~~~
 
-~~~
-# Final synthesis prompt
-template = """Here is a set of Q+A pairs:
 
-{context}
-
-Use these to synthesize an answer to the original question: {question}
-"""
-prompt = ChatPromptTemplate.from_template(template)
-
-final_rag_chain = (
-    prompt
-    | llm
-    | StrOutputParser()
-)
-
-~~~
 
 By using a hypothetical document as a lure, HyDE helped us zero in on the most relevant chunks in our knowledge base, demonstrating another powerful tool in our RAG toolkit.
