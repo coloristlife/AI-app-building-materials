@@ -81,3 +81,16 @@ Because it’s a **research prototype**, CRAG doesn’t include SDKs or APIs. In
 **CRAG:** Targeted at research and development settings where improving factual accuracy of LLMs is critical. It suits **QA or assistant systems** built on fixed knowledge bases (e.g., domain-specific RAG) that need a safety net for retrieval failures.
 
 CRAG’s maturity is **early**: it was introduced in a 2024 paper and has prototype code on GitHub. It is **not a polished product**; adoption is likely limited to experimental systems or research labs.
+
+
+## Langgraph implementation
+- https://levelup.gitconnected.com/building-the-entire-rag-ecosystem-and-optimizing-every-component-8f23349b96a4#8cd5
+- https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_crag/
+
+CRAG: If the retrieved documents are irrelevant or ambiguous for a given query, a CRAG system won’t just pass them to the LLM. Instead, it triggers a new, more robust web search to find better information, corrects the retrieved documents, and then proceeds with generation.
+
+
+<img width="1400" height="688" alt="image" src="https://github.com/user-attachments/assets/480a7bbc-e6e2-4895-a49a-338e7effae49" />
+
+
+
