@@ -116,5 +116,23 @@ Evaluating our RAG AI isn't about picking just one method; it's about using a mi
 
 By using all these tools, we can truly understand how our RAG AI is doing, identify its weaknesses, and keep making it smarter and more helpful for everyone. The journey to build truly intelligent AI helpers is exciting, and good evaluation is our compass!
 
-`
-`
+- https://levelup.gitconnected.com/building-the-entire-rag-ecosystem-and-optimizing-every-component-8f23349b96a4#fe06
+
+Manual RAG Evaluation
+
+We have built an increasingly sophisticated RAG pipeline, layering on advanced techniques for retrieval, indexing, and generation. But a crucial question remains: how do we prove it actually works?
+
+In a production environment, “it seems to work” is not enough. We need objective, repeatable metrics to measure performance, identify weaknesses, and guide improvements.
+
+This is where evaluation comes in. It’s the science of holding our RAG system accountable. In this part, we will explore how to quantitatively measure our system’s quality by building our own evaluators from first principles.
+
+The Core Metrics: What Should We Measure?
+Before we dive into code, let’s define what a “good” RAG response looks like. We can break it down into a few core principles:
+
+Faithfulness: Does the answer stick strictly to the provided context? A faithful answer does not invent information or use the LLM’s pre-trained knowledge to answer. This is the single most important metric for preventing hallucinations.
+
+Correctness: Is the answer factually correct when compared to a “ground truth” or reference answer?
+
+Contextual Relevancy: Was the context we retrieved actually relevant to the user’s question? This evaluates the performance of our retriever, not the generator.
+
+
