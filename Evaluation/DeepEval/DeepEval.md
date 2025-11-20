@@ -11,3 +11,6 @@ DeepEval is an open-source evaluation framework for LLMs. DeepEval makes it extr
 - Red team, safety scan LLM applications for security vulnerabilities.
 
   
+# use cases
+
+- https://levelup.gitconnected.com/building-the-entire-rag-ecosystem-and-optimizing-every-component-8f23349b96a4#fe06
