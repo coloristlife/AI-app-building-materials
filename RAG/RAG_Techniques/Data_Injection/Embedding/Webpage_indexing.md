@@ -222,6 +222,8 @@ The output shows that we have successfully partitioned the 10-K document into th
 **What we are going to do:**
 Standard chunking methods (like splitting by a fixed token count) can be destructive, especially for financial documents where tables are critical. A table split in half loses all its meaning. We will use `unstructured`'s `chunk_by_title` strategy. This method is more intelligent: it groups text under headings and, importantly, attempts to keep tables whole, treating them as atomic units.
 
+A table split in half loses all its meaning. This structure-aware chunking method is our defense against destroying critical tabular data during the ingestion process.
+
 ~~~
 # Convert the dictionary elements back to unstructured Element objects for chunking
 from unstructured.documents.elements import element_from_dict
@@ -264,6 +266,8 @@ if table_chunk_sample:
     print(f"Metadata: {table_chunk_sample.metadata.to_dict()}")
 ~~~
 
+Here, we first convert our list of dictionaries back into unstructured Element objects. Then, we pass them to chunk_by_title. The parameters allow us to control the approximate size of our chunks while giving the algorithm the flexibility to respect the document natural boundaries.
+
 Document chunked into 371 sections.
 
 --- Sample Chunks ---
@@ -286,6 +290,16 @@ Metadata: {'filetype': 'text/html', 'page_number': 3, 'filename': 'full-submissi
 The output shows we have reduced thousands of elements into a few hundred more manageable chunks. The key takeaway is in the sample chunks. We see a standard text chunk, and more importantly, a table chunk. Notice the table chunk's metadata includes `text_as_html`. This indicates that `unstructured` has correctly identified and preserved a table, which is a massive win for data quality. We have successfully avoided destroying critical tabular data during the chunking process.
 
 ### Step 1.3: Multi-faceted LLM-Powered Enrichment
+
+This step is a cornerstone of our advanced RAG pipeline. Standard RAG simply embeds the raw text of a chunk. We can do much better. Instead of relying solely on the raw text, we will use a fast and powerful LLM to generate rich metadata for each and every chunk.
+
+<img width="2000" height="448" alt="image" src="https://github.com/user-attachments/assets/e2e8c115-aa8d-4486-b1ed-ad891d6522d7" />
+
+We will create a process to generate a summary, keywords, a list of hypothetical questions the chunk could answer, and a special natural-language summary for tables. This metadata acts as a layer of machine-generated understanding, which we will embed alongside the raw text.
+
+This injects the LLM understanding directly into the vector representation, allowing our retrieval system to match based on conceptual meaning, not just keyword overlap.
+
+
 
 **What we are going to do:**
 This is a cornerstone of our advanced RAG pipeline. Instead of just embedding raw text, we will use a fast and powerful LLM to generate rich metadata for each chunk. This metadata acts as extra 'signals' for our retrieval system, allowing it to understand the content at a much deeper level.
@@ -361,9 +375,32 @@ print("\n--- Testing Enrichment on a Table Chunk ---")
 enriched_table_meta = enrich_chunk(table_chunk_sample)
 print(json.dumps(enriched_table_meta, indent=2))
 ~~~
+
+This is what we are getting.
+~~~
+--- Testing Enrichment on a Text Chunk ---
+{
+  "summary": "Microsoft, a global technology company, aims to empower individuals and organizations worldwide...",
+  "keywords": ["Microsoft", "technology company", "global operations", ...],
+  "hypothetical_questions": ["What is Microsoft's mission statement?", ...],
+  "table_summary": null
+}
+
+--- Testing Enrichment on a Table Chunk ---
+{
+  "summary": "This table presents Microsoft's revenue by major product and service categories...",
+  "keywords": ["Revenue", "Fiscal Year", "Server products and cloud services", ...],
+  "hypothetical_questions": ["What was Microsoft's total revenue in fiscal year 2023?", ...],
+  "table_summary": "The table shows Microsoft's total revenue increased by 7% to $211.9 billion in fiscal year 2023..."
+}
+~~~
+
 **Discussion of the Output:**
 This is a fantastic result. The output shows two JSON objects, one for each chunk type.
 - For the text chunk, we have a clear summary, relevant keywords, and insightful hypothetical questions.
 - For the table chunk, the LLM has correctly identified it as a table and provided a `table_summary` that interprets the data in natural language. This is incredibly powerful. Now, a semantic search for "revenue growth by segment" could match this table, even if those exact words aren't in the raw HTML.
 
+The LLM has generated high-quality, structured metadata for both types of content. For the table chunk, it has correctly provided a table_summary that interprets the data in natural language.
+
+A user could now search for revenue growth by segment, and our system could match this table, even though those exact words don't appear in the raw HTML.
 
