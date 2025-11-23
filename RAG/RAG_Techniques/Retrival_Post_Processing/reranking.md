@@ -101,4 +101,44 @@ Content: LLM-powered autonomous agents have been an exciting concept. They can b
 
 The output is remarkable. The CohereRerank model has not only re-ordered the documents but has also assigned a relevance_score to each one. We can now be much more confident that the context we pass to the LLM is of the highest quality, directly leading to better, more accurate answers.
 
+## more examples using CrossEncoder:
+https://levelup.gitconnected.com/building-an-advanced-agentic-rag-pipeline-that-mimics-a-human-thought-process-687e1fd79f61#a6e3
+
+~~~
+    query_embedding = list(embedding_model.embed([optimized_query]))[0]
+    search_results = client.search(
+        collection_name=COLLECTION_NAME,
+        query_vector=query_embedding,
+        limit=20,          # Fetch more results upfront for reranking
+        with_payload=True  # Include chunk metadata/content
+    )
+    print(f"  - Retrieved {len(search_results)} candidate chunks from vector store.")
+    
+    # 3. Re-rank results using a cross-encoder for semantic relevance
+    rerank_pairs = [[optimized_query, result.payload['content']] for result in search_results]
+    scores = cross_encoder_model.predict(rerank_pairs)
+    
+    # Attach re-rank scores to search results
+    for i, score in enumerate(scores):
+        search_results[i].score = score
+    
+    # Sort by descending re-rank score
+    reranked_results = sorted(search_results, key=lambda x: x.score, reverse=True)
+    print("  - Re-ranked the results using Cross-Encoder.")
+    
+    # 4. Select top-k results and format for return
+    top_k = 5
+    final_results = []
+    for result in reranked_results[:top_k]:
+        final_results.append({
+            'source': result.payload['source'],   # Document source path
+            'content': result.payload['content'], # Extracted text/table
+            'summary': result.payload['summary'], # Pre-computed summary
+            'rerank_score': float(result.score)   # Re-rank confidence score
+        })
+        
+    print(f"  - Returning top {top_k} re-ranked chunks.")
+    return final_results
+~~~
+
 
