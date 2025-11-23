@@ -168,7 +168,199 @@ text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(
 
 ---
 
-If you want, I can make a **visual diagram showing token-based vs character-based splitting** with an example of how the same text would be chunked differently. It’s very eye-opening.
+## method 3 - partition_html
+- https://levelup.gitconnected.com/building-an-advanced-agentic-rag-pipeline-that-mimics-a-human-thought-process-687e1fd79f61
+- https://github.com/FareedKhan-dev/agentic-rag/
 
-Do you want me to do that?
+- ### Step 1.1: Advanced Document Parsing
+
+**What we are going to do:**
+We will use the `unstructured` library to parse the raw HTML filings. Unlike simple text extraction, `unstructured` partitions the document into a list of meaningful 'elements' such as `Title`, `NarrativeText`, `ListItem`, and `Table`. This preservation of structural information is the first and most critical step towards intelligent chunking.
+
+
+~~~
+def parse_html_file(file_path: str) -> List[Dict]:
+    """Parses an HTML file using unstructured and returns a list of elements."""
+    try:
+        elements = partition_html(filename=file_path, infer_table_structure=True, strategy='fast')
+        return [el.to_dict() for el in elements]
+    except Exception as e:
+        print(f"Error parsing {file_path}: {e}")
+        return []
+
+# Let's parse the most recent 10-K filing as an example
+ten_k_file = [f for f in all_files if "10-K" in f][0]
+print(f"Parsing file: {ten_k_file}...")
+
+parsed_elements = parse_html_file(ten_k_file)
+
+print(f"\nSuccessfully parsed into {len(parsed_elements)} elements.")
+print("\n--- Sample Elements ---")
+
+# Print a few sample elements to inspect their type and content
+for i, element in enumerate(parsed_elements[20:25]): # Show a slice of elements
+    elem_type = element.get('type', 'N/A')
+    text_snippet = element.get('text', '')[:100].replace('\n', ' ') + '...'
+    print(f"Element {i+20}: [Type: {elem_type}] - Content: '{text_snippet}'")
+~~~
+
+output:
+Successfully parsed into 6328 elements.
+
+--- Sample Elements ---
+Element 20: [Type: Title] - Content: 'Table of Contents'...
+Element 21: [Type: NarrativeText] - Content: 'UNITED STATES SECURITIES AND EXCHANGE COMMISSION Washington, D.C. 20549'...
+Element 22: [Type: Title] - Content: 'FORM 10-K'...
+Element 23: [Type: NarrativeText] - Content: '(Mark One)'...
+Element 24: [Type: NarrativeText] - Content: '☒ ANNUAL REPORT PURSUANT TO SECTION 13 OR 15(d) OF THE SECURITIES EXCHANGE ACT OF 1934'...
+
+**Discussion of the Output:**
+The output shows that we have successfully partitioned the 10-K document into thousands of individual elements. The sample output is crucial: it demonstrates that `unstructured` has identified different types of content. We can see `Title` and `NarrativeText`. This structural awareness is what we will leverage in the next step to create more intelligent chunks, especially for preserving tables.
+
+### Step 1.2: Intelligent, Structure-Aware Chunking
+
+**What we are going to do:**
+Standard chunking methods (like splitting by a fixed token count) can be destructive, especially for financial documents where tables are critical. A table split in half loses all its meaning. We will use `unstructured`'s `chunk_by_title` strategy. This method is more intelligent: it groups text under headings and, importantly, attempts to keep tables whole, treating them as atomic units.
+
+~~~
+# Convert the dictionary elements back to unstructured Element objects for chunking
+from unstructured.documents.elements import element_from_dict
+
+elements_for_chunking = [element_from_dict(el) for el in parsed_elements]
+
+# Chunk the elements using the chunk_by_title strategy
+chunks = chunk_by_title(
+    elements_for_chunking,
+    max_characters=2048,      # Max size of a chunk
+    combine_text_under_n_chars=256, # Combine small text elements
+    new_after_n_chars=1800  # Start a new chunk if the current one is getting too big
+)
+
+print(f"Document chunked into {len(chunks)} sections.")
+
+print("\n--- Sample Chunks ---")
+
+# Find and print a sample text chunk and a sample table chunk
+text_chunk_sample = None
+table_chunk_sample = None
+
+for chunk in chunks:
+    if 'text_as_html' not in chunk.metadata.to_dict() and text_chunk_sample is None and len(chunk.text) > 500:
+        text_chunk_sample = chunk
+    if 'text_as_html' in chunk.metadata.to_dict() and table_chunk_sample is None:
+        table_chunk_sample = chunk
+    if text_chunk_sample and table_chunk_sample:
+        break
+
+if text_chunk_sample:
+    print("** Sample Text Chunk **")
+    print(f"Content: {text_chunk_sample.text[:500]}...")
+    print(f"Metadata: {text_chunk_sample.metadata.to_dict()}")
+
+if table_chunk_sample:
+    print("\n** Sample Table Chunk **")
+    # For tables, the HTML representation is often more useful
+    print(f"HTML Content: {table_chunk_sample.metadata.text_as_html[:500]}...")
+    print(f"Metadata: {table_chunk_sample.metadata.to_dict()}")
+~~~
+
+Document chunked into 371 sections.
+
+--- Sample Chunks ---
+** Sample Text Chunk **
+Content: ITEM 1. BUSINESS
+
+GENERAL
+
+Microsoft is a technology company whose mission is to empower every person and every organization on the planet to achieve more. We strive to create local opportunity, growth, and impact in every country around the world. We are a global company and have offices in more than 100 countries. Our platform and tools help drive small business productivity, large business competitiveness, and public-sector efficiency. They also support new startups, improve educational and health outcomes, and empower human...
+Metadata: {'filetype': 'text/html', 'page_number': 1, 'filename': 'full-submission.txt'}
+
+** Sample Table Chunk **
+HTML Content: <table><tr><td align="left" rowspan="2"></td><td align="center" colspan="3">For the Fiscal Year Ended June 30,</td><td align="center" colspan="2">Percentage Change</td></tr><tr><td align="center">2023</td><td align="center">2022</td><td align="center">2021</td><td align="center">2023 vs 2022</td><td align="center">2022 vs 2021</td></tr><tr><td align="left">Server products and cloud services</td><td align="center">$ 79,285</td><td align="center">$ 67,402</td><td align="center">$ 52,580</td><td align="center">18 %</td><td ali...
+Metadata: {'filetype': 'text/html', 'page_number': 3, 'filename': 'full-submission.txt', 'text_as_html': '<table><tr><td align="left" rowspan="2"></td><td align="center" colspan="3">For the Fiscal Year Ended June 30,</td><td align="center" colspan="2">Percentage Change</td></tr><tr><td align="center">2023</td><td align="center">2022</td><td align="center">2021</td><td align="center">2023 vs 2022</td><td align="center">2022 vs 2021</td></tr><tr><td align="left">Server products and cloud services</td><td align="center">$ 79,285</td><td align="center">$ 67,402</td><td align="center">$ 52,580</td><td align="center">18 %</td><td align="center">28 %</td></tr><tr><td align="left">Office products and cloud services</td><td align="center">48,688</td><td align="center">44,863</td><td align="center">39,871</td><td align="center">9 %</td><td align="center">13 %</td></tr><tr><td align="left">Windows</td><td align="center">21,507</td><td align="center">24,737</td><td align="center">22,488</td><td align="center">(13) %</td><td align="center">10 %</td></tr><tr><td align="left">Gaming</td><td align="center">15,465</td><td align="center">16,230</td><td align="center">15,370</td><td align="center">(5) %</td><td align="center">6 %</td></tr><tr><td align="left">LinkedIn</td><td align="center">15,147</td><td align="center">13,816</td><td align="center">10,289</td><td align="center">10 %</td><td align="center">34 %</td></tr><tr><td align="left">Search and news advertising</td><td align="center">12,231</td><td align="center">11,591</td><td align="center">9,267</td><td align="center">6 %</td><td align="center">25 %</td></tr><tr><td align="left">Enterprise Services</td><td align="center">7,548</td><td align="center">7,407</td><td align="center">6,943</td><td align="center">2 %</td><td align="center">7 %</td></tr><tr><td align="left">Devices</td><td align="center">5,541</td><td align="center">6,991</td><td align="center">7,143</td><td align="center">(21) %</td><td align="center">(2) %</td></tr><tr><td align="left">Other</td><td align="center">5,992</td><td align="center">4,498</td><td align="center">3,767</td><td align="center">33 %</td><td align="center">19 %</td></tr><tr><td align="left" style="padding-left: 24px">Total revenue</td><td align="center">$ 211,915</td><td align="center">$ 198,270</td><td align="center">$ 168,088</td><td align="center">7 %</td><td align="center">18 %</td></tr></table>'}
+
+**Discussion of the Output:**
+The output shows we have reduced thousands of elements into a few hundred more manageable chunks. The key takeaway is in the sample chunks. We see a standard text chunk, and more importantly, a table chunk. Notice the table chunk's metadata includes `text_as_html`. This indicates that `unstructured` has correctly identified and preserved a table, which is a massive win for data quality. We have successfully avoided destroying critical tabular data during the chunking process.
+
+### Step 1.3: Multi-faceted LLM-Powered Enrichment
+
+**What we are going to do:**
+This is a cornerstone of our advanced RAG pipeline. Instead of just embedding raw text, we will use a fast and powerful LLM to generate rich metadata for each chunk. This metadata acts as extra 'signals' for our retrieval system, allowing it to understand the content at a much deeper level.
+
+For each chunk, we will generate:
+1.  **Summary:** A concise, 1-2 sentence summary.
+2.  **Keywords:** A list of key topics.
+3.  **Hypothetical Questions:** A list of questions that the chunk can answer.
+4.  **Table Summary (for tables only):** A natural language description of the table's key insights.
+
+We'll use Pydantic to define the desired JSON structure, ensuring the LLM's output is reliable.
+
+~~~
+class ChunkMetadata(BaseModel):
+    """Structured metadata for a document chunk."""
+    summary: str = Field(description="A concise 1-2 sentence summary of the chunk.")
+    keywords: List[str] = Field(description="A list of 5-7 key topics or entities mentioned.")
+    hypothetical_questions: List[str] = Field(description="A list of 3-5 questions this chunk could answer.")
+    table_summary: Optional[str] = Field(description="If the chunk is a table, a natural language summary of its key insights.", default=None)
+
+print("Pydantic model for metadata defined.")
+print(ChunkMetadata.schema_json(indent=2))
+~~~
+
+We have defined the `ChunkMetadata` Pydantic model. Printing the JSON schema shows the exact structure, including field names, types, and descriptions, that we will request from the LLM. This use of structured output is far more reliable than simple prompt engineering.
+~~~
+# Initialize a powerful but fast LLM for the enrichment task
+# gpt-4o-mini is a great choice for this kind of structured data generation
+enrichment_llm = ChatOpenAI(model="gpt-4o-mini", temperature=0).with_structured_output(ChunkMetadata)
+
+def generate_enrichment_prompt(chunk_text: str, is_table: bool) -> str:
+    """Generates a prompt for the LLM to enrich a chunk."""
+    table_instruction = """
+    This chunk is a TABLE. Your summary should describe the main data points and trends, for example: 'This table shows a 15% year-over-year increase in revenue for the Cloud segment.'
+    """ if is_table else ""
+
+    prompt = f"""
+    You are an expert financial analyst. Please analyze the following document chunk and generate the specified metadata.
+    {table_instruction}
+    Chunk Content:
+    ---
+    {chunk_text}
+    ---
+    """
+    return prompt
+
+def enrich_chunk(chunk) -> Dict[str, Any]:
+    """Enriches a single chunk with LLM-generated metadata."""
+    is_table = 'text_as_html' in chunk.metadata.to_dict()
+    content = chunk.metadata.text_as_html if is_table else chunk.text
+    
+    # To avoid overwhelming the LLM, we'll truncate very long chunks
+    truncated_content = content[:3000]
+    
+    prompt = generate_enrichment_prompt(truncated_content, is_table)
+    
+    try:
+        metadata_obj = enrichment_llm.invoke(prompt)
+        return metadata_obj.dict()
+    except Exception as e:
+        print(f"  - Error enriching chunk: {e}")
+        return None
+
+print("Enrichment functions and LLM are ready.")
+~~~
+
+~~~
+print("--- Testing Enrichment on a Text Chunk ---")
+enriched_text_meta = enrich_chunk(text_chunk_sample)
+print(json.dumps(enriched_text_meta, indent=2))
+
+print("\n--- Testing Enrichment on a Table Chunk ---")
+enriched_table_meta = enrich_chunk(table_chunk_sample)
+print(json.dumps(enriched_table_meta, indent=2))
+~~~
+**Discussion of the Output:**
+This is a fantastic result. The output shows two JSON objects, one for each chunk type.
+- For the text chunk, we have a clear summary, relevant keywords, and insightful hypothetical questions.
+- For the table chunk, the LLM has correctly identified it as a table and provided a `table_summary` that interprets the data in natural language. This is incredibly powerful. Now, a semantic search for "revenue growth by segment" could match this table, even if those exact words aren't in the raw HTML.
+
 
