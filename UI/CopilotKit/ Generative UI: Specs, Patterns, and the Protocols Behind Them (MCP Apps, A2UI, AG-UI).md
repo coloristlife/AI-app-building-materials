@@ -4,7 +4,7 @@
 ![how it works](./pic/how_it_works.png)
 
 
-## staci generative UI
+## static generative UI
 
 In CopilotKit, static generative UI is a pattern where the AI agent does not create new UI layouts. Instead, it chooses from predefined UI components that developers already built.
 
@@ -21,7 +21,13 @@ There are **3 main types of Generative UI** used in AI applications and framewor
 
 ---
 
-> Generative UI: Specs, Patterns, and the Protocols Behind Them (MCP Apps, A2UI, AG-UI)
+> Generative UI: Specs, Patterns, and the Protocols Behind Them (MCP Apps, A2UI, AG-UI)  
+
+AG-UI and A2UI  
+https://www.copilotkit.ai/ag-ui-and-a2ui  
+AG-UI is the Agent–User Interaction protocol which connects your user-facing application to any agentic backend.
+
+A2UI is a Declarative Generative UI spec, originated by Google, which agents can use to return UI widgets as part of their responses.
 
 # 3 Types of Generative UI
 
@@ -85,7 +91,7 @@ Instead of selecting a component directly, the AI sends something like:
 
 The frontend then converts that **JSON specification → UI**.
 
-Yes — **A2UI is specifically designed for declarative UI**, not for other generative UI styles.
+ **A2UI is specifically designed for declarative UI**, not for other generative UI styles.
 
 ## Short answer
 
@@ -274,6 +280,9 @@ Most real products use **Static or Declarative Generative UI** because they are 
 
 ## AG UI
 **AG-UI (Agent–User Interaction Protocol)** supports the **interaction layer between an AI agent and a user-facing application**. In other words, it handles **how agents communicate with frontends** (web apps, copilots, dashboards, etc.). ([docs.ag-ui.com][1])
+
+https://github.com/ag-ui-protocol/ag-ui
+
 
 Think of it as the **protocol that connects the agent backend to the UI frontend**.
 
@@ -670,3 +679,72 @@ If you want, I can also explain the **common UI components and patterns used to 
 [2]: https://docs.ag-ui.com/introduction?utm_source=chatgpt.com "AG-UI Overview - Agent User Interaction Protocol"
 [3]: https://docs.ag-ui.com/concepts/events?utm_source=chatgpt.com "Events - Agent User Interaction Protocol"
 [4]: https://agentic-design.ai/patterns/ui-ux-patterns/agent-status-activity-patterns?utm_source=chatgpt.com "Agent Status & Activity UI Patterns (ASP) - Agentic Design | Agentic Design Patterns"
+
+
+
+# reading agent state
+useagent
+
+https://docs.copilotkit.ai/langgraph/shared-state/in-app-agent-read
+![readAgentState](./pic/readAgentState.png)
+
+# writing agent state
+https://docs.copilotkit.ai/langgraph/shared-state/in-app-agent-write#re-run-the-agent-with-updated-state
+
+![writeAgentState](./pic/writeAgentState.png)
+
+
+# Agent Steering
+
+In CopilotKit, Agent Steering is a Human-in-the-Loop (HITL) feature that allows users to monitor, course-correct, and guide an AI agent while it is in the middle of executing a multi-step process[1][2].  
+
+How Agent Steering Works
+With CopilotKit’s CoAgents framework, Agent Steering solves this problem through a few key mechanisms:
+Predictive / Intermediate State Updates: CopilotKit continuously streams the agent's intermediate state (what it is currently thinking or doing) to your frontend UI before the final state is determined[1][2].   
+
+Human Intervention: Because the frontend UI is strictly synced with the agent's state, the user can see what the agent is planning to do next[1]. If the user notices the agent going off-track, they can manually intervene by editing the state via the UI (e.g., changing a variable, fixing a generated outline, or unselecting a web source). 
+
+
+Time-Traveling & Replaying: Powered by underlying technologies like LangGraph's checkpointer, agent steering allows the user to effectively "zoom in" on the exact point of failure (Step 4), correct the mistake, and instruct the agent to resume its operations from that specific checkpoint onwards[2].
+
+
+In short, Agent Steering is the ability to dynamically redirect an agent's execution path using real-time user input[3]. It builds trust, prevents wasted compute time, and allows humans and AI to truly collaborate on complex workflows rather than just treating the AI as a fire-and-forget tool[1][2].
+
+# Self-improving Agents - auto RLHF
+on the horizon 
+https://youtu.be/Z4aSGCs_O5A?t=2600
+
+
+# examples:
+## Idun
+https://github.com/Idun-Group/idun-agent-platform  
+
+Why Idun exists
+The ecosystem is also moving around open source and open standards (MCP, LangGraph, OpenTelemetry, Langfuse, etc.). This is where innovation happens first, proprietary stacks usually follow, and staying aligned with standards keeps your system portable and future-proof.
+
+## open-research-ANA
+https://github.com/CopilotKit/open-research-ANA  
+This demo showcases ANA (Agent Native Application), a research canvas app that combines Human-in-the-Loop capabilities with Tavily's real-time search and CopilotKit's agentic interface.
+
+Powered by LangGraph, it simplifies complex research tasks, making them more interactive and efficient.
+
+## Generative UI Demo
+https://github.com/CopilotKit/generative-ui-playground  
+ generative UI playground showcasing the three types for building AI-powered user interfaces with CopilotKit.
+
+
+| Spec | Description | Use Case |
+| :--- | :--- | :--- |
+| **Static GenUI** | Pre-built React components rendered by frontend hooks | Weather cards, stock displays, task approvals |
+| **MCP Apps** | HTML/JS apps served by MCP servers in sandboxed iframes | Flight booking, hotel search, trading simulator |
+| **A2UI** | Agent-composed declarative JSON UI rendered dynamically | Restaurant finder, booking forms |
+
+
+## Human-in-the-Loop RAG Agent
+RAG AI Agent with Realtime Source Validation (Human in the Loop) - Built with CopilotKit + Pydantic AI
+
+https://github.com/coleam00/human-in-the-loop-rag-agent  
+
+https://www.youtube.com/watch?v=Be2OQ3LQZcQ
+
+
