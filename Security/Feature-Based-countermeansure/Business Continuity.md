@@ -1,0 +1,3 @@
+### Data Resilience & Business Continuity
+**Question**: Is there a defined and tested disaster recovery plan for all critical stateful services ([placeholder for all relevant services or their features]) that includes regularly scheduled, encrypted, and securely stored backups, and have clear Recovery Time Objectives (RTO) and Recovery Point Objectives (RPO) been established?
+*   **Associated Risk:** Unauthorized data access from compromised backups, permanent data loss, and extended service downtime in the event of a catastrophic system failure.

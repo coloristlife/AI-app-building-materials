@@ -1,0 +1,164 @@
+{
+  "ComponentTypes": [
+    {
+      "id": "component_llm_application",
+      "category": "AI Application",
+      "name": "LLM Application",
+      "description": "An application integrating a Large Language Model that processes user inputs and system prompts together without clear separation."
+    },
+    {
+      "id": "component_llm_agent",
+      "category": "AI Agent",
+      "name": "LLM Agent",
+      "description": "An advanced LLM system with reasoning capabilities, working memory, and access to external tools or APIs."
+    },
+    {
+      "id": "component_rag_system",
+      "category": "Data Augmentation",
+      "name": "Retrieval-Augmented Generation (RAG) System",
+      "description": "A system that fetches contextual information from external knowledge bases or vector databases to augment LLM queries."
+    },
+    {
+      "id": "component_vector_database",
+      "category": "Data Storage",
+      "name": "Vector Database",
+      "description": "A database used to store document embeddings for RAG systems, which can be vulnerable to data poisoning."
+    },
+    {
+      "id": "component_multimodal_llm",
+      "category": "AI Model",
+      "name": "Multimodal LLM",
+      "description": "A Large Language Model capable of processing non-textual inputs like images, audio, or document structures alongside text."
+    },
+    {
+      "id": "component_guardrail_model",
+      "category": "Security Control",
+      "name": "Guardrail Model",
+      "description": "An independent model (LLM-as-judge) used to filter inputs, screen outputs, or evaluate proposed actions of the primary LLM."
+    }
+  ],
+  "Capabilities": [
+    {
+      "id": "capability_process_natural_language",
+      "category": "Data Processing",
+      "name": "Process Natural Language",
+      "description": "The foundational ability to parse and process natural language instructions and data streams simultaneously."
+    },
+    {
+      "id": "capability_access_external_tools",
+      "category": "Execution",
+      "name": "Access External Tools",
+      "description": "The ability of an LLM agent to dynamically invoke external functions, APIs, or operational tools based on its reasoning."
+    },
+    {
+      "id": "capability_retrieve_external_content",
+      "category": "Data Retrieval",
+      "name": "Retrieve External Content",
+      "description": "The ability to fetch external data (e.g., via RAG, web browsing, or document parsing) to build contextual prompts."
+    },
+    {
+      "id": "capability_render_markdown_html",
+      "category": "Output Generation",
+      "name": "Render Markdown and HTML",
+      "description": "The capability to format responses using HTML or Markdown, which may be automatically interpreted and executed by client applications."
+    },
+    {
+      "id": "capability_process_multimodal_inputs",
+      "category": "Data Processing",
+      "name": "Process Multimodal Inputs",
+      "description": "The ability to consume and analyze diverse media types such as images and complex document metadata."
+    },
+    {
+      "id": "capability_maintain_conversation_history",
+      "category": "Session Management",
+      "name": "Maintain Conversation History",
+      "description": "The capability to persist conversation context or memory across multiple turns or sessions."
+    }
+  ],
+  "Threats": [
+    {
+      "id": "threat_direct_prompt_injection",
+      "category": "Prompt Injection",
+      "name": "Direct Prompt Injection",
+      "description": "An attacker explicitly embeds malicious instructions within user input to override the LLM's system prompt and behavior."
+    },
+    {
+      "id": "threat_remote_indirect_prompt_injection",
+      "category": "Prompt Injection",
+      "name": "Remote/Indirect Prompt Injection",
+      "description": "Malicious instructions are hidden in external content (e.g., websites, emails, documents) that the LLM fetches and processes."
+    },
+    {
+      "id": "threat_encoding_obfuscation",
+      "category": "Evasion",
+      "name": "Encoding and Obfuscation Attacks",
+      "description": "Attackers hide malicious prompts from detection using Base64, hex encoding, Unicode smuggling, or Typoglycemia."
+    },
+    {
+      "id": "threat_best_of_n_jailbreaking",
+      "category": "Evasion",
+      "name": "Best-of-N Jailbreaking",
+      "description": "Systematically generating and testing many prompt variations until one bypasses the model's safety measures and filters."
+    },
+    {
+      "id": "threat_html_markdown_injection",
+      "category": "Output Manipulation",
+      "name": "HTML and Markdown Injection",
+      "description": "Injecting malicious HTML or Markdown tags (e.g., hidden image tags) into the LLM output to exfiltrate data or compromise the client UI."
+    },
+    {
+      "id": "threat_jailbreaking",
+      "category": "Evasion",
+      "name": "Jailbreaking",
+      "description": "Bypassing AI safety controls through complex role-playing, emotional manipulation (e.g., grandmother trick), or hypothetical scenarios."
+    },
+    {
+      "id": "threat_multi_turn_persistent_attack",
+      "category": "Prompt Injection",
+      "name": "Multi-Turn and Persistent Attacks",
+      "description": "Exploiting conversation history by establishing coded language or delayed triggers that activate in later interactions."
+    },
+    {
+      "id": "threat_system_prompt_extraction",
+      "category": "Information Disclosure",
+      "name": "System Prompt Extraction",
+      "description": "Manipulating the model to output its exact internal instructions, operational guidelines, or hidden configurations."
+    },
+    {
+      "id": "threat_data_exfiltration",
+      "category": "Information Disclosure",
+      "name": "Data Exfiltration",
+      "description": "Tricking the model into revealing sensitive user data, API keys, passwords, or confidential information present in its context window."
+    },
+    {
+      "id": "threat_multimodal_injection",
+      "category": "Prompt Injection",
+      "name": "Multimodal Injection",
+      "description": "Concealing malicious instructions within image steganography, invisible characters, or document metadata processed by multimodal LLMs."
+    },
+    {
+      "id": "threat_rag_poisoning",
+      "category": "Data Poisoning",
+      "name": "RAG Poisoning (Retrieval Attacks)",
+      "description": "Injecting harmful content into external knowledge bases or vector databases so legitimate RAG queries retrieve attacker-controlled instructions."
+    },
+    {
+      "id": "threat_agent_thought_injection",
+      "category": "Agent Manipulation",
+      "name": "Thought/Observation Injection",
+      "description": "Forging an LLM agent's internal reasoning steps or tool observation outputs to misdirect its actions."
+    },
+    {
+      "id": "threat_agent_tool_manipulation",
+      "category": "Agent Manipulation",
+      "name": "Tool Manipulation",
+      "description": "Tricking an LLM agent into invoking external tools or APIs using malicious parameters controlled by the attacker."
+    },
+    {
+      "id": "threat_agent_context_poisoning",
+      "category": "Agent Manipulation",
+      "name": "Context Poisoning",
+      "description": "Injecting false or malicious information directly into the LLM agent's working memory or active session context."
+    }
+  ]
+}

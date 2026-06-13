@@ -1,0 +1,84 @@
+{
+  "ControlObjectives": [
+    {
+      "id": "objective_prevent_prompt_injection",
+      "Category": "Injection Prevention",
+      "name": "Prevent Prompt Injection",
+      "description": "Prevent malicious inputs from manipulating the LLM's behavior, bypassing safety controls, or altering intended instructions."
+    },
+    {
+      "id": "objective_prevent_data_exfiltration",
+      "Category": "Data Protection",
+      "name": "Prevent Data Exfiltration and Prompt Leakage",
+      "description": "Ensure the LLM does not reveal sensitive internal information, system instructions, API keys, or unauthorized user data."
+    },
+    {
+      "id": "objective_ensure_human_oversight",
+      "Category": "Authorization",
+      "name": "Ensure Human Oversight",
+      "description": "Provide manual human review and approval mechanisms for high-risk operations to prevent automated destructive actions."
+    },
+    {
+      "id": "objective_enforce_least_privilege",
+      "Category": "Access Control",
+      "name": "Enforce Least Privilege",
+      "description": "Grant the minimal necessary permissions to LLM applications, autonomous agents, and connected downstream tools."
+    },
+    {
+      "id": "objective_monitor_llm_behavior",
+      "Category": "Logging and Monitoring",
+      "name": "Monitor LLM Interactions",
+      "description": "Log and monitor LLM inputs, outputs, request rates, and agent reasoning patterns to detect anomalies and abuse."
+    }
+  ],
+  "ControlPatterns": [
+    {
+      "id": "pattern_input_validation_sanitization",
+      "Category": "Input Validation",
+      "name": "Input Validation and Sanitization",
+      "description": "Validate and sanitize all inputs before processing using established string metrics, regular expressions, length limits, and fuzzy matching for typoglycemia and encoding defenses."
+    },
+    {
+      "id": "pattern_structured_prompts",
+      "Category": "Prompt Engineering",
+      "name": "Structured Prompts with Clear Separation",
+      "description": "Employ structured prompt formats that clearly separate system instructions from user data, explicitly instructing the model to treat user input strictly as data."
+    },
+    {
+      "id": "pattern_output_monitoring_validation",
+      "Category": "Output Validation",
+      "name": "Output Monitoring and Validation",
+      "description": "Filter generated LLM outputs to detect and block signs of successful injection attacks, such as exposure of internal system prompts or API keys."
+    },
+    {
+      "id": "pattern_human_in_the_loop",
+      "Category": "Authorization",
+      "name": "Human-in-the-Loop (HITL) Controls",
+      "description": "Implement risk scoring on inputs and require explicit human approval prior to executing potentially sensitive or destructive LLM requests."
+    },
+    {
+      "id": "pattern_remote_content_sanitization",
+      "Category": "Input Validation",
+      "name": "Remote Content Sanitization",
+      "description": "Inspect and sanitize external content (webpages, emails, documentation) to remove hidden instructions or malicious markup before it is processed by the LLM."
+    },
+    {
+      "id": "pattern_model_based_guardrails",
+      "Category": "Architecture",
+      "name": "Model-Based Guardrails",
+      "description": "Deploy separate, purpose-trained classification models (LLM-as-judge) to screen user prompts, fetched external context, generated outputs, and proposed agent actions against security policies."
+    },
+    {
+      "id": "pattern_dual_llm_verification",
+      "Category": "Architecture",
+      "name": "Dual LLM Verification",
+      "description": "Isolate untrusted content by using a quarantined LLM for parsing external data and a privileged LLM for executing tool actions, passing only safe structured summaries between them."
+    },
+    {
+      "id": "pattern_agent_tool_validation",
+      "Category": "Access Control",
+      "name": "Agent-Specific Tool Validation",
+      "description": "Validate LLM agent tool calls against user permissions, enforce tool-specific parameter validation, and restrict access scopes based on the principle of least privilege."
+    }
+  ]
+}

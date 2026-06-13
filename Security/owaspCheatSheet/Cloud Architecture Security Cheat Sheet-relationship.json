@@ -1,0 +1,353 @@
+[
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_object_storage",
+    "Source_Name": "Object Storage",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_generate_signed_urls",
+    "Target_Name": "Generate Signed URLs"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_ephemeral_iam_server",
+    "Source_Name": "Ephemeral IAM Server",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_assume_ephemeral_identity",
+    "Target_Name": "Assume Ephemeral Identity"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_auth_identity_server",
+    "Source_Name": "Auth/Identity Server",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_verify_identity_and_access",
+    "Target_Name": "Verify Identity and Access"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_api_gateway",
+    "Source_Name": "API Gateway",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_filter_web_traffic",
+    "Target_Name": "Filter Web Traffic"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_api_gateway",
+    "Source_Name": "API Gateway",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_rate_limit_apis",
+    "Target_Name": "Rate Limit APIs"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_api_gateway",
+    "Source_Name": "API Gateway",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_log_and_monitor",
+    "Target_Name": "Log and Monitor Activity"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_waf",
+    "Source_Name": "Web Application Firewall (WAF)",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_filter_web_traffic",
+    "Target_Name": "Filter Web Traffic"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_waf",
+    "Source_Name": "Web Application Firewall (WAF)",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_rate_limit_apis",
+    "Target_Name": "Rate Limit APIs"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_waf",
+    "Source_Name": "Web Application Firewall (WAF)",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_log_and_monitor",
+    "Target_Name": "Log and Monitor Activity"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_generate_signed_urls",
+    "Source_Name": "Generate Signed URLs",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_signed_url_injection",
+    "Target_Name": "Signed URL Generation Injection"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_generate_signed_urls",
+    "Source_Name": "Generate Signed URLs",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_signed_url_leakage",
+    "Target_Name": "Signed URL Leakage"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_assume_ephemeral_identity",
+    "Source_Name": "Assume Ephemeral Identity",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_iam_credential_compromise",
+    "Target_Name": "IAM Credential Compromise"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_verify_identity_and_access",
+    "Source_Name": "Verify Identity and Access",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_public_storage_data_leak",
+    "Target_Name": "Public Storage Data Leak"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_verify_identity_and_access",
+    "Source_Name": "Verify Identity and Access",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_insecure_bastion_access",
+    "Target_Name": "Insecure Bastion Access"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_filter_web_traffic",
+    "Source_Name": "Filter Web Traffic",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_untrusted_input_injection",
+    "Target_Name": "Untrusted Input Injection"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_filter_web_traffic",
+    "Source_Name": "Filter Web Traffic",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_web_scraping",
+    "Target_Name": "Web Scraping"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_rate_limit_apis",
+    "Source_Name": "Rate Limit APIs",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_ddos_attack",
+    "Target_Name": "Distributed Denial of Service (DDoS)"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_log_and_monitor",
+    "Source_Name": "Log and Monitor Activity",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_sensitive_data_logging",
+    "Target_Name": "Sensitive Data in Logs"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_public_storage_data_leak",
+    "Source_Name": "Public Storage Data Leak",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_secure_object_storage",
+    "Target_Name": "Secure Object Storage"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_iam_credential_compromise",
+    "Source_Name": "IAM Credential Compromise",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_define_trust_boundaries",
+    "Target_Name": "Define Trust Boundaries"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_signed_url_injection",
+    "Source_Name": "Signed URL Generation Injection",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_secure_object_storage",
+    "Target_Name": "Secure Object Storage"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_signed_url_leakage",
+    "Source_Name": "Signed URL Leakage",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_secure_object_storage",
+    "Target_Name": "Secure Object Storage"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_insecure_bastion_access",
+    "Source_Name": "Insecure Bastion Access",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_enforce_network_segmentation",
+    "Target_Name": "Enforce Network Segmentation"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_direct_backend_exposure",
+    "Source_Name": "Direct Backend Exposure",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_enforce_network_segmentation",
+    "Target_Name": "Enforce Network Segmentation"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_untrusted_input_injection",
+    "Source_Name": "Untrusted Input Injection",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_protect_against_web_threats",
+    "Target_Name": "Protect Against Web Threats"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_sensitive_data_logging",
+    "Source_Name": "Sensitive Data in Logs",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_monitor_and_log_environment",
+    "Target_Name": "Monitor and Log Cloud Environment"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_unpatched_infrastructure",
+    "Source_Name": "Unpatched Infrastructure Exploitation",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_adhere_to_shared_responsibility",
+    "Target_Name": "Adhere to Shared Responsibility Model"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_web_scraping",
+    "Source_Name": "Web Scraping",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_protect_against_web_threats",
+    "Target_Name": "Protect Against Web Threats"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_ddos_attack",
+    "Source_Name": "Distributed Denial of Service (DDoS)",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_protect_against_web_threats",
+    "Target_Name": "Protect Against Web Threats"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_secure_object_storage",
+    "Source_Name": "Secure Object Storage",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_iam_storage_access",
+    "Target_Name": "IAM-based Storage Access"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_secure_object_storage",
+    "Source_Name": "Secure Object Storage",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_cryptographically_signed_urls",
+    "Target_Name": "Cryptographically Signed URLs"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_enforce_network_segmentation",
+    "Source_Name": "Enforce Network Segmentation",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_public_private_subnet_routing",
+    "Target_Name": "Public and Private Subnet Routing"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_define_trust_boundaries",
+    "Source_Name": "Define Trust Boundaries",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_strict_trust_boundaries",
+    "Target_Name": "Strict Trust Boundaries (Zero Trust)"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_define_trust_boundaries",
+    "Source_Name": "Define Trust Boundaries",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_risk_based_trust_boundaries",
+    "Target_Name": "Risk-Based Trust Boundaries"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_monitor_and_log_environment",
+    "Source_Name": "Monitor and Log Cloud Environment",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_comprehensive_layer7_logging",
+    "Target_Name": "Comprehensive Layer 7 Logging"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_monitor_and_log_environment",
+    "Source_Name": "Monitor and Log Cloud Environment",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_infrastructure_anomaly_monitoring",
+    "Target_Name": "Infrastructure Anomaly Monitoring"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_protect_against_web_threats",
+    "Source_Name": "Protect Against Web Threats",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_web_application_firewall",
+    "Target_Name": "Web Application Firewall (WAF) Integration"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_protect_against_web_threats",
+    "Source_Name": "Protect Against Web Threats",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_ddos_protection_integration",
+    "Target_Name": "DDoS Protection Integration"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_adhere_to_shared_responsibility",
+    "Source_Name": "Adhere to Shared Responsibility Model",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_automated_infrastructure_updates",
+    "Target_Name": "Automated Infrastructure Updates"
+  }
+]

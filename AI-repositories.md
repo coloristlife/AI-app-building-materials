@@ -69,3 +69,6 @@ https://jimeng.jianying.com/ai-tool/generate
 https://app.heygen.com/home
 
   
+
+## llm apps:
+https://github.com/Shubhamsaboo/awesome-llm-apps

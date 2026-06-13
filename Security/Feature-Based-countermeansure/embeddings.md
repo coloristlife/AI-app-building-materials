@@ -1,0 +1,1 @@
+	Are embeddings generated and stored per tenant?

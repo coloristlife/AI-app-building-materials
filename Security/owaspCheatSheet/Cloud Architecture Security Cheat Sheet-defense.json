@@ -1,0 +1,170 @@
+{
+  "ComponentTypes": [
+    {
+      "id": "component_object_storage",
+      "category": "Data Storage",
+      "name": "Object Storage",
+      "description": "A cloud storage mechanism used for storing data, resources, and metadata, accessible via IAM, signed URLs, or public access."
+    },
+    {
+      "id": "component_vpc",
+      "category": "Network",
+      "name": "Virtual Private Cloud (VPC)",
+      "description": "A secure, isolated private cloud hosted within a public cloud account, used to create logical network boundaries."
+    },
+    {
+      "id": "component_public_subnet",
+      "category": "Network",
+      "name": "Public Subnet",
+      "description": "A network subnet containing routing elements to allow housed components (like front-end apps or load balancers) to connect directly to the internet."
+    },
+    {
+      "id": "component_private_subnet",
+      "category": "Network",
+      "name": "Private Subnet",
+      "description": "A network subnet housing sensitive components (like databases or backends) that should not have direct internet access, receiving traffic via protected routing."
+    },
+    {
+      "id": "component_api_gateway",
+      "category": "Network",
+      "name": "API Gateway",
+      "description": "An internet-facing component acting as an initial touchpoint and entry interface for backend services and compute instances."
+    },
+    {
+      "id": "component_load_balancer",
+      "category": "Network",
+      "name": "Load Balancer",
+      "description": "An initial touchpoint component often placed in a public subnet to distribute incoming internet traffic securely."
+    },
+    {
+      "id": "component_bastion_host",
+      "category": "Compute",
+      "name": "Bastion Host",
+      "description": "A server providing access to a private network from an external network, commonly used as a developer access point."
+    },
+    {
+      "id": "component_auth_identity_server",
+      "category": "Identity",
+      "name": "Auth/Identity Server",
+      "description": "A representation of an OAuth, IAM, or directory system which manages identities, authenticates users, and verifies authorizations."
+    },
+    {
+      "id": "component_ephemeral_iam_server",
+      "category": "Identity",
+      "name": "Ephemeral IAM Server",
+      "description": "A service that grants temporary permissions or ephemeral identities to compute components to perform specific actions across trust boundaries."
+    },
+    {
+      "id": "component_waf",
+      "category": "Security Control",
+      "name": "Web Application Firewall (WAF)",
+      "description": "A security component used to monitor and block common attack payloads (like XSS and SQLi) before they reach application code."
+    }
+  ],
+  "Capabilities": [
+    {
+      "id": "capability_generate_signed_urls",
+      "category": "Access Control",
+      "name": "Generate Signed URLs",
+      "description": "The ability to dynamically generate URLs that cryptographically guarantee an entity can access a specific cloud storage resource."
+    },
+    {
+      "id": "capability_assume_ephemeral_identity",
+      "category": "Identity",
+      "name": "Assume Ephemeral Identity",
+      "description": "The capability of a compute instance or application component to temporarily adopt an identity to securely access protected resources."
+    },
+    {
+      "id": "capability_verify_identity_and_access",
+      "category": "Identity",
+      "name": "Verify Identity and Access",
+      "description": "The ability to authenticate users and authorize callers to access application components across varying trust boundaries."
+    },
+    {
+      "id": "capability_filter_web_traffic",
+      "category": "Security",
+      "name": "Filter Web Traffic",
+      "description": "The ability of a WAF or API Gateway to monitor, filter, or block common malicious HTTP requests based on curated or custom rulesets."
+    },
+    {
+      "id": "capability_rate_limit_apis",
+      "category": "Security",
+      "name": "Rate Limit APIs",
+      "description": "The capability to throttle or restrict the volume of requests to sensitive API endpoints to prevent abuse or service overload."
+    },
+    {
+      "id": "capability_log_and_monitor",
+      "category": "Observability",
+      "name": "Log and Monitor Activity",
+      "description": "The ability to record Layer 7 HTTP calls, internal actor metadata, and trace IDs, and emit alerts on functional anomalies."
+    }
+  ],
+  "Threats": [
+    {
+      "id": "threat_public_storage_data_leak",
+      "category": "Data Disclosure",
+      "name": "Public Storage Data Leak",
+      "description": "Unauthenticated, public access to object storage leading to the accidental leak or malicious reconnaissance of sensitive files."
+    },
+    {
+      "id": "threat_iam_credential_compromise",
+      "category": "Credential Theft",
+      "name": "IAM Credential Compromise",
+      "description": "Loss or hardcoding of persistent control plane IAM credentials, granting an attacker broad access to managed cloud systems."
+    },
+    {
+      "id": "threat_signed_url_injection",
+      "category": "Injection",
+      "name": "Signed URL Generation Injection",
+      "description": "Code injection vulnerability in custom or dynamic application logic used to generate cryptographically signed storage URLs."
+    },
+    {
+      "id": "threat_signed_url_leakage",
+      "category": "Data Disclosure",
+      "name": "Signed URL Leakage",
+      "description": "Anonymous access to protected storage resources via a leaked signed URL, typically exacerbated by inadequate expiration constraints."
+    },
+    {
+      "id": "threat_insecure_bastion_access",
+      "category": "Unauthorized Access",
+      "name": "Insecure Bastion Access",
+      "description": "Exploitation of a poorly engineered or improperly deployed bastion host to bypass external protections and gain unauthorized entry into a private subnet."
+    },
+    {
+      "id": "threat_direct_backend_exposure",
+      "category": "Network Configuration",
+      "name": "Direct Backend Exposure",
+      "description": "Placing databases or unhardened backend systems in public subnets, directly exposing them to targeted internet-based attacks."
+    },
+    {
+      "id": "threat_untrusted_input_injection",
+      "category": "Injection",
+      "name": "Untrusted Input Injection",
+      "description": "Passing dangerous, unverified user input directly to critical application components in a 'High Trust' architecture setup, resulting in XSS or SQLi."
+    },
+    {
+      "id": "threat_sensitive_data_logging",
+      "category": "Information Disclosure",
+      "name": "Sensitive Data in Logs",
+      "description": "Accidental exposure of SSNs, health information, or PII due to failure to mask or filter sensitive payloads in application and Layer 7 access logs."
+    },
+    {
+      "id": "threat_unpatched_infrastructure",
+      "category": "Vulnerability Exploitation",
+      "name": "Unpatched Infrastructure Exploitation",
+      "description": "Exploiting underlying vulnerabilities in self-managed IaaS or PaaS components where developers have failed to perform regular version updates or OS patching."
+    },
+    {
+      "id": "threat_web_scraping",
+      "category": "Abuse",
+      "name": "Web Scraping",
+      "description": "Automated, massive data extraction from public cloud endpoints when proper WAF filtering or acceptable route monitoring is absent."
+    },
+    {
+      "id": "threat_ddos_attack",
+      "category": "Denial of Service",
+      "name": "Distributed Denial of Service (DDoS)",
+      "description": "Volumetric or application-layer attacks that overwhelm cloud application resources, taking them offline if advanced protections or WAF rate limits are not in place."
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+[
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_llm_application",
+    "Source_Name": "LLM Application",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_process_natural_language",
+    "Target_Name": "Process Natural Language"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_llm_application",
+    "Source_Name": "LLM Application",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_render_markdown_html",
+    "Target_Name": "Render Markdown and HTML"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_llm_agent",
+    "Source_Name": "LLM Agent",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_process_natural_language",
+    "Target_Name": "Process Natural Language"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_llm_agent",
+    "Source_Name": "LLM Agent",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_access_external_tools",
+    "Target_Name": "Access External Tools"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_llm_agent",
+    "Source_Name": "LLM Agent",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_maintain_conversation_history",
+    "Target_Name": "Maintain Conversation History"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_rag_system",
+    "Source_Name": "Retrieval-Augmented Generation (RAG) System",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_process_natural_language",
+    "Target_Name": "Process Natural Language"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_rag_system",
+    "Source_Name": "Retrieval-Augmented Generation (RAG) System",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_retrieve_external_content",
+    "Target_Name": "Retrieve External Content"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_vector_database",
+    "Source_Name": "Vector Database",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_retrieve_external_content",
+    "Target_Name": "Retrieve External Content"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_multimodal_llm",
+    "Source_Name": "Multimodal LLM",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_process_natural_language",
+    "Target_Name": "Process Natural Language"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_multimodal_llm",
+    "Source_Name": "Multimodal LLM",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_process_multimodal_inputs",
+    "Target_Name": "Process Multimodal Inputs"
+  },
+  {
+    "Source_Type": "ComponentType",
+    "Source_ID": "component_guardrail_model",
+    "Source_Name": "Guardrail Model",
+    "Relationship": "INHERITS_CAPABILITY",
+    "Target_Type": "Capability",
+    "Target_ID": "capability_process_natural_language",
+    "Target_Name": "Process Natural Language"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_process_natural_language",
+    "Source_Name": "Process Natural Language",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_direct_prompt_injection",
+    "Target_Name": "Direct Prompt Injection"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_process_natural_language",
+    "Source_Name": "Process Natural Language",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_encoding_obfuscation",
+    "Target_Name": "Encoding and Obfuscation Attacks"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_process_natural_language",
+    "Source_Name": "Process Natural Language",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_best_of_n_jailbreaking",
+    "Target_Name": "Best-of-N Jailbreaking"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_process_natural_language",
+    "Source_Name": "Process Natural Language",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_jailbreaking",
+    "Target_Name": "Jailbreaking"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_process_natural_language",
+    "Source_Name": "Process Natural Language",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_system_prompt_extraction",
+    "Target_Name": "System Prompt Extraction"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_process_natural_language",
+    "Source_Name": "Process Natural Language",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_data_exfiltration",
+    "Target_Name": "Data Exfiltration"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_access_external_tools",
+    "Source_Name": "Access External Tools",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_agent_thought_injection",
+    "Target_Name": "Thought/Observation Injection"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_access_external_tools",
+    "Source_Name": "Access External Tools",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_agent_tool_manipulation",
+    "Target_Name": "Tool Manipulation"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_access_external_tools",
+    "Source_Name": "Access External Tools",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_agent_context_poisoning",
+    "Target_Name": "Context Poisoning"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_retrieve_external_content",
+    "Source_Name": "Retrieve External Content",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_remote_indirect_prompt_injection",
+    "Target_Name": "Remote/Indirect Prompt Injection"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_retrieve_external_content",
+    "Source_Name": "Retrieve External Content",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_rag_poisoning",
+    "Target_Name": "RAG Poisoning (Retrieval Attacks)"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_render_markdown_html",
+    "Source_Name": "Render Markdown and HTML",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_html_markdown_injection",
+    "Target_Name": "HTML and Markdown Injection"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_process_multimodal_inputs",
+    "Source_Name": "Process Multimodal Inputs",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_multimodal_injection",
+    "Target_Name": "Multimodal Injection"
+  },
+  {
+    "Source_Type": "Capability",
+    "Source_ID": "capability_maintain_conversation_history",
+    "Source_Name": "Maintain Conversation History",
+    "Relationship": "EXPOSED_TO",
+    "Target_Type": "Threat",
+    "Target_ID": "threat_multi_turn_persistent_attack",
+    "Target_Name": "Multi-Turn and Persistent Attacks"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_direct_prompt_injection",
+    "Source_Name": "Direct Prompt Injection",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_remote_indirect_prompt_injection",
+    "Source_Name": "Remote/Indirect Prompt Injection",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_encoding_obfuscation",
+    "Source_Name": "Encoding and Obfuscation Attacks",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_best_of_n_jailbreaking",
+    "Source_Name": "Best-of-N Jailbreaking",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_best_of_n_jailbreaking",
+    "Source_Name": "Best-of-N Jailbreaking",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_monitor_llm_behavior",
+    "Target_Name": "Monitor LLM Interactions"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_html_markdown_injection",
+    "Source_Name": "HTML and Markdown Injection",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_data_exfiltration",
+    "Target_Name": "Prevent Data Exfiltration and Prompt Leakage"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_jailbreaking",
+    "Source_Name": "Jailbreaking",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_multi_turn_persistent_attack",
+    "Source_Name": "Multi-Turn and Persistent Attacks",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_system_prompt_extraction",
+    "Source_Name": "System Prompt Extraction",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_data_exfiltration",
+    "Target_Name": "Prevent Data Exfiltration and Prompt Leakage"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_data_exfiltration",
+    "Source_Name": "Data Exfiltration",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_data_exfiltration",
+    "Target_Name": "Prevent Data Exfiltration and Prompt Leakage"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_multimodal_injection",
+    "Source_Name": "Multimodal Injection",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_rag_poisoning",
+    "Source_Name": "RAG Poisoning (Retrieval Attacks)",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_agent_thought_injection",
+    "Source_Name": "Thought/Observation Injection",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_agent_tool_manipulation",
+    "Source_Name": "Tool Manipulation",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_enforce_least_privilege",
+    "Target_Name": "Enforce Least Privilege"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_agent_tool_manipulation",
+    "Source_Name": "Tool Manipulation",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_ensure_human_oversight",
+    "Target_Name": "Ensure Human Oversight"
+  },
+  {
+    "Source_Type": "Threat",
+    "Source_ID": "threat_agent_context_poisoning",
+    "Source_Name": "Context Poisoning",
+    "Relationship": "MITIGATED_BY",
+    "Target_Type": "ControlObjective",
+    "Target_ID": "objective_prevent_prompt_injection",
+    "Target_Name": "Prevent Prompt Injection"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_prevent_prompt_injection",
+    "Source_Name": "Prevent Prompt Injection",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_input_validation_sanitization",
+    "Target_Name": "Input Validation and Sanitization"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_prevent_prompt_injection",
+    "Source_Name": "Prevent Prompt Injection",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_structured_prompts",
+    "Target_Name": "Structured Prompts with Clear Separation"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_prevent_prompt_injection",
+    "Source_Name": "Prevent Prompt Injection",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_remote_content_sanitization",
+    "Target_Name": "Remote Content Sanitization"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_prevent_prompt_injection",
+    "Source_Name": "Prevent Prompt Injection",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_model_based_guardrails",
+    "Target_Name": "Model-Based Guardrails"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_prevent_prompt_injection",
+    "Source_Name": "Prevent Prompt Injection",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_dual_llm_verification",
+    "Target_Name": "Dual LLM Verification"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_prevent_data_exfiltration",
+    "Source_Name": "Prevent Data Exfiltration and Prompt Leakage",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_output_monitoring_validation",
+    "Target_Name": "Output Monitoring and Validation"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_prevent_data_exfiltration",
+    "Source_Name": "Prevent Data Exfiltration and Prompt Leakage",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_model_based_guardrails",
+    "Target_Name": "Model-Based Guardrails"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_ensure_human_oversight",
+    "Source_Name": "Ensure Human Oversight",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_human_in_the_loop",
+    "Target_Name": "Human-in-the-Loop (HITL) Controls"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_enforce_least_privilege",
+    "Source_Name": "Enforce Least Privilege",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_agent_tool_validation",
+    "Target_Name": "Agent-Specific Tool Validation"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_monitor_llm_behavior",
+    "Source_Name": "Monitor LLM Interactions",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_output_monitoring_validation",
+    "Target_Name": "Output Monitoring and Validation"
+  },
+  {
+    "Source_Type": "ControlObjective",
+    "Source_ID": "objective_monitor_llm_behavior",
+    "Source_Name": "Monitor LLM Interactions",
+    "Relationship": "FULFILLED_BY",
+    "Target_Type": "ControlPattern",
+    "Target_ID": "pattern_model_based_guardrails",
+    "Target_Name": "Model-Based Guardrails"
+  }
+]

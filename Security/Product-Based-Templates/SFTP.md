@@ -1,0 +1,3 @@
+Secure File Transfer & Ingestion
+**Question**: Is the connection to the external Orion SFTP server strictly enforced using the SSH File Transfer Protocol (SFTP) with strong, key-based authentication, explicitly prohibiting legacy FTP and password-based credentials?
+*   **Associated Risk:**: Data interception during transit, credential compromise, and unauthorized access to sensitive files on the SFTP server.

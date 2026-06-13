@@ -1,0 +1,108 @@
+{
+  "ControlObjectives": [
+    {
+      "id": "objective_assess_cloud_risks",
+      "Category": "Risk Analysis",
+      "name": "Assess Cloud Security Risks",
+      "description": "Perform risk assessments, threat modeling, and attack surface assessments to identify application threats and accurately scope security resources."
+    },
+    {
+      "id": "objective_secure_object_storage",
+      "Category": "Data Security",
+      "name": "Secure Object Storage",
+      "description": "Ensure data in cloud object storage is properly protected against unauthorized public access using access management policies or cryptographic controls."
+    },
+    {
+      "id": "objective_enforce_network_segmentation",
+      "Category": "Network Security",
+      "name": "Enforce Network Segmentation",
+      "description": "Utilize Virtual Private Clouds (VPCs) and subnets to isolate application components and protect sensitive systems from direct internet exposure."
+    },
+    {
+      "id": "objective_define_trust_boundaries",
+      "Category": "Architecture",
+      "name": "Define Trust Boundaries",
+      "description": "Establish explicit trust configurations and boundaries between internal components and external entities, verifying claims based on quantitative risk factors."
+    },
+    {
+      "id": "objective_monitor_and_log_environment",
+      "Category": "Logging and Monitoring",
+      "name": "Monitor and Log Cloud Environment",
+      "description": "Maintain comprehensive visibility into the cloud environment by logging requests and monitoring system performance to detect anomalies and track threats."
+    },
+    {
+      "id": "objective_protect_against_web_threats",
+      "Category": "Application Security",
+      "name": "Protect Against Web Threats",
+      "description": "Deploy defensive security tooling to protect internet-facing applications from malicious web payloads, automated abuse, and denial-of-service attacks."
+    },
+    {
+      "id": "objective_adhere_to_shared_responsibility",
+      "Category": "Governance",
+      "name": "Adhere to Shared Responsibility Model",
+      "description": "Identify and securely manage the components of the cloud technology stack that fall under the developer's responsibility across IaaS, PaaS, and SaaS environments."
+    }
+  ],
+  "ControlPatterns": [
+    {
+      "id": "pattern_iam_storage_access",
+      "Category": "Data Access",
+      "name": "IAM-based Storage Access",
+      "description": "Use persistent control plane IAM credentials attached to backend compute resources to interact with object storage on the user's behalf, preventing direct end-user access to the storage system."
+    },
+    {
+      "id": "pattern_cryptographically_signed_urls",
+      "Category": "Data Access",
+      "name": "Cryptographically Signed URLs",
+      "description": "Generate dynamic, cryptographically signed URLs to grant entities temporary, direct access to specific, non-sensitive resources in object storage without exposing the entire bucket."
+    },
+    {
+      "id": "pattern_public_private_subnet_routing",
+      "Category": "Network Security",
+      "name": "Public and Private Subnet Routing",
+      "description": "Place internet-facing entry points (load balancers, API gateways) in public subnets, while strictly isolating sensitive backend systems (databases, backend servers) inside private subnets."
+    },
+    {
+      "id": "pattern_strict_trust_boundaries",
+      "Category": "Architecture",
+      "name": "Strict Trust Boundaries (Zero Trust)",
+      "description": "Configure systems such that no component trusts another. Require explicit authentication, authorization checks, and ephemeral identity assumption for all data passing between internal components."
+    },
+    {
+      "id": "pattern_risk_based_trust_boundaries",
+      "Category": "Architecture",
+      "name": "Risk-Based Trust Boundaries",
+      "description": "Verify authentication at the API gateway and explicitly delegate trust to downstream compute instances for lower-risk operations to optimize performance while maintaining security."
+    },
+    {
+      "id": "pattern_web_application_firewall",
+      "Category": "Application Security",
+      "name": "Web Application Firewall (WAF) Integration",
+      "description": "Attach a WAF to public entry points using cloud-managed and custom rule sets to block common attack payloads (e.g., XSS, SQLi), filter acceptable routes, and rate-limit sensitive APIs."
+    },
+    {
+      "id": "pattern_comprehensive_layer7_logging",
+      "Category": "Logging and Monitoring",
+      "name": "Comprehensive Layer 7 Logging",
+      "description": "Log all layer 7 HTTP calls with headers and caller metadata, mask sensitive PII, and propagate trace IDs through the request lifecycle to track errors and malicious actions."
+    },
+    {
+      "id": "pattern_infrastructure_anomaly_monitoring",
+      "Category": "Logging and Monitoring",
+      "name": "Infrastructure Anomaly Monitoring",
+      "description": "Establish environment-specific baselines and configure alerts for anomalous activity, including HTTP 4xx/5xx spikes, abnormal resource consumption, and deployment errors."
+    },
+    {
+      "id": "pattern_ddos_protection_integration",
+      "Category": "Network Security",
+      "name": "DDoS Protection Integration",
+      "description": "Enable cloud-provider managed DDoS protection services (e.g., AWS Shield, GCP Cloud Armor) and WAF rate limiting to protect internet-facing applications against volume-based attacks."
+    },
+    {
+      "id": "pattern_automated_infrastructure_updates",
+      "Category": "Operations",
+      "name": "Automated Infrastructure Updates",
+      "description": "Implement automated mechanisms to regularly update minor versions, patch operating systems, and refresh compute images for self-managed cloud services (IaaS/PaaS)."
+    }
+  ]
+}

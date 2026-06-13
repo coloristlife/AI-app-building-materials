@@ -4,10 +4,9 @@
 2. Feature Description
 3. Title of security Issue (in the format of what is missing)
 4. Description 
-5. Compensating Controls
-6. Recommendation
-7. Risk Level
-8. Stanadard Baseline
+5. Recommendation
+6. Risk Level
+7. Stanadard Baseline
 ## Example:
 
 ### **Feature: Codebase Indexing (Contextual Retrieval)**
