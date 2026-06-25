@@ -57,3 +57,11 @@ Here is the fully aggregated security review questionnaire for **Network Access 
 - **Question:** Are all network communications between internal application runtimes, gateways, and external servers or integrations strictly enforced over strong encryption protocols (e.g., TLS 1.2 or higher)?
   - **Recommended Control:** Disabling plaintext protocols (e.g., HTTP) internally and enforcing mutual TLS (mTLS) or strong TLS 1.2+ ciphers for all intra-component and external communication paths, terminating TLS as close to the application as possible.
   - **Associated Risk:** Unencrypted network traffic can be intercepted via packet sniffing or man-in-the-middle (MitM) attacks, leading to the compromise of sensitive data, session tokens, and internal operational secrets traversing the network.
+
+
+
+### Cross-Boundary & Network Security (System-to-System/Cross-BU)
+
+- **Question:** How is network traffic isolated, routed, and secured when systems from different Business Units (BUs) or distinct trust domains need to communicate and share data?
+  - **Recommended Control:** Traffic must not traverse the public internet. Utilize cloud-native private backbone routing (e.g., AWS PrivateLink, Azure Private Link) or encrypted Site-to-Site VPNs (IPsec) to connect the BUs. Furthermore, enforce zero-trust principles at the boundary: require Mutual TLS (mTLS) for system-to-system authentication and implement strict Network Access Control Lists (NACLs) or Security Groups to restrict traffic explicitly to required ports and IP addresses.
+  - **Associated Risk:** Treating all internal corporate networks as "trusted" is a major architectural flaw. If cross-BU traffic is routed over public channels, it is vulnerable to interception. If routed over a flat internal network without Private Link/VPN isolation, an attacker who compromises a low-security BU (e.g., Marketing) can easily pivot laterally into a high-security BU (e.g., Finance or Engineering) and exfiltrate sensitive data.

@@ -16,6 +16,13 @@ Could you please provide the relevant supporting documentation for the requireme
   - **Associated Risk:** Failure to rapidly identify and patch critical vulnerabilities or properly manage third-party dependencies leaves the environment exposed to known exploits, giving automated scanners and threat actors ample opportunity to execute remote code execution, ransomware, or data exfiltration attacks.
 
 
+### RACI & Incident Accountability
+
+- **Question:** How does the RACI (Responsible, Accountable, Consulted, Informed) matrix integrate with your Identity and Access Management (IAM) policies for executing critical RunBook actions?
+  - **Recommended Control:** The RACI matrix must be formally mapped to IAM roles and security groups. Only the individuals designated as "Responsible" or "Accountable" in the RACI matrix should physically possess the technical permissions (e.g., emergency break-glass accounts) required to execute the RunBook's high-impact commands.
+  - **Associated Risk:** If there is a disconnect between the RACI matrix and technical permissions, unauthorized personnel could execute disruptive operational commands, or conversely, the designated incident responders might lack the necessary access during a crisis, severely delaying recovery.
+
+
 
 
 

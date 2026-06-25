@@ -1,9 +1,4 @@
 
-
-
-
-
-
 This distinction between Delegated Permissions and Application Permissions is one of the most important concepts in modern application security and Identity & Access Management (IAM). 
 
 ---

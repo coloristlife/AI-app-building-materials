@@ -10,6 +10,19 @@
 
 ### Token Validation
 
+
+- **Question:** When processing authorization via tokens (e.g., JWTs), does the backend cryptographically verify the signature, issuer, audience, and expiration before trusting the embedded authorization scopes/claims?
+  - **Recommended Control:** Use established, secure libraries to validate JWTs. Enforce strict checks on the `alg` header (preventing 'None' algorithm attacks or symmetric/asymmetric confusion), and validate the `exp`, `iss`, and `aud` claims. 
+  - **Associated Risk:** Attackers may craft forged tokens, alter their permissions (e.g., changing `"role": "user"` to `"role": "admin"`), or replay expired tokens to gain unauthorized access to the system.
+
+- **Question:** Are authorization scopes and claims securely mapped to backend actions, and do you avoid trusting user-supplied parameters to dictate privilege?
+  - **Recommended Control:** Derive the user's role and scopes solely from the cryptographically signed, server-issued token. Never trust parameters like `?isAdmin=true` or POST body fields that dictate role assignment during resource creation/modification.
+  - **Associated Risk:** Mass Assignment or Parameter Tampering vulnerabilities where an attacker manipulates API requests to elevate their privileges horizontally or vertically.
+
+
+
+
+
 How does the MCP Gateway validate Okta JWTs? Does it strictly verify the iss (issuer), aud (audience), exp (expiration), and signature using cached JWKS (JSON Web Key Sets)?
 
 

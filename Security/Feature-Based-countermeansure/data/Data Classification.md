@@ -1,6 +1,11 @@
 **Data Classification**. 
 
 
+### Data Classification & Governance
+- **Question:** How is data identified, classified, and inventoried across the system's architecture?
+  - **Recommended Control:** Implement a formalized data classification policy (e.g., Public, Internal, Confidential, Restricted/PII) enforced through automated data discovery and cataloging tools.
+  - **Associated Risk:** Without clear visibility and classification, sensitive data may be stored in unauthorized or unmonitored locations ("shadow data"), leading to inadequate security controls, unintentional exposure, and regulatory compliance violations.
+
 ### Policy, Governance, and Ownership
 
 - **Question:** Has a formal Data Classification Policy been documented, approved by executive management, and mapped to specific business and regulatory requirements (e.g., GDPR, HIPAA, PCI-DSS)?

@@ -1,14 +1,17 @@
  **Data Security**
 
-### Data Classification & Governance
-- **Question:** How is data identified, classified, and inventoried across the system's architecture?
-  - **Recommended Control:** Implement a formalized data classification policy (e.g., Public, Internal, Confidential, Restricted/PII) enforced through automated data discovery and cataloging tools.
-  - **Associated Risk:** Without clear visibility and classification, sensitive data may be stored in unauthorized or unmonitored locations ("shadow data"), leading to inadequate security controls, unintentional exposure, and regulatory compliance violations.
+
 
 ### Data at Rest (Storage Security)
 - **Question:** What encryption mechanisms are applied to data stored in databases, object storage, file systems, and offline backups?
   - **Recommended Control:** Enforce AES-256 encryption for all data at rest. Utilize Transparent Data Encryption (TDE) for databases, volume/object-level encryption for cloud storage, and ensure backups are encrypted and stored immutably.
   - **Associated Risk:** Physical theft of storage media, unauthorized access to the underlying storage infrastructure, or stolen database snapshots could result in a massive breach of plaintext sensitive information.
+
+
+**Question:** Are all forms of persistent data stores and message brokers ([placeholder for all relevant services or their features]) encrypted at rest using centrally managed and regularly rotated KMS keys?
+*   **Associated Risk:** Unauthorized access to sensitive records, raw certificate documents, and backend data stores in the event of a storage volume compromise.
+  
+
 
 ### Data in Transit (Network Security)
 - **Question:** What cryptographic protocols and cipher suites are utilized to protect data moving between external clients, internal microservices, and third-party APIs?
@@ -20,13 +23,12 @@
   - **Recommended Control:** Implement strict data masking and redaction for application logs and UIs. Utilize parameterized queries to prevent injection, employ memory-safe programming practices, and consider Confidential Computing (Secure Enclaves/Trusted Execution Environments) for highly sensitive workloads.
   - **Associated Risk:** Sensitive data can be exposed through memory scraping malware, verbose error logging, application vulnerabilities (e.g., buffer overflows), or over-the-shoulder surfing in user interfaces.
 
-### Cryptographic Key Management
-- **Question:** How are cryptographic keys generated, stored, distributed, rotated, and protected against unauthorized access?
-  - **Recommended Control:** Utilize a centralized Key Management Service (KMS) or Hardware Security Module (HSM) with FIPS 140-2 Level 3 (or higher) validation. Enforce automated key rotation schedules, strict separation of duties, and audit logging for all key access.
-  - **Associated Risk:** If encryption keys are hardcoded, stored alongside the encrypted data, or poorly managed, attackers can easily retrieve them, rendering all data encryption efforts useless and allowing full decryption of stolen data.
+- **Question:** If sensitive payloads are processed locally, are these operations tightly isolated using ephemeral sandboxes or Trusted Execution Environments (TEEs), and is there a strict, automated data destruction/garbage collection mechanism that securely wipes the data immediately upon task completion?
+    - **Associated Risk:** Data Remanence and Unauthorized Cross-Task Exposure. If sensitive files are processed in persistent or shared execution environments without robust isolation (such as TEEs or ephemeral, single-use containers), residual data left in memory or temporary storage could be exposed. This "data remanence" creates a significant risk of data spillage, where confidential attachments could be scraped by malicious actors, infrastructure administrators, or inadvertently leaked to subsequent tasks or other tenants sharing the same underlying infrastructure.
+
 
 ### Identity & Access Management (IAM) for Data
-- **Question:** How is access to sensitive data stores authorized, and how is the principle of least privilege enforced for both human and machine identities?
+- **Question:** Are strict role-based access controls (RBAC), least-privilege principles, and data segregation mechanisms enforced at both the application and database layers (via [placeholder for all relevant services or their features]) to ensure users/tenants can only view or modify their specific records?
   - **Recommended Control:** Implement Role-Based Access Control (RBAC) or Attribute-Based Access Control (ABAC). Mandate Multi-Factor Authentication (MFA) for human access, and utilize short-lived, dynamically generated tokens for machine-to-machine access.
   - **Associated Risk:** Over-provisioned access rights or compromised user/service accounts can allow unauthorized entities or malicious insiders to seamlessly access, manipulate, or exfiltrate sensitive data.
 
@@ -36,9 +38,26 @@
   - **Associated Risk:** Without egress monitoring and DLP, a compromised account or malicious insider could easily copy and exfiltrate large volumes of intellectual property, PII, or financial data to an external location without detection.
 
 ### Data Lifecycle & Retention Management
+
+
+- **Question:** Are strict data retention limits and secure deletion policies defined, automated, and actively enforced across all internal data stores as well as any external operational environments?
+  *   **Associated Risk:** Unnecessary prolonged data exposure, expanded attack surface, and data retention compliance violations. 
+  
+
 - **Question:** What processes ensure that data is securely destroyed or anonymized when it reaches the end of its legal, regulatory, or business retention period?
   - **Recommended Control:** Enforce automated data retention policies. Use cryptographic erasure (crypto-shredding) for cloud environments or secure wiping processes compliant with NIST SP 800-88 guidelines for physical media. 
   - **Associated Risk:** Accumulating "dark data" or legacy sensitive information indefinitely expands the attack surface, increases the "blast radius" of a potential breach, and violates the data minimization principles of privacy laws like GDPR or CCPA.
+
+
+### Data Privacy & Third-Party Integrations
+
+- **Question:** Does the system actively identify and successfully mask/redact sensitive PII/PHI (e.g., [placeholder for all relevant services or their features]) from parsed inputs *before* that data is transmitted outside the internal environment to third-party services?
+  *   **Associated Risk:** Unintentional exposure of PII/PHI to external vendors, regulatory violations (GDPR, HIPAA).
+
+- **Question:** Are strict enterprise Data Processing Agreements (DPAs) and confidentiality clauses executed with our external vendors ([placeholder for all relevant services or their features]) explicitly guaranteeing that our document data will *not* be retained or used for their purposes, for example to train their foundational models, and does the geographic hosting of their API comply with our data residency requirements?
+  *   *(Note: If the Embedding model is self-hosted,  this risk for embeddings is mitigated).*
+  *   **Associated Risk:** Legal and compliance risks, data sovereignty violations, and corporate intellectual property misuse by third parties.
+
 
 ### Third-Party & Supply Chain Data Security
 - **Question:** How is system data protected when shared with, processed by, or transmitted to third-party vendors, APIs, or downstream supply chain partners?

@@ -14,7 +14,7 @@
 - **Associated Risk**: Privilege escalation, lateral movement, and unauthorized insider or compromised-service access to highly sensitive customer secrets.
 
 ### Tenant Isolation & Multi-Tenancy Security
-Granular Access Scoping (Least Privilege) (p1)
+Granular Access Scoping (Least Privilege) (p1)  
 **Question**: Can the vault restrict a tenant's access to specific sub-keys or scopes within a vault, rather than granting access to the entire vault, and can these permissions be restricted by IP address, CIDR block, or specific machine metadata?
 - **Associated Risk**: Over-privileged non-human identities. lateral movement.
 
