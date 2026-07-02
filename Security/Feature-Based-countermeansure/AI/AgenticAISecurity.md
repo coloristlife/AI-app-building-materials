@@ -4,13 +4,13 @@ This evaluation is closely aligned with emerging industry frameworks such as the
 
 
 
-### Category 1: Agent Identity & Access Management (IAM)
+### Agent Identity & Access Management (IAM)
 
 - **Question:** How is identity assigned to the AI agent, and how are its permissions scoped when authenticating to internal APIs, databases, and third-party services?
   - **Recommended Control:** Assign a dedicated, least-privilege Service Account or machine identity to each agent. Implement granular Role-Based Access Control (RBAC) and strict OAuth scopes tailored to the specific task. Ensure the agent's access rights never exceed the permissions of the human user initiating the session.
   - **Associated Risk:** If an agent is over-privileged, it creates a severe "Confused Deputy" vulnerability. An attacker who manipulates the agent could weaponize its credentials to access unauthorized databases, modify sensitive records, or pivot laterally across the corporate network.
 
-### Category 2: Tool Execution & Action Boundaries
+### Tool Execution & Action Boundaries
 
 - **Question:** What guardrails and boundaries govern the external tools, APIs, or code execution environments the AI agent is authorized to invoke?
   - **Recommended Control:** Implement strict allow-lists for API endpoints and parameters the agent can call. Sandbox all agent-driven code execution (e.g., Python interpreters) within highly restricted, ephemeral, and network-isolated containers. Implement API rate limiting specific to the agent's identity.
@@ -38,7 +38,7 @@ This evaluation is closely aligned with emerging industry frameworks such as the
 
 
 
-### Category 3: Input Security & Adversarial Defenses
+### Input Security & Adversarial Defenses
 
 - **Question:** How is the AI agent protected against malicious instructions, prompt injections, and jailbreaks originating from untrusted users or ingested third-party data (e.g., reading a compromised web page)?
   - **Recommended Control:** Deploy a defense-in-depth strategy utilizing an AI/LLM Firewall (e.g., Enterprise AI Guardrails) to filter malicious intent. Strictly separate system instructions from user data (using techniques like chat templating and system prompts). Continuously subject the agent to automated adversarial testing and red-teaming.
@@ -48,13 +48,13 @@ This evaluation is closely aligned with emerging industry frameworks such as the
   - **Recommended Control:** Employ securely engineered, hardened system prompts that explicitly define the agent’s persona, negative constraints (what it must *never* do), and strict operational boundaries. Use prompt parameterization, enforce prompt version control, and ensure system directives are placed in the most secure, non-overridable context window supported by the model provider.
   - **Associated Risk:** Weak, vague, or overly generic system prompts make it trivial for attackers to convince the agent to break character, ignore safety boundaries, and execute unauthorized actions through simple conversational manipulation, role-play jailbreaks, or logical deception.
 
-### Category 4: Data Privacy & Output Handling
+### Data Privacy & Output Handling
 
 - **Question:** How do you ensure that the agent does not ingest unauthorized sensitive data, or exfiltrate intellectual property and PII in its outputs or API calls?
   - **Recommended Control:** Implement Data Loss Prevention (DLP) scanners on both the prompts sent to external LLMs and the agent's final outputs to redact PII/PHI. Enforce strict data-level access controls during Retrieval-Augmented Generation (RAG) so the agent can only access documents the invoking user is authorized to see.
   - **Associated Risk:** The agent might inadvertently memorize and leak sensitive intellectual property, PII, or secrets retrieved during its reasoning process. Additionally, sending raw, unredacted corporate data to third-party model providers could violate GDPR, CCPA, and enterprise confidentiality agreements.
 
-### Category 5: Monitoring, Auditing & Explainability
+### Monitoring, Auditing & Explainability
 
 - **Question:** How are the agent's autonomous decisions, intermediate reasoning steps, and tool invocations logged and monitored for anomalous behavior?
   - **Recommended Control:** Implement comprehensive, tamper-evident logging of the agent's entire "Chain of Thought" (CoT), exact API requests/responses, and triggered safety filters. Forward these logs to a centralized SIEM and create alerting rules for anomalous behaviors (e.g., an agent suddenly querying a database it has never accessed before, or repetitive failed API calls).

@@ -56,7 +56,7 @@
 # alternative question
 
 ### Logging, Monitoring & Observability
-**Question**: Are all critical system actions, authentication events, and data processing workflows comprehensively logged for auditing ([placeholder for all relevant services or their features]), and are explicit controls in place to ensure that raw request and responses associated with essential interactions ([placeholder for all relevant services or their features]) are securely stored and scrubbed of sensitive PII prior to being written to logs?
+**Question**: Are all critical system actions, authentication events, and data processing workflows comprehensively logged for auditing, and are explicit controls in place to ensure that raw request and responses associated with essential interactions are securely stored and scrubbed of sensitive PII prior to being written to logs?
 *   **Associated Risk**: Lack of traceability during incident response, undetected insider threats, and sensitive data leakage or log poisoning within log repositories.
   
 

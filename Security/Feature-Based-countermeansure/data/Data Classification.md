@@ -1,4 +1,7 @@
-**Data Classification**. 
+**Data Classification**
+
+
+- **Question:** Please specify the data classification of the information processed, stored, and transmitted by the platform.
 
 
 ### Data Classification & Governance

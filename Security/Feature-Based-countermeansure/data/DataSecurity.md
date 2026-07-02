@@ -1,6 +1,8 @@
  **Data Security**
 
+### Data Process
 
+- **Question:** How does the platform process and store our customer data? Specifically, is downstream data from integrations  stored persistently, temporarily cached, or only processed in memory?"
 
 ### Data at Rest (Storage Security)
 - **Question:** What encryption mechanisms are applied to data stored in databases, object storage, file systems, and offline backups?
@@ -51,7 +53,7 @@
 
 ### Data Privacy & Third-Party Integrations
 
-- **Question:** Does the system actively identify and successfully mask/redact sensitive PII/PHI (e.g., [placeholder for all relevant services or their features]) from parsed inputs *before* that data is transmitted outside the internal environment to third-party services?
+- **Question:** Does the system actively identify and successfully mask/redact sensitive PII/PHI from parsed inputs *before* that data is transmitted outside the internal environment to third-party services?
   *   **Associated Risk:** Unintentional exposure of PII/PHI to external vendors, regulatory violations (GDPR, HIPAA).
 
 - **Question:** Are strict enterprise Data Processing Agreements (DPAs) and confidentiality clauses executed with our external vendors ([placeholder for all relevant services or their features]) explicitly guaranteeing that our document data will *not* be retained or used for their purposes, for example to train their foundational models, and does the geographic hosting of their API comply with our data residency requirements?
