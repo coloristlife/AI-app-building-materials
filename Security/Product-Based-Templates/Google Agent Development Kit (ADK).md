@@ -63,7 +63,7 @@ Here is the unified, authoritative security guidance combining both the cloud-sc
 
 ---
 
-# Enterprise Security Guidance for Google Agent Development Kit (ADK)
+# Security Guidance for Google Agent Development Kit (ADK)
 
 As AI agents transition from conversational wrappers to autonomous systems that execute tools, modify databases, and collaborate via Agent-to-Agent (A2A) protocols, security must evolve from simple prompt engineering to robust systems engineering. Securing agents built with the **Google Agent Development Kit (ADK)** requires defense-in-depth across seven distinct layers.
 
@@ -384,7 +384,7 @@ By enabling telemetry flags (`--otel_to_cloud` via CLI or configuring `Telemetry
 While `adk eval` protects your CI/CD pipeline against *known* attack patterns, live production environments face zero-day prompt injections and dynamic adversarial manipulation. Production runtimes require active, real-time defense layers capable of intercepting anomalous execution paths mid-flight:
 
 *   **Native Framework Interception:** Register global security plugins (like the `Model Armor Plugin` or custom screening plugins) directly to the ADK `Runner`. As the agent executes multi-step workflows, the plugin evaluates checkpoints in real time; if an indirect prompt injection succeeds in tricking a sub-agent mid-workflow, the Runner plugin intercepts the execution state, safely terminates the graph, and returns a safe fallback response.
-*   **External GenAI Firewalls:** Leverage ADK's open telemetry and API boundaries to route live traffic through external AI runtime security proxies (such as Cisco AI Defense, Datadog monitoring, or dedicated GenAI firewalls). These external layers monitor live execution graphs to detect policy drift, anomalous tool loops, or unauthorized lateral data transfers, automatically severing compromised sessions before data exfiltration occurs.
+*   **External GenAI Firewalls:** Leverage ADK's open telemetry and API boundaries to route live traffic through external AI runtime security proxies (such as dedicated GenAI firewalls). These external layers monitor live execution graphs to detect policy drift, anomalous tool loops, or unauthorized lateral data transfers, automatically severing compromised sessions before data exfiltration occurs.
 
 ---
 
