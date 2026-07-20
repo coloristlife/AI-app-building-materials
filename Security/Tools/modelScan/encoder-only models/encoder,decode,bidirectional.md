@@ -57,3 +57,14 @@ It can only use those five words to predict the next word ("mat", "couch", etc.)
 | **Best For...** | Classification, search, sentiment analysis | Chatbots, creative writing, coding assistants |
 
 *(Note: There is also a third category, **Encoder-Decoder models** like T5 or BART, which keep both parts. These are often used for tasks that require both deep understanding and generation, such as document summarization or language translation).*
+
+---
+
+### I. Are these three models fine-tuned?
+
+
+They are all **Pre-trained Base Models**:
+
+1.  **`google-bert/bert-base-uncased`**: This is the original BERT base model released by Google. It has only undergone pre-training for Masked Language Modeling (MLM) and Next Sentence Prediction (NSP) and is not designed for any specific task.
+2.  **`answerdotai/ModernBERT-base`**: This is a modernized BERT base model released by Answer.AI. Similarly, it only possesses general language representation capabilities and has no fine-tuning.
+3.  **`FacebookAI/xlm-roberta-base`**: This is a multilingual base model released by Meta. It has also not been fine-tuned for any specific classification task.

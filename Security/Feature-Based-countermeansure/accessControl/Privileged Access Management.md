@@ -14,7 +14,7 @@
   - **Associated Risk:** A single rogue administrator, or a single compromised admin account, could unilaterally dismantle security controls or exfiltrate sensitive data.
 
 
-### Function & Endpoint-Level Authorization (BFLA)
+### Authorization for Priviledged Functions & Endpoints
 
 - **Question:** How are privileged functions (e.g., administration panels, user provisioning, system configuration) protected from execution by standard users?
   - **Recommended Control:** Implement Role-Based Access Control (RBAC) or Attribute-Based Access Control (ABAC) verified continuously on the backend for every privileged request. Prevent Broken Function Level Authorization (BFLA) by never relying solely on hiding UI elements.

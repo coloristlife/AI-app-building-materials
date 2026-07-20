@@ -1,0 +1,2 @@
+According to the current design, customer data is not used for model training, while usage data is used for training. However, usage data includes DOM elements, structured metadata, and screenshots. If a developer inadvertently exposes sensitive information in any of these artifacts, what controls are in place to prevent that data from being included in the training dataset? Specifically, what mechanisms are used to detect, redact, filter, or exclude sensitive data before it is retained or used for model training?
+

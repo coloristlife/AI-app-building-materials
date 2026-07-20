@@ -1,4 +1,4 @@
- **Agentic AI** (autonomous or semi-autonomous AI agents that utilize tools, APIs, and reasoning to execute tasks). 
+ **Agentic AI Security** (autonomous or semi-autonomous AI agents that utilize tools, APIs, and reasoning to execute tasks). 
 
 This evaluation is closely aligned with emerging industry frameworks such as the **NIST AI Risk Management Framework (AI RMF)**, the **OWASP Top 10 for LLM Applications** (specifically LLM06: Insecure Plugin Design and LLM08: Excessive Agency), and zero-trust principles.
 

@@ -38,7 +38,7 @@
   - **Recommended Control:** Transmitting keys exclusively over mutually authenticated, highly encrypted channels (e.g., mTLS) and utilizing "key wrapping" (encrypting a key with a Master Key Encryption Key, or KEK) during transit.
   - **Associated Risk:** Unwrapped keys transmitted over internal networks can be intercepted by a Man-in-the-Middle (MitM) attacker, who can then silently decrypt sensitive communications or data stores without alerting system owners.
 
-### Resiliency, Monitoring, and Auditing
+### Resiliency, Monitoring, and Auditing for Key Management
 *Focuses on ensuring key availability and detecting malicious interactions with the key management infrastructure.*
 
 - **Question:** What recovery mechanisms (e.g., key escrow, secure backups) are in place to ensure encrypted data is not permanently lost if a master key is accidentally deleted, corrupted, or becomes unavailable?

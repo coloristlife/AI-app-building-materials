@@ -13,7 +13,7 @@
 **Question**: Is the Principle of Least Privilege (PoLP) strictly enforced for service roles, application identities, and human operators, ensuring that programmatic access to decrypt or retrieve customer credentials is computationally restricted to strictly necessary components? 
 - **Associated Risk**: Privilege escalation, lateral movement, and unauthorized insider or compromised-service access to highly sensitive customer secrets.
 
-### Tenant Isolation & Multi-Tenancy Security
+###  Static Credentials Isolation in Multi-Tenant Environments
 Granular Access Scoping (Least Privilege) (p1)  
 **Question**: Can the vault restrict a tenant's access to specific sub-keys or scopes within a vault, rather than granting access to the entire vault, and can these permissions be restricted by IP address, CIDR block, or specific machine metadata?
 - **Associated Risk**: Over-privileged non-human identities. lateral movement.
@@ -35,9 +35,8 @@ Granular Access Scoping (Least Privilege) (p1)
 **Question**: Does the provider offer automated rotation/revocation for the static API keys it stores? Specifically, can it trigger a rotation/revocation of the downstream API key (e.g., a GitHub PAT or OpenAI key) without requiring a manual update by a human?
 - **Associated Risk**: Stale credentials. Non-human identities often use keys that remain active for years. If a key is leaked but not rotated, it provides a persistent backdoor for attackers.
 
-### Non-Human Attribution & Audit Logging (P2)
-**Question**: Does the audit log distinguish between actions taken by a human administrator (who created the secret) and the non-human identity (that retrieved it), providing full telemetry on which machine accessed which secret at what specific timestamp?
-- **Associated Risk**: Loss of accountability. If multiple agents use a shared service account, or if logs only show "User X accessed the vault," you cannot perform forensic analysis to determine which specific MCP client was compromised.
+
+
 
 ### Client-Side Decryption for Automation (P0)
 **Question**: For the automation gateway (the component that delivers secrets to the MCP client), is the data encrypted end-to-end such that the vendor’s infrastructure only sees encrypted blobs, with the final decryption happening only within your trusted network/environment?
@@ -46,6 +45,10 @@ Granular Access Scoping (Least Privilege) (p1)
 
 
 ### Logging and Monitoring
+
+**Question**: Does the audit log distinguish between actions taken by a human administrator (who created the secret) and the non-human identity (that retrieved it), providing full telemetry on which machine accessed which secret at what specific timestamp?
+- **Associated Risk**: Loss of accountability. If multiple agents use a shared service account, or if logs only show "User X accessed the vault," you cannot perform forensic analysis to determine which specific MCP client was compromised.
+
 **Question**: When it comes to the use case of storing sensitive credentials (e.g., API keys), do your central monitoring and auditing systems explicitly log the "Tenant ID" and timestamp alongside every secret creation/retrieval, decryption, and administrative event to ensure rapid detection of cross-tenant access attempts? (e.g., Centralized SIEM, Application Logs, AWS CloudTrail).
 - **Associated Risk**: Inability to accurately attribute malicious activity to a specific tenant, making it impossible to detect or investigate lateral movement between customer boundaries. Without Tenant ID tagging, a "noisy" or compromised tenant in one environment could potentially probe other tenants without the vendor’s security team being able to pinpoint the source or scope of the leak.
 
@@ -57,7 +60,7 @@ Granular Access Scoping (Least Privilege) (p1)
 
 
 (overlap with network security)
-### Network Security & Isolation 
+### Network Security for Credential Access
 **Question**: Are the environments housing customer static credentials strictly isolated within private networks/VPCs, enforcing micro-segmentation and prohibiting any direct inbound routing from the public internet? (For example, AWS Secrets Manager, PostgreSQL Database, Internal EKS/Microservices)
 - **Associated Risk**: Direct external exploitation of data stores, unauthorized network traversal, and data exfiltration.
 

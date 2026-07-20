@@ -6,7 +6,7 @@ Here is the security review questionnaire for your Infrastructure and Cloud arch
 
 This questionnair might have some overlap with other features like data security, access control, network security etc. So hanlde the overlaps manually.
 
-### Category 1: Cloud Architecture & Network Security
+### Cloud Architecture & Network Security
 
 - **Question:** How is network segmentation implemented within the cloud environment (e.g., VPCs, Vnets, subnets) to isolate public-facing workloads from backend services and databases?
   - **Recommended Control:** Implement a strict multi-tier architecture using public and private subnets. Only load balancers, WAFs, or bastion hosts should reside in public subnets, while application servers and databases must reside in private subnets without direct inbound internet access (using NAT gateways for egress).
@@ -20,7 +20,7 @@ This questionnair might have some overlap with other features like data security
   - **Recommended Control:** Deploy a Web Application Firewall (WAF) and a dedicated DDoS mitigation service (e.g., AWS Shield, Cloudflare) at the network perimeter, configured with OWASP core rule sets and custom rate-limiting.
   - **Associated Risk:** Infrastructure can be easily overwhelmed by DDoS attacks, or web workloads can be compromised via common application exploits (like SQLi or XSS) before the traffic even reaches the application layer.
 
-### Category 2: Cloud Identity & Access Management (IAM)
+### Cloud Identity & Access Management (IAM)
 
 - **Question:** Are cloud administrative permissions managed at an organizational level to prevent lateral movement between disparate environments (e.g., Dev, QA, Prod)?
   - **Recommended Control:** Implement centralized cloud governance using features like AWS Organizations with Service Control Policies (SCPs) or Azure Management Groups to enforce mandatory security guardrails across all accounts/subscriptions.
@@ -30,7 +30,7 @@ This questionnair might have some overlap with other features like data security
   - **Recommended Control:** Use native Cloud IAM roles (e.g., AWS IAM Roles for EC2, Azure Managed Identities) instead of hardcoding or distributing long-lived static access keys. Apply the principle of least privilege to these roles.
   - **Associated Risk:** Hardcoded or static cloud credentials embedded in application code or configuration files are frequently leaked to source control repositories, leading to rapid, automated compromise of the cloud environment.
 
-### Category 3: Data Security & Cryptography
+### Data Security & Cryptography
 
 - **Question:** How is "Encryption at Rest" enforced across all cloud storage components (e.g., block storage volumes, object storage, databases, snapshots)?
   - **Recommended Control:** Mandate encryption at rest globally using a centralized Key Management Service (e.g., AWS KMS, Azure Key Vault). Prefer Customer-Managed Keys (CMKs) with automated annual key rotation over provider-managed keys for sensitive workloads.
@@ -44,7 +44,7 @@ This questionnair might have some overlap with other features like data security
   - **Recommended Control:** Store all infrastructure secrets in an encrypted, centralized secrets manager. Implement automated lifecycle management for TLS certificates (e.g., AWS ACM) to ensure they are renewed before expiration.
   - **Associated Risk:** Mishandling secrets or allowing TLS certificates to expire leads to man-in-the-middle (MitM) attacks, intercepted traffic, or massive service outages.
 
-### Category 4: Infrastructure as Code (IaC) & Automation
+### Infrastructure as Code (IaC) & Automation
 
 - **Question:** Is the cloud infrastructure deployed manually or via Infrastructure as Code (IaC), and how is the IaC code secured?
   - **Recommended Control:** Mandate that all infrastructure is defined via IaC (e.g., Terraform, CloudFormation). Integrate static application security testing (SAST) tools (like Checkov, tfsec, or OPA) into the CI/CD pipeline to block deployments containing security misconfigurations.
@@ -54,7 +54,7 @@ This questionnair might have some overlap with other features like data security
   - **Recommended Control:** Implement automated drift detection tools that alert security and engineering teams when out-of-band manual changes are made in the cloud console.
   - **Associated Risk:** An administrator or an attacker might manually alter a security group or disable logging in the console; without drift detection, this backdoor or misconfiguration will persist unnoticed.
 
-### Category 5: Workload, Container, and Vulnerability Management
+###  Workload, Container, and Vulnerability Management
 
 - **Question:** What is the process for creating, securing, and patching virtual machine images or containers (Golden Images)?
   - **Recommended Control:** Utilize an automated image building pipeline (e.g., HashiCorp Packer) to create immutable, hardened baseline images based on CIS Benchmarks. Continuously scan running workloads and container registries for CVEs.
@@ -64,7 +64,7 @@ This questionnair might have some overlap with other features like data security
   - **Recommended Control:** Deploy cloud-native or third-party runtime protection platforms (e.g., Falco, Prisma Cloud) that monitor for anomalous system calls, container escapes, or execution of unauthorized binaries within the workload.
   - **Associated Risk:** Supply chain attacks or zero-day vulnerabilities in applications can lead to remote code execution (RCE). Without runtime monitoring, the attacker can operate inside the container or serverless environment without detection.
 
-### Category 6: Logging, Monitoring, & Cloud Security Posture Management (CSPM)
+### Logging, Monitoring, & Cloud Security Posture Management (CSPM)
 
 - **Question:** Is cloud control plane auditing (e.g., AWS CloudTrail, Azure Activity Logs) enabled in all geographic regions, and where are these logs stored?
   - **Recommended Control:** Enable multi-region control plane logging universally. Forward all logs to a dedicated, tightly restricted security/log archive account using immutable storage (e.g., WORM compliance policies) to prevent tampering.
@@ -74,7 +74,7 @@ This questionnair might have some overlap with other features like data security
   - **Recommended Control:** Deploy a CSPM tool that continuously scans the cloud control plane APIs against established frameworks (like CIS Cloud Benchmarks) and provides real-time alerting and automated remediation for high-risk findings.
   - **Associated Risk:** Cloud environments are highly dynamic. A configuration that is secure today may be made vulnerable tomorrow by a simple misconfiguration, leading to silent, long-term exposure.
 
-### Category 7: Resilience & Disaster Recovery
+### Resilience & Disaster Recovery
 
 - **Question:** How is backup architecture protected against modern ransomware or malicious insider deletion?
   - **Recommended Control:** Implement an air-gapped or cross-account backup strategy where backups are stored in a physically and logically isolated cloud account. Enforce strict immutability (Object Lock) so backups cannot be deleted or modified, even by a super-admin.
