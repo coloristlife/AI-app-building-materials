@@ -2,7 +2,9 @@
 
 This evaluation is closely aligned with emerging industry frameworks such as the **NIST AI Risk Management Framework (AI RMF)**, the **OWASP Top 10 for LLM Applications** (specifically LLM06: Insecure Plugin Design and LLM08: Excessive Agency), and zero-trust principles.
 
+We would also like to better understand the internal design and operation of the agentic framework. Specifically, could you provide more details on how the different agents are coordinated and interact with each other, what tools or services are invoked by these agents, and how communication and data flow are managed within the framework?
 
+Understanding the underlying architecture and workflow of the agentic AI system will help us properly evaluate the security controls, potential risks, and safeguards implemented within the framework.
 
 ### Agent Identity & Access Management (IAM)
 

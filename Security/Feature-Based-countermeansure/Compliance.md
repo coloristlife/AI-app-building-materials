@@ -1,10 +1,13 @@
 
 
-
+# Compliance and governance Documentation
 ---
+
+We also need to understand the compliance and governance documentation available for this vendor. 
 
 # Security & Compliance Artifact Request List
 
+## provide the vendor risk evaluation report conducted by S&P ? 
 ## SOC 2 Type II or ISO 27001 Report
 
 * Does the vendor have any SOC 2 Type II or ISO 27001 report? If so, can you please share it?
@@ -91,7 +94,6 @@ This includes, but is not limited to:
 * Vulnerability scanning tools
 * SIEM log forwarding agents
 * Identity/security monitoring agents
-
 ---
 
 ## Security Policy Compliance & Hardening

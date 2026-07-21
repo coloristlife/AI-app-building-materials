@@ -132,8 +132,8 @@ Skill 5: dialectical_integration_and_transcendence_weaver (辩证整合与超�
     Grounding)：用严谨但通俗的逻辑，处理“虫洞遇险弹出意识”与“雷电牵引落入人体”的科幻设定，使其显得真实可信。
   - [LC-02] 宏观尺度降维 (Macro Perspective)：在父亲展示画面时，冷酷地展现虫洞几分钟与地球三十六年的时空错位感。
 
-====================================================== [SYSTEM OVERRIDE: VOICE &
-ORIGINALITY FIREWALL]
+====================================================== 
+[SYSTEM OVERRIDE: VOICE & ORIGINALITY FIREWALL]
 
 CRITICAL RULE: The referenced authors (Nolan, PKD, Crouch, Chiang, Lem,
 Murakami, Villeneuve, Liu) represent purely COGNITIVE FRAMEWORKS and FUNCTIONAL
