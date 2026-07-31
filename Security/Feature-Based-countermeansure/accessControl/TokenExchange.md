@@ -29,7 +29,8 @@ This version is designed to accommodate *both* architectures (Gateway as the Min
     *   *✅ Preferred Answer:* Keys are stored in a managed KMS (AWS KMS, HashiCorp Vault) or HSM. Keys are never hardcoded in memory/environment variables. Rotation is automated (e.g., every 30 days). The algorithm is strong asymmetric (e.g., `RS256` or `ES256`). The Gateway exposes an internal JWKS endpoint for backends to fetch public keys.
 *   **If Path B (Okta Proxy): Client Authentication to Okta:**
     *   *Question:* When the Gateway calls the Okta Token Exchange API, how does it securely authenticate itself as a trusted client?
-    *   *✅ Preferred Answer:* The Gateway uses Private Key JWT (asymmetric) or mTLS to authenticate to Okta. (Basic Auth / static client secrets are acceptable but less ideal for high-security AI gateways).
+    *   *✅ Preferred Answer:* The Gateway uses Private Key JWT (asymmetric) or mTLS to authenticate to Okta. (Basic Auth / static client secrets are acceptable but less ideal for high-security AI gateways).  
+    Note: In the context of OAuth 2.0 and Okta, Private Key JWT (officially known as private_key_jwt in OAuth/OIDC specifications) is a highly secure method for a machine (like your Gateway) to prove its identity to an authorization server (Okta) without using a password or shared secret.
 
 ---
 

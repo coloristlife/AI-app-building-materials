@@ -95,7 +95,8 @@ Execute the writing purely through the [Writer Skills] and the conceptual [Autho
 ---
 
 ## Level 4: Novel Constitution (小说宪法与执行协议)
-[空]
+不要用不文明的语言。
+
 
 
 
@@ -127,3 +128,6 @@ Execute the writing purely through the [Writer Skills] and the conceptual [Autho
 # 📥 Level 1: Story Blueprint (剧情骨架输入区)
 
 [USER INPUT EXPECTED BELOW:]
+
+
+

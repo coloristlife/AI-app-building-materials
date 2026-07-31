@@ -6,10 +6,10 @@
 MODEL_TYPE="ollama"
 MODEL_NAME="qwen3:4b-instruct-2507-q4_K_M"
 GENERATIONS=1
-TIMEOUT_PER_PROBE="20m"  # ⏳ 每个 Probe 最多运行 20 分钟，超时自动杀掉
+TIMEOUT_PER_PROBE="20m"  # ⏳ 
 OUTPUT_DIR="$PWD/resilient_scan_results"
 TRACKING_FILE="${OUTPUT_DIR}/completed_probes.txt"
-TIMEOUT_FILE="${OUTPUT_DIR}/timeout_probes.txt" # 记录超时的探针
+TIMEOUT_FILE="${OUTPUT_DIR}/timeout_probes.txt" 
 
 # ==========================================
 # 2. 初始化
@@ -21,7 +21,7 @@ touch "$TIMEOUT_FILE"
 # The complete list of specific probes (filtered from your list)
 PROBES=(
 # ==========================================
-# 1. 核心提示词注入与系统劫持 (Prompt Injection)
+# 1. (Prompt Injection)
 # ==========================================w
 "sysprompt_extraction.SystemPromptExtraction"  # 尝试窃取模型的 System Prompt
 "promptinject.HijackKillHumans"                # 恶意指令覆盖
@@ -32,7 +32,7 @@ PROBES=(
 "agent_breaker.AgentBreaker"                   # AI Agent 边界突破
 
 # ==========================================
-# 2. 越狱攻击 (Jailbreaks - 筛选了最高效的)
+# 2. (Jailbreaks - 筛选了最高效的)
 # ==========================================
 "dan.AutoDAN"                                  # 自动化变异越狱
 "dan.DAN_Jailbreak"                            # 经典 Do Anything Now
@@ -51,7 +51,7 @@ PROBES=(
 "donotanswer.MaliciousUses"                    # 强制输出恶意用途信息
 
 # ==========================================
-# 3. 信息泄露与隐私窃取 (Data Leakage & PII)
+# 3.(Data Leakage & PII)
 # ==========================================
 "apikey.CompleteKey"                           # 诱导模型输出真实 API Key
 "apikey.GetKey"                                
@@ -63,7 +63,7 @@ PROBES=(
 "leakreplay.GuardianComplete"                  # 训练集数据提取 (卫报)
 
 # ==========================================
-# 4. 恶意代码生成与网络攻击 (Malware & Exploitation)
+# 4.  (Malware & Exploitation)
 # ==========================================
 "malwaregen.Evasion"                           # 生成免杀恶意代码
 "malwaregen.Payload"                           # 生成攻击载荷
@@ -79,7 +79,7 @@ PROBES=(
 "packagehallucination.JavaScript"              # 供应链投毒攻击测试 (生成假 NPM 库)
 
 # ==========================================
-# 5. 终端安全、XSS 与数据外带 (Web/Terminal & Exfiltration)
+# 5. (Web/Terminal & Exfiltration)
 # ==========================================
 "web_injection.MarkdownXSS"                    # 诱导输出含 XSS 跨站脚本的 Markdown
 "web_injection.TaskXSS"                        
@@ -89,7 +89,7 @@ PROBES=(
 "ansiescape.AnsiRaw"                           
 
 # ==========================================
-# 6. 隐蔽注入与编码绕过 (Obfuscation & Smuggling)
+# 6.  (Obfuscation & Smuggling)
 # ==========================================
 "latentinjection.LatentJailbreak"              # 隐性越狱 (潜伏在正常文本中)
 "latentinjection.LatentWhoisSnippet"           
@@ -115,11 +115,10 @@ for PROBE in "${PROBES[@]}"; do
         continue
     fi
 
-    echo "▶️  正在运行: $PROBE ..."
+    echo "▶️  running: $PROBE ..."
     REPORT_PREFIX="${OUTPUT_DIR}/${PROBE}"
     
-    # 核心改进：使用 timeout 命令
-    # --kill-after=30s 表示如果 SIGTERM 杀不掉，30秒后强制 SIGKILL
+
     timeout --kill-after=30s $TIMEOUT_PER_PROBE python3 -m garak -m "$MODEL_TYPE" -n "$MODEL_NAME" \
         --probes "$PROBE" \
         --generations "$GENERATIONS" \
@@ -131,23 +130,21 @@ for PROBE in "${PROBES[@]}"; do
     # 4. 状态判定
     # ==========================================
     if [ $EXIT_CODE -eq 124 ]; then
-        # 124 是 timeout 命令的特有返回码，表示超时
-        echo "⏰ [超时] $PROBE 运行超过 $TIMEOUT_PER_PROBE，已跳过。"
+
+        echo "⏰ [超时] $PROBE exceed $TIMEOUT_PER_PROBE，skipped."
         echo "$PROBE" >> "$TIMEOUT_FILE"
-        # 即使超时，我们也把它记录为“处理过”，或者不记录以便以后重试
-        # 建议记录到专用文件，不要记入 completed_probes
+
         
     elif ls ${REPORT_PREFIX}*.report.jsonl 1> /dev/null 2>&1; then
-        echo "✅ [完成] $PROBE"
+        echo "✅ [done] $PROBE"
         echo "$PROBE" >> "$TRACKING_FILE"
         
     else
-        echo "❌ [失败] $PROBE 发生非超时错误 (Exit Code: $EXIT_CODE)"
-        # 这种情况下可以根据需要决定是 exit 1 (停止整个脚本) 还是继续
-        # 建议继续，让脚本尽可能多跑一些
+        echo "❌ [failed] $PROBE (Exit Code: $EXIT_CODE)"
+
         echo "$PROBE (Error $EXIT_CODE)" >> "${OUTPUT_DIR}/failed_probes.txt"
     fi
 done
 
-echo "🎉 所有探针尝试完毕！"
-echo "检查 $TRACKING_FILE 查看成功项，检查 $TIMEOUT_FILE 查看超时项。"
+echo "🎉 all done"
+echo "check $TRACKING_FILE for successful probes，check $TIMEOUT_FILE for timeouts."

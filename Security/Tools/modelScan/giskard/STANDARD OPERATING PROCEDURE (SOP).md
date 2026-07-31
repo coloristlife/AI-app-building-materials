@@ -303,12 +303,12 @@ if __name__ == "__main__":
 ```
 
 
-## Phase 4: Reporting, CI/CD Integration, and Artifact Management (Newly Added)
+## Phase 4: Reporting and Artifact Management
 
-Once Phase 3 generates the results, the CI/CD pipeline must enforce security policies based on those results.
+Once Phase 3 generates the results, security policies must be enforced based on those results.
 
-### Step 4.1: CI/CD Pipeline Blocking (The Quality Gate)
-The pipeline (e.g., Jenkins, GitHub Actions) is configured to parse the `giskard_security_report.xml` file. 
+### Step 4.1: Blocking (The Quality Gate)
+Parse the `giskard_security_report.xml` file
 *   **Pass Condition:** If all tests pass, the pipeline executes `exit 0`, allowing the model artifact to be pushed to the production registry (e.g., AWS SageMaker or HF Model Registry).
 *   **Fail Condition (Blocking):** If any test fails (e.g., leakage is detected, or overconfidence exceeds 5%), the XML parser detects a `<failure>` tag. The pipeline executes `exit 1` (Build Failed). The model is **blocked** from deployment.
 
@@ -319,8 +319,7 @@ While machines read XML, SecOps engineers need context to patch the model. The a
 test_results.to_html("secops_vulnerability_report.html")
 ```
 
-### Step 4.3: Artifact Archiving
-The CI/CD pipeline must upload both the XML and HTML files as **Pipeline Artifacts** before terminating. This ensures that even if the pipeline is blocked and the container is destroyed, the SecOps team can download the `secops_vulnerability_report.html` to review exactly which homoglyphs, OOD strings, or benign payloads successfully bypassed the model.
+
 
 ---
 
