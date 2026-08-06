@@ -32,6 +32,8 @@ https://www.novelcrafter.com/courses/beats-cookbook
 
 
 ## 简易节拍（Simple Beats）
+https://www.novelcrafter.com/courses/beats-cookbook/simple-beats
+
 **哪怕只是一两句话，也能让 AI 生成令人兴奋的精彩文段。**
 
 
@@ -86,6 +88,10 @@ https://www.novelcrafter.com/courses/beats-cookbook
 
 
 ## 详细节拍（Detailed Beats）
+
+https://www.novelcrafter.com/courses/beats-cookbook/detailed-beats
+
+
 **精心编排的提示词节拍，让生成的文本紧紧贴合你的构想。**
 
 
@@ -168,6 +174,8 @@ https://www.novelcrafter.com/courses/beats-cookbook
 
 
 ## 对话节拍（Dialogue Beats）
+https://www.novelcrafter.com/courses/beats-cookbook/dialogue-beats
+
 **通过“对话优先”的节拍设定方式，精准掌控你故事中的细微差别。**
 
 
@@ -248,7 +256,7 @@ https://www.novelcrafter.com/courses/beats-cookbook
 
 
 ## 场景节拍（Scene Beat）
-**当你希望在一次文本生成中，一口气写完整个场景时使用。**
+**当你希望在一次文本生成中，一口气写完整个场景时使用。**  
 https://www.novelcrafter.com/courses/beats-cookbook/scene-beat
 
 
@@ -272,6 +280,7 @@ https://www.novelcrafter.com/courses/beats-cookbook/scene-beat
 *   如果你在提示词设置中提供更多的 **“前文参考字数（words before）”**，这也能向 AI 示范（教育它）你平时写场景的篇幅到底有多长。
 
 *（注：对于刚接触 AI 提示词的新手，原文在此处提供了一个修改版提示词模板的下载链接，教你如何将其导入账号。）*
+https://www.novelcrafter.com/help/docs/prompts/sharing-prompts
 
 **应该包含哪些内容（What to include）**
 *   **探索型作者（只想定个大方向）：** 请参考“简易节拍”。
