@@ -4,8 +4,6 @@ https://www.novelcrafter.com/courses/ultimate-beginners-guide/interlude
 
 **了解AI在Novelcrafter中是如何工作的，以及你可以使用的几种方式。**
 
-**阅读时间**：约2分钟
-**上一课** | **下一课**
 
 
 
