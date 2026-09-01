@@ -30,3 +30,6 @@ As highlighted in the article, the industry has moved from **static RAG** (simpl
 # product with memory
 
 https://docs.openwebui.com/features/chat-conversations/memory  
+
+
+https://github.com/NirDiamant/Agent_Memory_Techniques

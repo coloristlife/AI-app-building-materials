@@ -7,3 +7,5 @@ https://github.com/FareedKhan-dev/complex-RAG-guide
 https://github.com/NirDiamant/rag_techniques
 
 https://www.uber.com/en-PK/blog/enhanced-agentic-rag/
+
+https://github.com/Yigtwxx/Awesome-RAG-Production#real-world-case-studies

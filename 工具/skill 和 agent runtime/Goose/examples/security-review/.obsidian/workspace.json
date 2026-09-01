@@ -1,0 +1,221 @@
+{
+  "main": {
+    "id": "32b81bd8ce2bee06",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ad934a8f70b2d9b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6ef8e4749f02595b",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e42007ad5a527009",
+    "type": "split",
+    "children": [
+      {
+        "id": "42c2fcc5865e7e64",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e4b3714c745075ba",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "55398019feb7a75f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "api-input-validation",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "7610c425c27c0c9a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "80e27ed204d05c95",
+    "type": "split",
+    "children": [
+      {
+        "id": "bb18dda80009161b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "502a3e02fc550015",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "knowledge-base/requirements/api-input-validation.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "9ccc9ea7a2c49ccb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "knowledge-base/requirements/api-input-validation.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "836f3e6cddc824b3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "c726e302d17584cd",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "0ad07ab3ac956ecc",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "knowledge-base/requirements/api-input-validation.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "e4b3714c745075ba",
+  "lastOpenFiles": [
+    "goose/recipes/security-review debug.yaml",
+    "goose/recipes/security-review copy.yaml",
+    "goose/recipes/references/domain-index.md",
+    "goose/recipes/references/concern-index.md",
+    "goose/recipes/references/component-index.md",
+    "goose/skills/security-review/SKILL.md",
+    "goose/recipes/references",
+    "goose/skills/security-review",
+    "goose/recipes/security-review.yaml",
+    "goose/skills",
+    "goose/recipes",
+    "goose",
+    "knowledge-base/requirements/api-authorization.md",
+    "knowledge-base/requirements/api-authentication.md",
+    "knowledge-base/questions/api-input-validation-questions.md",
+    "knowledge-base/questions/api-authorization-questions.md",
+    "knowledge-base/questions/api-authentication-questions.md",
+    "knowledge-base/domains/identity-access.md",
+    "knowledge-base/domains/application-security.md",
+    "knowledge-base/requirements/api-input-validation.md",
+    "knowledge-base/concerns/authorization.md",
+    "knowledge-base/concerns/authentication.md",
+    "knowledge-base/concerns/api-security.md",
+    "knowledge-base/components/aws-lambda.md",
+    "knowledge-base/components/api-gateway.md",
+    "references/component-index.md",
+    "SKILL.md",
+    "references/domain-index.md",
+    "knowledge-base/questions",
+    "knowledge-base/requirements",
+    "knowledge-base/concerns"
+  ]
+}

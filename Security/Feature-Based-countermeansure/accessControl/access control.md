@@ -1,7 +1,4 @@
 
-# Access Control
-
-
 ### Authentication (Identity Verification)
 
 - **Question:** Is Multi-Factor Authentication (MFA) enforced for all human users across all ingress points (e.g., VPNs, web portals, administrative interfaces)?

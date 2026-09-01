@@ -359,7 +359,18 @@ BGE-M3
 BGE Reranker
 ```
 
+
+BGE-M3 是 BAAI（北京智源人工智能研究院）推出的 **Embedding / Retrieval 模型**。
+
 BGE-M3 可以用于多语言 embedding，并且支持 dense/sparse/multi-vector 等检索方向。
+
+名字可以拆成：
+
+- **BGE**：BAAI General Embedding
+- **M3**：代表它同时支持多种检索能力，核心是：
+    - **Multi-lingual**：多语言
+    - **Multi-functionality**：多种检索方式
+    - **Multi-granularity**：不同粒度的文本表示
 
 如果你以后研究：
 

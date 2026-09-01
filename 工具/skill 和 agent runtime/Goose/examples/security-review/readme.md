@@ -1,0 +1,1 @@
+这个是以recipe入口，需要设置working dir。goose 会在working dir下面搜索所有的markdown 文件。

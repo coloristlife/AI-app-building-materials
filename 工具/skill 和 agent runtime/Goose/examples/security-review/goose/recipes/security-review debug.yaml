@@ -1,0 +1,16 @@
+version: "1.0.0"
+
+title: "Security Review debug"
+
+description: >
+  Perform a structured security review of a user-provided system
+  using the Security Knowledge Base.
+
+
+instructions: |
+  DEBUG TASK
+
+
+  Report the value of:
+
+  {{ recipe_dir }}

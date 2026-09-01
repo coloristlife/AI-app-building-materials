@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5fb61c5c9de13f25",
+        "id": "bb2fb8fa8429dd4f",
         "type": "tabs",
         "children": [
           {
-            "id": "d424c02a3e31306e",
+            "id": "6e6f4bc18866cbe4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Agent/Framework/Agent Operating System-framework.md",
-                "mode": "source",
+                "file": "个人工具设计/股票预测/股票预测/记录.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Agent Operating System-framework"
+              "title": "记录"
             }
           }
         ]
@@ -55,8 +55,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "openhand",
-                "matchingCase": false,
+                "query": " ",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -78,13 +78,22 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
+          },
+          {
+            "id": "0a0e70aaac140b96",
+            "type": "leaf",
+            "state": {
+              "type": "story-line-navigator",
+              "state": {},
+              "icon": "compass",
+              "title": "StoryLine navigator"
+            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 593.203125
+    "width": 371.80078125
   },
   "right": {
     "id": "1b774b97f4e147db",
@@ -158,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Agent/Framework/Agent Operating System-framework.md",
+                "file": "个人工具设计/股票预测/股票预测/记录.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -192,13 +201,23 @@
               "icon": "lucide-info",
               "title": "笔记属性"
             }
+          },
+          {
+            "id": "4b4ff97e68eb09d7",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "smart-connections",
+              "title": "Connections"
+            }
           }
         ],
         "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 494.28515625
+    "width": 360.578125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,57 +228,63 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
-      "omnisearch:Omnisearch": false
+      "omnisearch:Omnisearch": false,
+      "callout-manager:Insert Callout": false,
+      "storyline:StoryLine projects": false,
+      "smart-connections:Smart Connections: Open random connection": false,
+      "smart-connections:Smart Connections: Open connections view": false,
+      "smart-connections:Toggle Footer Connections": false,
+      "code-space:打开 Code Space 主面板": false
     }
   },
-  "active": "d424c02a3e31306e",
+  "active": "6e6f4bc18866cbe4",
   "lastOpenFiles": [
-    "工具/Obsidian/教程视频.md",
-    "工具/Obsidian/插件.md",
-    "工具/Obsidian/属性.md",
-    "工具/Obsidian/QMD， Smart Connections，Vault Retrieval.md",
-    "RAG/RAG_Tools/AI KnowledgeBase-tool.md",
-    "RAG/RAG_Tools/Obsidian + Personal AI.md",
-    "个人工具设计/Second Brain.md",
-    "RAG/RAG_Tools/QMD.md",
-    "个人工具设计/第二大脑/第一版本-2026-8月/LLM Wiki基于 Obsidian 的个人 AI 知识库.md",
-    "未命名 1.md",
-    "个人工具设计/第二大脑/第一版本-2026-8月",
-    "RAG/RAG_Tools/用LlamaIndex搭建个人 AI 知识库（RAG）最佳实践与架构指南.md",
-    "个人工具设计/第二大脑",
-    "个人工具设计",
-    "附件/Pasted image 20260811095456.png",
-    "RAG/RAG_Tools/知识图谱的可计算化（向量化）.md",
-    "未命名.md",
-    "Memory/Agent Memory Concept Map.md",
-    "Memory/AI 的“最强大脑”是怎么炼成的？一次看懂 AI Agent Memory：从“记住你”到“真正理解你”.md",
-    "Memory/告别“失忆症”，从 RAG 到 MemOS 揭秘 AI Agent 的长效记忆系统演进.md",
-    "附件/Pasted image 20260810220943.png",
-    "附件/Pasted image 20260810220927.png",
-    "Memory/从“存数据”到“AI 智能体操作系统”：企业数据架构的五代演进史.md",
-    "附件/Pasted image 20260810205632.png",
-    "附件/Pasted image 20260810205541.png",
-    "工具/结构化文本格式/零基础通关 Markdown：5分钟学会这个排版神器！.md",
-    "Security/Feature-Based-countermeansure/accessControl/KnowledgeBase/exchange of authentication tokensVia3rdPartyPlatform.md",
-    "Security/Feature-Based-countermeansure/accessControl/KnowledgeBase/exchange of authentication tokens.md",
-    "工具/~$sidian在线教程.docx",
-    "工具/Obsidian在线教程.docx",
-    "工具/结构化文本格式/带你读懂人机沟通的“神级便利贴” - YAML.md",
-    "工具/结构化文本格式",
-    "工具/Obsidian/将 Obsidian 设置为中文.md",
-    "工具/Obsidian/仓库.md",
-    "工具/Obsidian/数据库.md",
-    "工具/从本地文件夹开始创建Obsidian知识库.docx",
-    "从本地文件夹开始创建Obsidian知识库.docx",
-    "附件/Pasted image 20260809193005.png",
-    "附件/Pasted image 20260809192921.png",
-    "工具",
-    "obsidian-属性.pdf",
-    "附件/Pasted image 20260809162319.png",
-    "附件/Pasted image 20260809161350.png",
-    "附件/Pasted image 20260809160820.png",
-    "temp.md",
+    "UI/NextJS/Authentication.md",
+    "UI/NextJS/Middleware and Proxy.md",
+    "UI/NextJS/部署.md",
+    "UI/NextJS/客户端组件.md",
+    "UI/NextJS/Route Handlers（路由处理程序）.md",
+    "UI/NextJS/Revalidation（重新验证）与 Cache Invalidation（缓存失效）.md",
+    "UI/NextJS/BFF（Backend For Frontend）.md",
+    "UI/NextJS/Server Actions.md",
+    "UI/NextJS/Server Actions（服务端动作）.md",
+    "UI/NextJS/Zod-TypeScript 优先的运行时数据校验库.md",
+    "UI/NextJS/Cache Components.md",
+    "UI/NextJS/PPR（Partial Prerendering，局部预渲染）.md",
+    "UI/NextJS/Suspense 和 Streaming（流式传输）.md",
+    "UI/NextJS/动态渲染（Dynamic Rendering）.md",
+    "UI/NextJS/静态站点生成,静态渲染 ，SSG.md",
+    "UI/NextJS/Production Build.md",
+    "UI/NextJS/AI specific Updates.md",
+    "UI/NextJS/Database Prisma.md",
+    "Security/securityArchitecture/tool.md",
     "Temp1.md",
+    "UI/NextJS/缓存机制（Caching）.md",
+    "UI/NextJS/页面组件声明.md",
+    "UI/NextJS/文件夹命名.md",
+    "UI/NextJS/动态路由（Dynamic Routes）.md",
+    "UI/NextJS/Pages Router 和 App Router.md",
+    "UI/NextJS/嵌套布局（Nested Layouts）.md",
+    "UI/NextJS/未命名",
+    "待研究内容",
+    "UI/NextJS",
+    "UI/React/React hook/use-toast.ts",
+    "UI/React/React hook/toaste-demo.html",
+    "UI/JS or TS",
+    "UI/React/Toaster-Demo/toaste-demo.html",
+    "UI/React/Toaster-Demo/toaster.html",
+    "UI/React/Toaster-Demo",
+    "UI/React/Toaster",
+    "附件/Snapzy_2026-08-26_22-59-49_910.png",
+    "附件/Snapzy_2026-08-26_22-59-31_901.png",
+    "附件/Pasted image 20260826224517.png",
+    "附件/Snapzy_2026-08-26_22-31-47_147.png",
+    "附件/Snapzy_2026-08-26_22-31-18_435.png",
+    "附件/Pasted image 20260826222144.png",
+    "附件/Pasted image 20260826222111.png",
+    "附件/Pasted image 20260826210951.png",
+    "附件/Pasted image 20260825180015.png",
+    "附件/Pasted image 20260825175932.png",
     "未命名.canvas"
   ]
 }

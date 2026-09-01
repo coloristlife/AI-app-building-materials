@@ -1,0 +1,377 @@
+version: "1.0.0"
+
+title: "Security Review"
+
+description: >
+  Perform a structured security review of a user-provided system
+  using the Security Knowledge Base.
+
+instructions: |
+
+  You are performing a structured Security Review.
+
+  IMPORTANT:
+  The following files are the canonical lookup indexes for this review:
+
+  Domain Index:
+  {{ target_dir }}/references/domain-index.md
+
+  Component Index:
+  {{ target_dir }}/references/component-index.md
+
+  Security Concern Index:
+  {{ target_dir }}/references/concern-index.md
+
+  These files MUST be used when resolving canonical Domains,
+  Components, and Security Concerns.
+
+  ============================================================
+  1. SYSTEM UNDERSTANDING
+  ============================================================
+
+  Analyze the system description provided by the user.
+
+  Extract:
+
+  - system purpose
+  - business function
+  - users
+  - external actors
+  - applications
+  - services
+  - APIs
+  - databases
+  - storage
+  - messaging
+  - cloud services
+  - infrastructure
+  - identity services
+  - authentication
+  - authorization
+  - data types
+  - sensitive data
+  - communication channels
+  - external dependencies
+  - third-party services
+  - deployment environment
+  - trust boundaries
+  - security controls
+  - implementation evidence
+
+  Do not generate the questionnaire yet.
+
+
+  ============================================================
+  2. DOMAIN IDENTIFICATION
+  ============================================================
+
+  Read:
+
+  {{ target_dir }}/references/domain-index.md
+
+  Extract candidate Domains from the system description.
+
+  Match each candidate against the Domain Index using:
+
+  - canonical name
+  - aliases
+  - description
+  - semantic meaning
+  - system context
+
+  Select only canonical Domains that exist in the Domain Index.
+
+  NEVER invent a canonical Domain.
+
+  Record:
+
+  - canonical Domain ID
+  - canonical Domain Name
+  - original system evidence
+  - matching rationale
+
+
+  ============================================================
+  3. COMPONENT EXTRACTION
+  ============================================================
+
+  Extract candidate Components from the system description.
+
+  Components may represent:
+
+  - applications
+  - services
+  - APIs
+  - databases
+  - storage
+  - messaging
+  - infrastructure
+  - cloud services
+  - identity services
+  - security services
+  - integration components
+
+  The extracted Component name is only a candidate.
+
+  It is NOT yet a Knowledge Base identity.
+
+
+  ============================================================
+  4. COMPONENT CANONICAL MATCHING
+  ============================================================
+
+  Read:
+
+  {{ target_dir }}/references/component-index.md
+
+  For every extracted Component:
+
+  1. Compare the candidate with the Component Index.
+  2. Consider:
+     - canonical name
+     - aliases
+     - description
+     - semantic meaning
+     - system context
+  3. Select the best matching canonical Component.
+
+  Record:
+
+  - original candidate
+  - canonical Component ID
+  - canonical Component Name
+  - matched alias
+  - matching rationale
+
+  NEVER invent a canonical Component.
+
+  If no sufficiently reliable match exists:
+
+  mark the Component as:
+
+  Unresolved Component
+
+  Do not guess.
+
+
+  ============================================================
+  5. OPEN CANONICAL COMPONENT KNOWLEDGE
+  ============================================================
+
+  For every resolved Component:
+
+  Open its canonical Knowledge Base page.
+
+  The Knowledge Base page is authoritative for the Security
+  Concerns associated with that Component.
+
+  Do NOT independently invent Component Security Concerns.
+
+  Component relationships are defined by the Knowledge Base.
+
+
+  ============================================================
+  6. OPEN CANONICAL DOMAIN KNOWLEDGE
+  ============================================================
+
+  For every resolved Domain:
+
+  Open its canonical Knowledge Base page.
+
+  Retrieve the Security Concerns associated with that Domain.
+
+  Domain-level Concerns are candidate Concerns and require
+  applicability analysis.
+
+
+  ============================================================
+  7. SECURITY CONCERN CONSOLIDATION
+  ============================================================
+
+  Combine:
+
+  - Component Security Concerns
+  - Domain Security Concerns
+
+  Deduplicate using canonical Security Concern ID.
+
+  Do not create new canonical Security Concerns.
+
+
+  ============================================================
+  8. SECURITY CONCERN APPLICABILITY
+  ============================================================
+
+  For every candidate Security Concern:
+
+  evaluate whether it applies to the system.
+
+  Consider:
+
+  - system architecture
+  - system purpose
+  - Domain
+  - Component
+  - data
+  - trust boundaries
+  - external dependencies
+  - existing controls
+  - user-provided evidence
+  - applicability guidance
+
+  Do not select a Concern simply because a keyword appears.
+
+  Use:
+
+  Applicable
+  Not Applicable
+  Uncertain
+
+  as applicability status.
+
+
+  ============================================================
+  9. SECURITY REQUIREMENTS
+  ============================================================
+
+  For every Applicable Security Concern:
+
+  retrieve the associated Security Requirements from the
+  Knowledge Base.
+
+  Requirements must come from the Knowledge Base.
+
+  Do not invent Requirements.
+
+
+  ============================================================
+  10. EVIDENCE EXTRACTION
+  ============================================================
+
+  Analyze the user's system description for existing
+  security controls and implementation evidence.
+
+  Extract evidence that can satisfy Security Requirements.
+
+  Distinguish:
+
+  Observed Evidence
+
+  from:
+
+  Security Interpretation
+
+  from:
+
+  Security Conclusion
+
+  Never assume a control exists without evidence.
+
+
+  ============================================================
+  11. QUESTION RETRIEVAL
+  ============================================================
+
+  Retrieve the canonical Security Questions associated with
+  applicable Security Requirements.
+
+  Questions must come from the Knowledge Base.
+
+  Do not invent canonical Questions.
+
+
+  ============================================================
+  12. QUESTION STATUS
+  ============================================================
+
+  Evaluate every Question against the extracted evidence.
+
+  Use:
+
+  - Addressed
+  - Partially Addressed
+  - Open
+  - Requires Confirmation
+  - Not Applicable
+
+  Do not silently delete Questions.
+
+  If existing evidence addresses a Question, preserve the
+  Question internally and mark it Addressed.
+
+
+  ============================================================
+  13. FINAL QUESTIONNAIRE
+  ============================================================
+
+  Generate the Security Questionnaire.
+
+  Primary questionnaire:
+
+  - Open
+  - Partially Addressed
+  - Requires Confirmation
+
+  Separate evidence-covered Questions:
+
+  - Addressed
+
+
+  ============================================================
+  14. TRACEABILITY
+  ============================================================
+
+  Validate:
+
+  Domain
+      ↓
+  Component
+      ↓
+  Security Concern
+      ↓
+  Security Requirement
+      ↓
+  Security Question
+      ↓
+  Evidence
+      ↓
+  Status
+
+  Every selected entity must exist in the Knowledge Base.
+
+  Every final Question must be traceable to a Requirement.
+
+  Every Requirement must be traceable to a Concern.
+
+  Every Concern must be traceable to a Domain and/or Component.
+
+
+  ============================================================
+  FINAL RESPONSE
+  ============================================================
+
+  Produce:
+
+  ## 1. System Understanding
+
+  ## 2. Identified Domains
+
+  ## 3. Identified Components
+
+  ## 4. Component Matching Results
+
+  ## 5. Candidate Security Concerns
+
+  ## 6. Applicable Security Concerns
+
+  ## 7. Security Requirements
+
+  ## 8. Evidence Identified
+
+  ## 9. Security Questionnaire
+
+  ## 10. Evidence-Covered Questions
+
+  ## 11. Unresolved / Ambiguous Entities
+
+  ## 12. Traceability Summary

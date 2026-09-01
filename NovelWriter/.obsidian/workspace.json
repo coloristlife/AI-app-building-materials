@@ -1,0 +1,257 @@
+{
+  "main": {
+    "id": "699f0205bd8079a1",
+    "type": "split",
+    "children": [
+      {
+        "id": "02781b623feac549",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2e7c85537c3fbcff",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "NovelWriterSkills/底层编剧与写作逻辑.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "底层编剧与写作逻辑"
+            }
+          }
+        ]
+      },
+      {
+        "id": "37057c6c8d8f004f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e43a89c82f97da43",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "37b94dd9e7875d08",
+    "type": "split",
+    "children": [
+      {
+        "id": "b09ceb8831aa1bc9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7b4efe613e2475dc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "fb28eb7e1bd0a598",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "Subplot",
+                "matchingCase": true,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "97101820ae7aa060",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 301.59375
+  },
+  "right": {
+    "id": "ff569fcf05842277",
+    "type": "split",
+    "children": [
+      {
+        "id": "65222a676efdc1f5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "898f217b99ec6ea5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "NovelCrafter/小说工匠（NovelCrafter）全功能解析与实战应用指南：一张地图看懂网文创作终极神器.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "f09214a125abae69",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "NovelCrafter/小说工匠（NovelCrafter）全功能解析与实战应用指南：一张地图看懂网文创作终极神器.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "cdfaeedf4130e4d5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "26f12364e9cd9d9c",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "025ca670815247af",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "NovelWriterSkills/底层编剧与写作逻辑.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "2e7c85537c3fbcff",
+  "lastOpenFiles": [
+    "小说工匠/小说工匠（NovelCrafter）全功能解析与实战应用指南：一张地图看懂网文创作终极神器.md",
+    "小说工匠/【使用工具之前必看】小说工匠（NovelCrafter）全功能解析与实战应用指南：一张地图看懂网文创作终极神器.md",
+    "NovelWriterSkills/底层编剧与写作逻辑.md",
+    "NovelCrafter/设定集/视角（POV）与序章.md",
+    "小说工匠/设定集/设定库.md",
+    "小说工匠/设定集/系列设定库（Series Codex）.md",
+    "小说工匠/设定集/视角（POV）与序章.md",
+    "小说工匠/设定集/流派（Genre).md",
+    "小说工匠/设定集/整理 Codex（设定集）.md",
+    "小说工匠/设定集/在故事中追踪地点.md",
+    "小说工匠/设定集/剧情发展（progression）.md",
+    "小说工匠/设定集/别名与提及（Aliases & Mentions）.md",
+    "小说工匠/设定集/关系（Relations）.md",
+    "小说工匠/设定集/使用自定义详情构建你的 Codex（设定集）.md",
+    "小说工匠/设定集/使用 Codex 分类对条目进行分组.md",
+    "小说工匠/设定集/世界观.md",
+    "小说工匠/设定集/Codex 追踪与匹配（Codex Tracking）.md",
+    "小说工匠/设定集/Codex 分类（Codex Categories）.md",
+    "小说工匠/法典（设定集）实用秘籍/追踪人物弧光（角色成长轨迹）.md",
+    "小说工匠/法典（设定集）实用秘籍/管理系列小说中的“前情提要”.md",
+    "小说工匠/法典（设定集）实用秘籍/用“设定集”来追踪你的坏习惯.md",
+    "小说工匠/法典（设定集）实用秘籍/用“设定集”来定制你的快捷指令（Prompt）.md",
+    "小说工匠/法典（设定集）实用秘籍/整理你的研究笔记与参考资料.md",
+    "小说工匠/法典（设定集）实用秘籍/将设定（Codex）条目添加为场景上下文.md",
+    "小说工匠/法典（设定集）实用秘籍/实际案例-用“设定集”来定制你的快捷指令（Prompt）.md",
+    "小说工匠/法典（设定集）实用秘籍/双重身份角色（Dual Nature Characters）.md",
+    "小说工匠/设定集",
+    "小说工匠/法典（设定集）实用秘籍",
+    "小说工匠/提示词和预设配置",
+    "小说工匠/小说工匠教程.docx",
+    "小说工匠/十二幕结构",
+    "小说工匠/写作",
+    "小说工匠/~$小说工匠教程.docx",
+    "小说工匠/AI集成",
+    "小说工匠",
+    "附件/Snapzy_2026-08-13_21-53-29_423 1.png",
+    "附件/Snapzy_2026-08-13_21-53-29_423.png",
+    "附件/Snapzy_2026-08-13_21-51-56_628.png",
+    "附件/Snapzy_2026-08-13_21-50-31_414.png",
+    "附件/Snapzy_2026-08-13_21-49-28_352.png",
+    "附件/Snapzy_2026-08-13_21-18-48_125 1.png",
+    "附件/Snapzy_2026-08-13_21-18-48_125.png",
+    "附件/Snapzy_2026-08-13_21-16-50_748.png",
+    "附件/Pasted image 20260813211516.png",
+    "附件/Pasted image 20260813211456.png",
+    "附件"
+  ]
+}

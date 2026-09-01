@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>use-toast.ts — full feature demo</title>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; }
+  h2 { border-bottom: 2px solid #ddd; padding-bottom: 6px; }
+  .panel { border: 1px solid #ccc; border-radius: 8px; padding: 16px; margin-bottom: 20px; }
+  .panel p { color: #444; font-size: 14px; }
+  button { padding: 8px 14px; margin: 4px 6px 4px 0; cursor: pointer; }
+  .toast-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 8px; z-index: 999; }
+  .toast { background: #222; color: white; padding: 10px 40px 10px 16px; border-radius: 6px; min-width: 220px;
+           position: relative; opacity: 1; transition: opacity 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+  .toast.closed { opacity: 0; }
+  .toast small { color: #aaa; display: block; margin-top: 2px; }
+  .toast .x { position: absolute; top: 6px; right: 10px; cursor: pointer; color: #999; }
+  .toast .x:hover { color: white; }
+  code { background: #eee; padding: 2px 5px; border-radius: 3px; }
+  .note { font-size: 13px; background: #fffbe6; border: 1px solid #f0e0a0; padding: 8px 12px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+// ============================================================
+// This is a near line-for-line copy of hooks/use-toast.ts,
+// converted from TypeScript to plain JS. Every feature from the
+// real file is here: TOAST_LIMIT, the 4-action reducer, the
+// removal queue with de-duplication, toast()'s returned
+// {id, dismiss, update} handle, onOpenChange wiring, and
+// useToast()'s subscribe/unsubscribe.
+//
+// ONE deliberate change for demo purposes: TOAST_REMOVE_DELAY is
+// 3000ms here instead of the real file's 1000000ms (~16.6 min),
+// so you can actually see REMOVE_TOAST fire without waiting.
+// ============================================================
+
+const TOAST_LIMIT = 2;             // same as real file: only 1 toast visible at a time
+const TOAST_REMOVE_DELAY = 3000;   // real file: 1000000 -- shortened here to observe it
+
+let count = 0;
+function genId() {
+  count = (count + 1) % Number.MAX_SAFE_INTEGER;
+  return count.toString();
+}
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "ADD_TOAST":
+      console.log("[reducer] ADD_TOAST", action.toast);
+      return { toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT) };
+
+    case "UPDATE_TOAST":
+      console.log("[reducer] UPDATE_TOAST", action.toast);
+      return {
+        toasts: state.toasts.map((t) =>
+          t.id === action.toast.id ? { ...t, ...action.toast } : t
+        ),
+      };
+
+    case "DISMISS_TOAST": {
+      const { toastId } = action;
+      console.log("[reducer] DISMISS_TOAST", toastId ?? "(all)");
+      if (toastId) {
+        addToRemoveQueue(toastId);
+      } else {
+        state.toasts.forEach((t) => addToRemoveQueue(t.id));
+      }
+      return {
+        toasts: state.toasts.map((t) =>
+          t.id === toastId || toastId === undefined ? { ...t, open: false } : t
+        ),
+      };
+    }
+
+    case "REMOVE_TOAST":
+      console.log("[reducer] REMOVE_TOAST", action.toastId ?? "(all)");
+      if (action.toastId === undefined) return { toasts: [] };
+      return { toasts: state.toasts.filter((t) => t.id !== action.toastId) };
+
+    default:
+      return state;
+  }
+}
+
+const toastTimeouts = new Map();
+
+function addToRemoveQueue(toastId) {
+  if (toastTimeouts.has(toastId)) {
+    console.log("[addToRemoveQueue] already queued, skipping:", toastId);
+    return; // de-dupe guard: calling dismiss twice on the same id won't double-schedule
+  }
+  const timeout = setTimeout(() => {
+    toastTimeouts.delete(toastId);
+    dispatch({ type: "REMOVE_TOAST", toastId });
+  }, TOAST_REMOVE_DELAY);
+  toastTimeouts.set(toastId, timeout);
+  console.log("[addToRemoveQueue] scheduled removal of", toastId, "in", TOAST_REMOVE_DELAY, "ms");
+}
+
+const listeners = [];
+let memoryState = { toasts: [] };
+
+function dispatch(action) {
+  memoryState = reducer(memoryState, action);
+  listeners.forEach((listener) => listener(memoryState));
+}
+
+function toast({ ...props }) {
+  const id = genId();
+
+  const update = (props) => dispatch({ type: "UPDATE_TOAST", toast: { ...props, id } });
+  const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id });
+
+  dispatch({
+    type: "ADD_TOAST",
+    toast: {
+      ...props,
+      id,
+      open: true,
+      onOpenChange: (open) => {
+        if (!open) dismiss(); // clicking the X sets open=false -> this fires -> dismiss()
+      },
+    },
+  });
+
+  return { id, dismiss, update };
+}
+
+function useToast() {
+  const [state, setState] = useState(memoryState);
+
+  useEffect(() => {
+    listeners.push(setState);
+    return () => {
+      const index = listeners.indexOf(setState);
+      if (index > -1) listeners.splice(index, 1);
+    };
+  }, [state]); // matches the real file exactly, including its odd [state] dependency
+
+  return {
+    ...state,
+    toast,
+    dismiss: (toastId) => dispatch({ type: "DISMISS_TOAST", toastId }),
+  };
+}
+
+// ============================================================
+// DEMO UI -- one panel per feature
+// ============================================================
+
+function LimitPanel() {
+  return (
+    <div className="panel">
+      <h2>1. TOAST_LIMIT = 2</h2>
+      <p>The reducer's <code>ADD_TOAST</code> does <code>.slice(0, TOAST_LIMIT)</code>. Click twice fast --
+      the first toast disappears immediately, replaced by the second. Only one is ever shown, even though
+      both were added.</p>
+      <button onClick={() => toast({ title: "First toast", description: "Added first" })}>Add toast 1</button>
+      <button onClick={() => toast({ title: "Second toast", description: "Added second -- replaces the first" })}>Add toast 2</button>
+    </div>
+  );
+}
+
+function UpdatePanel() {
+  return (
+    <div className="panel">
+      <h2>2. toast() returns {"{ id, dismiss, update }"}</h2>
+      <p>This calls <code>toast(...)</code>, keeps the returned handle, and 1.2s later calls
+      <code> handle.update(...)</code> on that same id -- watch the title/description change in place
+      via <code>UPDATE_TOAST</code>, without creating a second toast.</p>
+      <button onClick={() => {
+        const handle = toast({ title: "Saving...", description: "Please wait" });
+        setTimeout(() => handle.update({ title: "Saved!", description: "Updated via handle.update()" }), 1200);
+      }}>Add toast, then update it</button>
+    </div>
+  );
+}
+
+function DismissPanel() {
+  const [handle, setHandle] = useState(null);
+  return (
+    <div className="panel">
+      <h2>3. Manual dismiss via the returned handle</h2>
+      <p>Add a toast, then dismiss that <i>specific</i> toast on demand using <code>handle.dismiss()</code>
+      (the closure captured over its own <code>id</code>) -- this is <code>DISMISS_TOAST</code> with a
+      specific <code>toastId</code>.</p>
+      <button onClick={() => setHandle(toast({ title: "Long task running...", description: "Click 'Dismiss this one' below" }))}>
+        Add toast
+      </button>
+      <button disabled={!handle} onClick={() => handle && handle.dismiss()}>Dismiss this one</button>
+    </div>
+  );
+}
+
+function DismissAllPanel() {
+  const { dismiss } = useToast();
+  return (
+    <div className="panel">
+      <h2>4. Dismiss ALL toasts at once</h2>
+      <p>Calling <code>dismiss()</code> (from <code>useToast()</code>) with no id dispatches
+      <code> DISMISS_TOAST</code> with <code>toastId: undefined</code> -- the reducer's
+      "else" branch queues removal for every current toast.</p>
+      <button onClick={() => { toast({ title: "One" }); }}>Add a toast</button>
+      <button onClick={() => dismiss()}>Dismiss ALL (toastId = undefined)</button>
+    </div>
+  );
+}
+
+function DedupePanel() {
+  return (
+    <div className="panel">
+      <h2>5. addToRemoveQueue's de-dupe guard</h2>
+      <p>Add a toast, then click "Dismiss twice fast" -- check the console. The second
+      <code> addToRemoveQueue</code> call for the same id is skipped because
+      <code> toastTimeouts.has(toastId)</code> is already true, so removal is only ever scheduled once.</p>
+      <button onClick={() => {
+        const h = toast({ title: "Dismiss me twice" });
+        window.__lastHandle = h;
+      }}>Add toast</button>
+      <button onClick={() => {
+        if (window.__lastHandle) { window.__lastHandle.dismiss(); window.__lastHandle.dismiss(); }
+      }}>Dismiss twice fast (check console)</button>
+    </div>
+  );
+}
+
+function MultiSubscriberPanel() {
+  const { toasts } = useToast();
+  return (
+    <div className="panel">
+      <h2>6. Independent subscriber (no props from other panels)</h2>
+      <p>This panel calls its own <code>useToast()</code> and re-renders whenever the shared store
+      changes -- proving the pub-sub wiring, not props, connects everything above to this count.</p>
+      <p>Toasts currently in store (max {TOAST_LIMIT}): <b>{toasts.length}</b></p>
+    </div>
+  );
+}
+
+function Toaster() {
+  const { toasts } = useToast();
+  return (
+    <div className="toast-container">
+      {toasts.map((t) => (
+        <div key={t.id} className={"toast" + (t.open === false ? " closed" : "")}>
+          <span className="x" onClick={() => t.onOpenChange(false)}>&times;</span>
+          <div>{t.title}</div>
+          {t.description && <small>{t.description}</small>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <div>
+      <h1>use-toast.ts -- every feature, live</h1>
+      <p className="note">
+        Console is your friend here: every dispatch/reducer/queue step is logged in order.
+        The X on a toast calls the real <code>onOpenChange(false)</code> path, exactly like
+        Radix's Toast primitive would when a user closes it.
+      </p>
+      <LimitPanel />
+      <UpdatePanel />
+      <DismissPanel />
+      <DismissAllPanel />
+      <DedupePanel />
+      <MultiSubscriberPanel />
+      <Toaster />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+</script>
+</body>
+</html>

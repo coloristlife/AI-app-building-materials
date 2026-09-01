@@ -1,0 +1,203 @@
+{
+  "main": {
+    "id": "0d57752bffd66c1e",
+    "type": "split",
+    "children": [
+      {
+        "id": "cdbaae7ced56a700",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "040bf246d8f31e06",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "股票预测/设计- v1/LLM Extraction Pipeline.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LLM Extraction Pipeline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2a468f96d9196ac8",
+    "type": "split",
+    "children": [
+      {
+        "id": "a9d51f8d177132db",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ca08154f65ac706a",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "463f29dfc6cdee24",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "81cbdbd3d24f9572",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "9e5d5f8f0a0c3281",
+    "type": "split",
+    "children": [
+      {
+        "id": "d22290f8b2d8aa1d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8cc6d7a5299e3647",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "股票预测/设计- v1/数据结构.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "5c7853f42dad7e7a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "股票预测/炒股经验转化为Rule.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "553499c89ffb7eb0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "dd84eca367fac4a6",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "b7205aeac67cb115",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "股票预测/设计- v1/LLM Extraction Pipeline.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "040bf246d8f31e06",
+  "lastOpenFiles": [
+    "股票预测/设计- v1/数据结构.md",
+    "股票预测/设计- v1/LLM Extraction Pipeline.md",
+    "股票预测/设计- v1/设计- v1.md",
+    "股票预测/设计- v1",
+    "股票预测/炒股建议.md",
+    "股票预测/炒股实战口诀.md",
+    "股票预测/炒股经验转化为Rule.md",
+    "Second Brain.md",
+    "股票预测"
+  ]
+}
